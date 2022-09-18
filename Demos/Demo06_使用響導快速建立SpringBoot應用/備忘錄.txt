@@ -1,0 +1,7 @@
+默認生成的Spring Boot項目；
+
+主程序已經生成好了，我們只需要我們自己的邏輯
+    1. resources文件夾中目錄結構
+    2. static：保存所有的靜態資源； js css images；
+    3. templates：保存所有的模板頁面；（Spring Boot默認jar包使用嵌入式的Tomcat，默認不支持JSP頁面）；可以使用模板引擎（freemarker、thymeleaf）；
+    4. application.properties：Spring Boot應用的配置文件；可以修改一些默認設置；

@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="Demo07_yaml簡介" />
         <module name="demo06" />
         <module name="Demo05_HelloWorld" />
       </profile>
@@ -14,11 +15,13 @@
       <module name="Demo05_HelloWorld" target="1.8" />
       <module name="demo06" target="1.8" />
       <module name="Demo06_使用響導快速建立SpringBoot應用" target="1.8" />
+      <module name="Demo07_yaml簡介" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Demo06_使用響導快速建立SpringBoot應用" options="-parameters" />
+      <module name="Demo07_yaml簡介" options="-parameters" />
       <module name="demo06" options="-parameters" />
     </option>
   </component>

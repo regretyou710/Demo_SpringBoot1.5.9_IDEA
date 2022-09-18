@@ -5,6 +5,7 @@
       <list>
         <option value="$PROJECT_DIR$/Demo05_HelloWorld/pom.xml" />
         <option value="$PROJECT_DIR$/Demo06_使用響導快速建立SpringBoot應用/pom.xml" />
+        <option value="$PROJECT_DIR$/Demo07_yaml簡介/pom.xml" />
       </list>
     </option>
   </component>

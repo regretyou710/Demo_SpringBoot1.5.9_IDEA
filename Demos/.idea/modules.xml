@@ -3,8 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Demo05_HelloWorld/Demo05_HelloWorld.iml" filepath="$PROJECT_DIR$/Demo05_HelloWorld/Demo05_HelloWorld.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Demo07_yaml簡介/Demo07_yaml簡介.iml" filepath="$PROJECT_DIR$/Demo07_yaml簡介/Demo07_yaml簡介.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Demo06_使用響導快速建立SpringBoot應用/demo06.iml" filepath="$PROJECT_DIR$/Demo06_使用響導快速建立SpringBoot應用/demo06.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Demo08_使用響導快速建立SpringBoot應用/demo08.iml" filepath="$PROJECT_DIR$/Demo08_使用響導快速建立SpringBoot應用/demo08.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Demo09_yaml簡介/demo09.iml" filepath="$PROJECT_DIR$/Demo09_yaml簡介/demo09.iml" />
     </modules>
   </component>
 </project>

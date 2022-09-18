@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/Demo05_HelloWorld/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Demo08_使用響導快速建立SpringBoot應用/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Demo09_yaml簡介/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Demo11_yaml配置文件值獲取/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Demo12_properties配置文件編碼問題/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Demo13_@ConfigurationProperties與@Value區別/src/main/java" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

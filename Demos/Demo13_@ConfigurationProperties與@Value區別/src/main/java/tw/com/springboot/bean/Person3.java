@@ -1,7 +1,11 @@
 package tw.com.springboot.bean;
 
+
+import org.hibernate.validator.constraints.Email;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
+import org.springframework.validation.annotation.Validated;
 
 import java.util.Date;
 import java.util.List;
@@ -14,15 +18,28 @@ import java.util.Map;
  * <p>
  * 只有這個組件是容器中的組件，才能使用容器提供的@ConfigurationProperties功能；
  */
-@ConfigurationProperties(prefix = "person")
+//@ConfigurationProperties(prefix = "person3")
 @Component
-public class Person {
+//@Validated
+public class Person3 {
+
+    /**
+     * @Value無法對複雜封裝類型進行注入
+     */
+
     private String lastName;
+
     private Integer age;
+
     private Boolean boss;
+
     private Date birth;
+
+    //@Value("${person3.maps}")
     private Map<String, Object> maps;
+
     private List<Object> lists;
+
     private Dog dog;
 
     public String getLastName() {

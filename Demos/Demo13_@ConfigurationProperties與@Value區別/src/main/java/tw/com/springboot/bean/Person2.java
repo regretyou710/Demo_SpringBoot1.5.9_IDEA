@@ -1,7 +1,11 @@
 package tw.com.springboot.bean;
 
+
+import org.hibernate.validator.constraints.Email;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
+import org.springframework.validation.annotation.Validated;
 
 import java.util.Date;
 import java.util.List;
@@ -14,15 +18,31 @@ import java.util.Map;
  * <p>
  * 只有這個組件是容器中的組件，才能使用容器提供的@ConfigurationProperties功能；
  */
-@ConfigurationProperties(prefix = "person")
+@ConfigurationProperties(prefix = "person2")
 @Component
-public class Person {
+@Validated
+public class Person2 {
+
+    /**
+     * JSR303數據校驗
+     *
+     * @ConfigurationProperties可以搭配@Validated進行屬性注入的驗證(@Email) 不使用@ConfigurationProperties而使用@Value搭配@Validated進行屬性注入的驗證(@Email)是沒有效果的
+     */
+
+    //@Value("${person2.last-name}")//表示從appliction.properties資源文件中的person.last-name鍵獲取它的值並注入
+    @Email//注入內容驗證是否為信箱格式
     private String lastName;
+
     private Integer age;
+
     private Boolean boss;
+
     private Date birth;
+
     private Map<String, Object> maps;
+
     private List<Object> lists;
+
     private Dog dog;
 
     public String getLastName() {

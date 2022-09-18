@@ -1,5 +1,6 @@
 package tw.com.springboot.bean;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
@@ -14,15 +15,38 @@ import java.util.Map;
  * <p>
  * 只有這個組件是容器中的組件，才能使用容器提供的@ConfigurationProperties功能；
  */
-@ConfigurationProperties(prefix = "person")
+//@ConfigurationProperties(prefix = "person")
 @Component
 public class Person {
+    /**
+     * 因Person透過註解方式成為spring容器中的組件
+     *
+     * <bean class="Person">
+     * <property name="lastName" value="字面量/${key}從環境變量、配置文件中獲取值/#{SpEL}"></property>
+     * <bean/>
+     *
+     * @Value("?") : 相當於為Spring容器中的組件(bean)的屬性注入值
+     * ?可以是
+     * 1. 字面量
+     * 2. ${key}:從環境變量、配置文件中獲取值
+     * 3. #{SpEL}:spring表達式,只能在@Value中使用。若在properties資源文件中的值使用表達式並透過@ConfigurationProperties注入是會報錯
+     */
+
+    @Value("${person.last-name}")//表示從appliction.properties資源文件中的person.last-name鍵獲取它的值並注入
     private String lastName;
+
+    @Value("#{11*2}")//表示使用SpEL進行屬性注入
     private Integer age;
+
+    @Value("true")//表示使用字面量進行屬性注入
     private Boolean boss;
+
     private Date birth;
+
     private Map<String, Object> maps;
+
     private List<Object> lists;
+
     private Dog dog;
 
     public String getLastName() {

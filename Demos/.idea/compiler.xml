@@ -15,9 +15,6 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Demo05_HelloWorld" target="1.8" />
-      <module name="Demo06_使用響導快速建立SpringBoot應用" target="1.8" />
-      <module name="demo07" target="1.8" />
-      <module name="Demo07_yaml簡介" target="1.8" />
       <module name="demo08" target="1.8" />
       <module name="demo09" target="1.8" />
       <module name="demo11" target="1.8" />
@@ -26,9 +23,6 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="Demo06_使用響導快速建立SpringBoot應用" options="-parameters" />
-      <module name="Demo07_yaml簡介" options="-parameters" />
-      <module name="demo07" options="-parameters" />
       <module name="demo08" options="-parameters" />
       <module name="demo09" options="-parameters" />
       <module name="demo11" options="-parameters" />

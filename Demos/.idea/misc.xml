@@ -8,6 +8,8 @@
         <option value="$PROJECT_DIR$/Demo07_yaml簡介/pom.xml" />
         <option value="$PROJECT_DIR$/Demo08_使用響導快速建立SpringBoot應用/pom.xml" />
         <option value="$PROJECT_DIR$/Demo09_yaml簡介/pom.xml" />
+        <option value="$PROJECT_DIR$/Demo11_yaml配置文件值獲取/pom.xml" />
+        <option value="$PROJECT_DIR$/Demo12_properties配置文件編碼問題/pom.xml" />
       </list>
     </option>
   </component>

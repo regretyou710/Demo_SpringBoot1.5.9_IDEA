@@ -8,6 +8,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="demo09" />
         <module name="demo08" />
+        <module name="demo11" />
+        <module name="demo12" />
         <module name="Demo05_HelloWorld" />
       </profile>
     </annotationProcessing>
@@ -18,6 +20,8 @@
       <module name="Demo07_yaml簡介" target="1.8" />
       <module name="demo08" target="1.8" />
       <module name="demo09" target="1.8" />
+      <module name="demo11" target="1.8" />
+      <module name="demo12" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -27,6 +31,8 @@
       <module name="demo07" options="-parameters" />
       <module name="demo08" options="-parameters" />
       <module name="demo09" options="-parameters" />
+      <module name="demo11" options="-parameters" />
+      <module name="demo12" options="-parameters" />
     </option>
   </component>
 </project>

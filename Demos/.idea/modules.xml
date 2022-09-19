@@ -11,6 +11,7 @@
       <module fileurl="file://$PROJECT_DIR$/Demo14_@PropertySource、@ImportResource、@Bean1/demo14-1.iml" filepath="$PROJECT_DIR$/Demo14_@PropertySource、@ImportResource、@Bean1/demo14-1.iml" />
       <module fileurl="file://$PROJECT_DIR$/Demo14_@PropertySource、@ImportResource、@Bean2/demo14-2.iml" filepath="$PROJECT_DIR$/Demo14_@PropertySource、@ImportResource、@Bean2/demo14-2.iml" />
       <module fileurl="file://$PROJECT_DIR$/Demo14_@PropertySource、@ImportResource、@Bean3/demo14-3.iml" filepath="$PROJECT_DIR$/Demo14_@PropertySource、@ImportResource、@Bean3/demo14-3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Demo15_配置文件佔位符/demo15.iml" filepath="$PROJECT_DIR$/Demo15_配置文件佔位符/demo15.iml" />
     </modules>
   </component>
 </project>

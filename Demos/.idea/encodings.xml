@@ -7,6 +7,9 @@
     <file url="file://$PROJECT_DIR$/Demo11_yaml配置文件值獲取/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Demo12_properties配置文件編碼問題/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Demo13_@ConfigurationProperties與@Value區別/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Demo14_@PropertySource、@ImportResource、@Bean1/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Demo14_@PropertySource、@ImportResource、@Bean2/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Demo14_@PropertySource、@ImportResource、@Bean3/src/main/java" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

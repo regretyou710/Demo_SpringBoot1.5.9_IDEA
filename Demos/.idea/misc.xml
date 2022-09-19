@@ -11,6 +11,9 @@
         <option value="$PROJECT_DIR$/Demo11_yaml配置文件值獲取/pom.xml" />
         <option value="$PROJECT_DIR$/Demo12_properties配置文件編碼問題/pom.xml" />
         <option value="$PROJECT_DIR$/Demo13_@ConfigurationProperties與@Value區別/pom.xml" />
+        <option value="$PROJECT_DIR$/Demo14_@PropertySource、@ImportResource、@Bean1/pom.xml" />
+        <option value="$PROJECT_DIR$/Demo14_@PropertySource、@ImportResource、@Bean2/pom.xml" />
+        <option value="$PROJECT_DIR$/Demo14_@PropertySource、@ImportResource、@Bean3/pom.xml" />
       </list>
     </option>
   </component>

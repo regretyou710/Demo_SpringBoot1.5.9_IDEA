@@ -8,6 +8,9 @@
       <module fileurl="file://$PROJECT_DIR$/Demo11_yaml配置文件值獲取/demo11.iml" filepath="$PROJECT_DIR$/Demo11_yaml配置文件值獲取/demo11.iml" />
       <module fileurl="file://$PROJECT_DIR$/Demo12_properties配置文件編碼問題/demo12.iml" filepath="$PROJECT_DIR$/Demo12_properties配置文件編碼問題/demo12.iml" />
       <module fileurl="file://$PROJECT_DIR$/Demo13_@ConfigurationProperties與@Value區別/demo13.iml" filepath="$PROJECT_DIR$/Demo13_@ConfigurationProperties與@Value區別/demo13.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Demo14_@PropertySource、@ImportResource、@Bean1/demo14-1.iml" filepath="$PROJECT_DIR$/Demo14_@PropertySource、@ImportResource、@Bean1/demo14-1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Demo14_@PropertySource、@ImportResource、@Bean2/demo14-2.iml" filepath="$PROJECT_DIR$/Demo14_@PropertySource、@ImportResource、@Bean2/demo14-2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Demo14_@PropertySource、@ImportResource、@Bean3/demo14-3.iml" filepath="$PROJECT_DIR$/Demo14_@PropertySource、@ImportResource、@Bean3/demo14-3.iml" />
     </modules>
   </component>
 </project>

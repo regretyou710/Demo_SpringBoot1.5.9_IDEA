@@ -15,6 +15,9 @@
         <option value="$PROJECT_DIR$/Demo14_@PropertySource、@ImportResource、@Bean2/pom.xml" />
         <option value="$PROJECT_DIR$/Demo14_@PropertySource、@ImportResource、@Bean3/pom.xml" />
         <option value="$PROJECT_DIR$/Demo15_配置文件佔位符/pom.xml" />
+        <option value="$PROJECT_DIR$/Demo16_Profile多環境支持1/pom.xml" />
+        <option value="$PROJECT_DIR$/Demo16_Profile多環境支持2/pom.xml" />
+        <option value="$PROJECT_DIR$/Demo16_Profile多環境支持3/pom.xml" />
       </list>
     </option>
   </component>

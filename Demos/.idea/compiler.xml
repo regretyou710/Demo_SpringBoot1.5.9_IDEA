@@ -8,18 +8,19 @@
         <outputRelativeToContentRoot value="true" />
         <module name="demo17-3" />
         <module name="demo16-1" />
+        <module name="demo17-2" />
         <module name="demo11" />
-        <module name="demo18" />
+        <module name="Demo20_@Conditional&amp;自動配置報告" />
         <module name="demo16-3" />
         <module name="Demo05_HelloWorld" />
-        <module name="demo15" />
+        <module name="demo18" />
         <module name="demo09" />
         <module name="demo08" />
         <module name="demo14-3" />
         <module name="demo14-2" />
         <module name="demo14-1" />
         <module name="demo16-2" />
-        <module name="demo17-2" />
+        <module name="demo15" />
         <module name="demo17-1" />
         <module name="demo13" />
         <module name="demo12" />
@@ -47,10 +48,14 @@
       <module name="demo17-3" target="1.8" />
       <module name="demo17-3 (1)" target="1.8" />
       <module name="demo18" target="1.8" />
+      <module name="Demo19_自動配置原理" target="1.8" />
+      <module name="Demo20_@Conditional&amp;自動配置報告" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Demo19_自動配置原理" options="-parameters" />
+      <module name="Demo20_@Conditional&amp;自動配置報告" options="-parameters" />
       <module name="demo08" options="-parameters" />
       <module name="demo09" options="-parameters" />
       <module name="demo11" options="-parameters" />

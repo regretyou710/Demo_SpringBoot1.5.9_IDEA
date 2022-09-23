@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Demo05_HelloWorld/Demo05_HelloWorld.iml" filepath="$PROJECT_DIR$/Demo05_HelloWorld/Demo05_HelloWorld.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Demo20_@Conditional&amp;自動配置報告/Demo20_@Conditional&amp;自動配置報告.iml" filepath="$PROJECT_DIR$/Demo20_@Conditional&amp;自動配置報告/Demo20_@Conditional&amp;自動配置報告.iml" />
       <module fileurl="file://$PROJECT_DIR$/Demo08_使用響導快速建立SpringBoot應用/demo08.iml" filepath="$PROJECT_DIR$/Demo08_使用響導快速建立SpringBoot應用/demo08.iml" />
       <module fileurl="file://$PROJECT_DIR$/Demo09_yaml簡介/demo09.iml" filepath="$PROJECT_DIR$/Demo09_yaml簡介/demo09.iml" />
       <module fileurl="file://$PROJECT_DIR$/Demo11_yaml配置文件值獲取/demo11.iml" filepath="$PROJECT_DIR$/Demo11_yaml配置文件值獲取/demo11.iml" />

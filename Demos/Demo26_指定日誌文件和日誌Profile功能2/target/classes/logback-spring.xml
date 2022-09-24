@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+scan：當此屬性設置為true時，配置文件如果發生改變，將會被重新加載，默認值為true。
+scanPeriod：設置監測配置文件是否有修改的時間間隔，如果沒有給出時間單位，默認單位是毫秒當scan為true時，此屬性生效。默認的時間間隔為1分鐘。
+debug：當此屬性設置為true時，將打印出logback內部日志信息，實時查看logback運行狀態。默認值為false。
+-->
+<configuration scan="false" scanPeriod="60 seconds" debug="false">
+    <!-- 定義日志的根目錄 -->
+    <property name="LOG_HOME" value="/app/log"/>
+    <!-- 定義日志文件名稱 -->
+    <property name="appName" value="atguigu-springboot"></property>
+    <!-- ch.qos.logback.core.ConsoleAppender 表示控制台輸出 -->
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <!--
+        日志輸出格式：
+			%d表示日期時間，
+			%thread表示線程名，
+			%-5level：級別從左顯示5個字符寬度
+			%logger{50} 表示logger名字最長50個字符，否則按照句點分割。
+			%msg：日志消息，
+			%n是換行符
+        -->
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <springProfile name="dev">
+                <pattern>Dev Logback===>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
+            </springProfile>
+            <springProfile name="!dev">
+                <pattern>My Logback===>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
+            </springProfile>
+        </layout>
+    </appender>
+
+    <!-- 滾動記錄文件，先將日志記錄到指定文件，當符合某個條件時，將日志記錄到其他文件 -->
+    <appender name="appLogAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!-- 指定日志文件的名稱 -->
+        <file>${LOG_HOME}/${appName}.log</file>
+        <!--
+        當發生滾動時，決定 RollingFileAppender 的行為，涉及文件移動和重命名
+        TimeBasedRollingPolicy： 最常用的滾動策略，它根據時間來制定滾動策略，既負責滾動也負責出發滾動。
+        -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!--
+            滾動時產生的文件的存放位置及文件名稱 %d{yyyy-MM-dd}：按天進行日志滾動
+            %i：當文件大小超過maxFileSize時，按照i進行文件滾動
+            -->
+            <fileNamePattern>${LOG_HOME}/${appName}-%d{yyyy-MM-dd}-%i.log</fileNamePattern>
+            <!--
+            可選節點，控制保留的歸檔文件的最大數量，超出數量就刪除舊文件。假設設置每天滾動，
+            且maxHistory是365，則只保存最近365天的文件，刪除之前的舊文件。注意，刪除舊文件是，
+            那些為了歸檔而創建的目錄也會被刪除。
+            -->
+            <MaxHistory>365</MaxHistory>
+            <!--
+            當日志文件超過maxFileSize指定的大小是，根據上面提到的%i進行日志文件滾動 注意此處配置SizeBasedTriggeringPolicy是無法實現按文件大小進行滾動的，必須配置timeBasedFileNamingAndTriggeringPolicy
+            -->
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>100MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+        <!-- 日志輸出格式： -->
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [ %thread ] - [ %-5level ] [ %logger{50} : %line ] - %msg%n</pattern>
+        </layout>
+    </appender>
+
+    <!--
+		logger主要用於存放日志對象，也可以定義日志類型、級別
+		name：表示匹配的logger類型前綴，也就是包的前半部分
+		level：要記錄的日志級別，包括 TRACE < DEBUG < INFO < WARN < ERROR
+		additivity：作用在於children-logger是否使用 rootLogger配置的appender進行輸出，
+		false：表示只用當前logger的appender-ref，true：
+		表示當前logger的appender-ref和rootLogger的appender-ref都有效
+    -->
+    <!-- hibernate logger -->
+    <logger name="com.atguigu" level="debug"/>
+    <!-- Spring framework logger -->
+    <logger name="org.springframework" level="debug" additivity="false"></logger>
+
+
+    <!--
+    root與logger是父子關系，沒有特別定義則默認為root，任何一個類只會和一個logger對應，
+    要麽是定義的logger，要麽是root，判斷的關鍵在於找到這個logger，然後判斷這個logger的appender和level。
+    -->
+    <root level="info">
+        <appender-ref ref="stdout"/>
+        <appender-ref ref="appLogAppender"/>
+    </root>
+</configuration>

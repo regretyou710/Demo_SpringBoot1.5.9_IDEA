@@ -1,0 +1,48 @@
+{
+  "groups": [
+    {
+      "name": "person2",
+      "type": "tw.com.springboot.bean.Person2",
+      "sourceType": "tw.com.springboot.bean.Person2"
+    }
+  ],
+  "properties": [
+    {
+      "name": "person2.age",
+      "type": "java.lang.Integer",
+      "sourceType": "tw.com.springboot.bean.Person2"
+    },
+    {
+      "name": "person2.birth",
+      "type": "java.util.Date",
+      "sourceType": "tw.com.springboot.bean.Person2"
+    },
+    {
+      "name": "person2.boss",
+      "type": "java.lang.Boolean",
+      "sourceType": "tw.com.springboot.bean.Person2"
+    },
+    {
+      "name": "person2.dog",
+      "type": "tw.com.springboot.bean.Dog",
+      "sourceType": "tw.com.springboot.bean.Person2"
+    },
+    {
+      "name": "person2.last-name",
+      "type": "java.lang.String",
+      "description": "JSR303數據校驗 @ConfigurationProperties可以搭配@Validated進行屬性注入的驗證(@Email) 不使用@ConfigurationProperties而使用@Value搭配@Validated進行屬性注入的驗證(@Email)是沒有效果的",
+      "sourceType": "tw.com.springboot.bean.Person2"
+    },
+    {
+      "name": "person2.lists",
+      "type": "java.util.List<java.lang.Object>",
+      "sourceType": "tw.com.springboot.bean.Person2"
+    },
+    {
+      "name": "person2.maps",
+      "type": "java.util.Map<java.lang.String,java.lang.Object>",
+      "sourceType": "tw.com.springboot.bean.Person2"
+    }
+  ],
+  "hints": []
+}

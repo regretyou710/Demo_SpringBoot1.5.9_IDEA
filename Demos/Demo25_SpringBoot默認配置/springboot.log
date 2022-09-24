@@ -1,0 +1,18 @@
+2022-09-24 09:25:50.883  INFO 4176 --- [main] t.com.springboot.Demo25ApplicationTests  : Starting Demo25ApplicationTests using Java 1.8.0_131 on DESKTOP-8T4NL9P with PID 4176 (started by Workerman-NB in D:\Projects\Demo_SpringBoot1.5.9_IDEA\Demos\Demo25_SpringBoot默認配置)
+2022-09-24 09:25:50.953 DEBUG 4176 --- [main] t.com.springboot.Demo25ApplicationTests  : Running with Spring Boot v2.7.4, Spring v5.3.23
+2022-09-24 09:25:50.955  INFO 4176 --- [main] t.com.springboot.Demo25ApplicationTests  : No active profile set, falling back to 1 default profile: "default"
+2022-09-24 09:25:53.736  INFO 4176 --- [main] t.com.springboot.Demo25ApplicationTests  : Started Demo25ApplicationTests in 3.667 seconds (JVM running for 6.591)
+2022-09-24 09:25:54.054 TRACE 4176 --- [main] t.com.springboot.Demo25ApplicationTests  : 這是trace日誌
+2022-09-24 09:25:54.054 DEBUG 4176 --- [main] t.com.springboot.Demo25ApplicationTests  : 這是debug日誌
+2022-09-24 09:25:54.054  INFO 4176 --- [main] t.com.springboot.Demo25ApplicationTests  : 這是info日誌
+2022-09-24 09:25:54.055  WARN 4176 --- [main] t.com.springboot.Demo25ApplicationTests  : 這是warn日誌
+2022-09-24 09:25:54.055 ERROR 4176 --- [main] t.com.springboot.Demo25ApplicationTests  : 這是error日誌
+2022-09-24 09:27:17.634  INFO 2300 --- [main] t.com.springboot.Demo25ApplicationTests  : Starting Demo25ApplicationTests using Java 1.8.0_131 on DESKTOP-8T4NL9P with PID 2300 (started by Workerman-NB in D:\Projects\Demo_SpringBoot1.5.9_IDEA\Demos\Demo25_SpringBoot默認配置)
+2022-09-24 09:27:17.637 DEBUG 2300 --- [main] t.com.springboot.Demo25ApplicationTests  : Running with Spring Boot v2.7.4, Spring v5.3.23
+2022-09-24 09:27:17.639  INFO 2300 --- [main] t.com.springboot.Demo25ApplicationTests  : No active profile set, falling back to 1 default profile: "default"
+2022-09-24 09:27:22.403  INFO 2300 --- [main] t.com.springboot.Demo25ApplicationTests  : Started Demo25ApplicationTests in 5.923 seconds (JVM running for 9.331)
+2022-09-24 09:27:23.114 TRACE 2300 --- [main] t.com.springboot.Demo25ApplicationTests  : 這是trace日誌
+2022-09-24 09:27:23.115 DEBUG 2300 --- [main] t.com.springboot.Demo25ApplicationTests  : 這是debug日誌
+2022-09-24 09:27:23.115  INFO 2300 --- [main] t.com.springboot.Demo25ApplicationTests  : 這是info日誌
+2022-09-24 09:27:23.115  WARN 2300 --- [main] t.com.springboot.Demo25ApplicationTests  : 這是warn日誌
+2022-09-24 09:27:23.116 ERROR 2300 --- [main] t.com.springboot.Demo25ApplicationTests  : 這是error日誌

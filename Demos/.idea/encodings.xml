@@ -20,6 +20,8 @@
     <file url="file://$PROJECT_DIR$/Demo18_外部配置加載順序/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Demo20_@Conditional&amp;自動配置報告/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Demo25_SpringBoot默認配置/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Demo26_指定日誌文件和日誌Profile功能1/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Demo26_指定日誌文件和日誌Profile功能2/src/main/java" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

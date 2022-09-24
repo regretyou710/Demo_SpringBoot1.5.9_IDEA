@@ -26,6 +26,8 @@
         <option value="$PROJECT_DIR$/Demo19_自動配置原理/pom.xml" />
         <option value="$PROJECT_DIR$/Demo20_@Conditional&amp;自動配置報告/pom.xml" />
         <option value="$PROJECT_DIR$/Demo25_SpringBoot默認配置/pom.xml" />
+        <option value="$PROJECT_DIR$/Demo26_指定日誌文件和日誌Profile功能1/pom.xml" />
+        <option value="$PROJECT_DIR$/Demo26_指定日誌文件和日誌Profile功能2/pom.xml" />
       </list>
     </option>
   </component>

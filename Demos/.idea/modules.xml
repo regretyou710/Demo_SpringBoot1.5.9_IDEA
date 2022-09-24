@@ -21,6 +21,8 @@
       <module fileurl="file://$PROJECT_DIR$/Demo17_配置文件的加載位置2/demo17-2.iml" filepath="$PROJECT_DIR$/Demo17_配置文件的加載位置2/demo17-2.iml" />
       <module fileurl="file://$PROJECT_DIR$/Demo17_配置文件的加載位置3/demo17-3.iml" filepath="$PROJECT_DIR$/Demo17_配置文件的加載位置3/demo17-3.iml" />
       <module fileurl="file://$PROJECT_DIR$/Demo18_外部配置加載順序/demo18.iml" filepath="$PROJECT_DIR$/Demo18_外部配置加載順序/demo18.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Demo26_指定日誌文件和日誌Profile功能1/demo26-1.iml" filepath="$PROJECT_DIR$/Demo26_指定日誌文件和日誌Profile功能1/demo26-1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Demo26_指定日誌文件和日誌Profile功能2/demo26-2.iml" filepath="$PROJECT_DIR$/Demo26_指定日誌文件和日誌Profile功能2/demo26-2.iml" />
     </modules>
   </component>
 </project>

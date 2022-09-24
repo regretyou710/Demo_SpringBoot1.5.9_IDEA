@@ -17,6 +17,8 @@
         <module name="demo11" />
         <module name="demo09" />
         <module name="demo08" />
+        <module name="demo26-2" />
+        <module name="demo26-1" />
         <module name="demo14-3" />
         <module name="demo14-2" />
         <module name="demo14-1" />
@@ -52,6 +54,8 @@
       <module name="Demo19_自動配置原理" target="1.8" />
       <module name="Demo20_@Conditional&amp;自動配置報告" target="1.8" />
       <module name="Demo25_SpringBoot默認配置" target="1.8" />
+      <module name="demo26-1" target="1.8" />
+      <module name="demo26-2" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -79,6 +83,8 @@
       <module name="demo17-3" options="-parameters" />
       <module name="demo17-3 (1)" options="-parameters" />
       <module name="demo18" options="-parameters" />
+      <module name="demo26-1" options="-parameters" />
+      <module name="demo26-2" options="-parameters" />
     </option>
   </component>
 </project>

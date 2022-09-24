@@ -28,6 +28,8 @@
         <option value="$PROJECT_DIR$/Demo25_SpringBoot默認配置/pom.xml" />
         <option value="$PROJECT_DIR$/Demo26_指定日誌文件和日誌Profile功能1/pom.xml" />
         <option value="$PROJECT_DIR$/Demo26_指定日誌文件和日誌Profile功能2/pom.xml" />
+        <option value="$PROJECT_DIR$/Demo27_切換日誌框架1/pom.xml" />
+        <option value="$PROJECT_DIR$/Demo27_切換日誌框架2/pom.xml" />
       </list>
     </option>
   </component>

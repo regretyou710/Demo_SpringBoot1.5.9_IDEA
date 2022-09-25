@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html lang="zh-cn" style="--olcb-folder-code-block-max-height:80vh;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="origin-when-cross-origin">
+    <meta name="description" content="一.Spring Boot设置欢迎页面 1.默认欢迎页的源码 在Spring Boot中，默认的欢迎界面是index.html，那为什么这样呢？我们可以看看源码是怎么定义的。 1 public cla">
+    <meta property="og:description" content="一.Spring Boot设置欢迎页面 1.默认欢迎页的源码 在Spring Boot中，默认的欢迎界面是index.html，那为什么这样呢？我们可以看看源码是怎么定义的。 1 public cla">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园</title>
+    <link id="favicon" rel="shortcut icon" href="https://common.cnblogs.com/favicon.svg" type="image/svg+xml">
+    
+    <style>#home :not(.cnblogs_code):not(.cnblogs_Highlighter)>pre:not([highlighted]):not([class*="brush:"]) code:not(.hljs), :not(.cnblogs_code):not(.cnblogs_Highlighter)>pre:not([highlighted]):not([class*="brush:"]) code:not(.hljs) {background: rgb(245, 245, 245);
+        padding: 12px;
+        border: 1px solid rgb(204, 204, 204);
+        border-radius: 3px;
+        border-color: transparent;
+        color: rgb(68, 68, 68);
+        font-family: "Courier New", sans-serif;
+        font-size: 12px</style><link rel="stylesheet" href="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/blog-common.min.css">
+    
+
+    <link id="MainCss" rel="stylesheet" href="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/bundle-elf.min.css">
+        <link id="highlighter-theme-cnblogs" type="text/css" rel="stylesheet" href="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/cnblogs.css">
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/bundle-elf-mobile.min.css">
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/autumnlj/rss">
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/autumnlj/rsd.xml">
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/autumnlj/wlwmanifest.xml">
+    <script type="text/javascript" src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/encoder.js.下載"></script><script type="text/javascript" async="" src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/analytics.js.下載"></script><script>
+        var currentBlogId = 214152;
+        var currentBlogApp = 'autumnlj';
+        var isLogined = false;
+        var isBlogOwner = false;
+        var skinName = 'elf';
+        var visitorUserId = '';
+        var hasCustomScript = false;
+        try {
+            if (hasCustomScript && document.referrer && document.referrer.indexOf('baidu.com') >= 0) {
+                Object.defineProperty(document, 'referrer', { value: '' });
+                Object.defineProperty(Document.prototype, 'referrer', { get: function(){ return ''; } });
+            }
+        } catch(error) { }
+        window.cb_enable_mathjax = false;
+        window.mathEngine = 0;
+        window.codeHighlightEngine = 1;
+        window.enableCodeLineNumber = false;
+        window.codeHighlightTheme = 'cnblogs';
+        window.darkModeCodeHighlightTheme = 'vs2015';
+        window.isDarkCodeHighlightTheme = false;
+        window.isDarkModeCodeHighlightThemeDark = true;
+        window.isDisableCodeHighlighter = false;
+        window.enableCodeThemeTypeFollowSystem = false;
+    </script>
+        <script>
+            var currentPostDateAdded = '2021-01-23 23:52';
+        </script>
+    <script src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/jquery-2.2.0.min.js.下載"></script>
+    <script src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/blog-common.min.js.下載"></script><style>.medium-zoom-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 300ms;
+  will-change: opacity;
+}
+
+.medium-zoom--opened .medium-zoom-overlay {
+  cursor: pointer;
+  cursor: zoom-out;
+  opacity: 1;
+}
+
+.medium-zoom-image {
+  cursor: pointer;
+  cursor: zoom-in;
+  /*
+    The `transition` is marked as "!important" for the animation to happen
+    even though it's overriden by another inline `transition` style attribute.
+
+    This is problematic with frameworks that generate inline styles on their
+    images (e.g. Gatsby).
+
+    See https://github.com/francoischalifour/medium-zoom/issues/110
+   */
+  transition: transform 300ms cubic-bezier(0.2, 0, 0.2, 1) !important;
+}
+
+.medium-zoom-image--hidden {
+  visibility: hidden;
+}
+
+.medium-zoom-image--opened {
+  position: relative;
+  cursor: pointer;
+  cursor: zoom-out;
+  will-change: transform;
+}
+</style><script id="hljs-script" src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/highlight.min.js.下載" type="text/javascript" async=""></script>
+    
+
+    
+<meta http-equiv="origin-trial" content="A+cA2PUOfIOKAdSDJOW5CP9ZlxONy1yu+hqAq72zUtKw4rLdihqRp6Nui/jUyCyegr+BUtH+C+Elv0ufn05yBQEAAACFeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjY5NzY2Mzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A+zsdH3aNZT/bkjT8U/o5ACzyaeNYzTvtoVmwf/KOilfv39pxY2AIsOwhQJv+YnXp98i3TqrQibIVtMWs5UHjgoAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjY5NzY2Mzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="AxceVEhIegcDEHqLXFQ2+vPKqzCppoJYsRCZ/BdfVnbM/sUUF2BXV8lwNosyYjvoxnTh2FC8cOlAnA5uULr/zAUAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjY5NzY2Mzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><script src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/pubads_impl_2022092001.js.下載" async=""></script><link rel="preload" href="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/f.txt" as="script"><script type="text/javascript" src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/f.txt"></script><link rel="preload" href="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/f(1).txt" as="script"><script type="text/javascript" src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/f(1).txt"></script></head>
+<body class="skin-elf has-navbar hljs-engine">
+<a name="top"></a>
+    <div id="bannerbar" class="bannerbar-mobile formobile">
+        <a href="https://www.cnblogs.com/cmt/p/16723967.html" onclick="countCreativeClicks(&#39;M2-亚马逊云科技-现代化应用&#39;)" rel="nofollow">
+            <img src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/35695-20220923213706551-1741945526.jpg" alt="" onload="countCreativeImpressionsOnMobile(&#39;M2-亚马逊云科技-现代化应用&#39;)">
+        </a>
+    </div>
+<div id="top_nav" class="navbar forpc">
+    <nav id="nav_main" class="navbar-main">
+        <ul id="nav_left" class="navbar-list navbar-left">
+            <li class="navbar-branding">
+                <a href="https://www.cnblogs.com/" title="开发者的网上家园" role="banner">
+                    <img src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/logo.svg" alt="博客园Logo">
+                </a>
+            </li>
+            <li>
+                <a href="https://www.cnblogs.com/" onclick="countClicks(&#39;skin-navbar-sitehome&#39;)">首页</a>
+            </li>
+            <li>
+                <a href="https://news.cnblogs.com/" onclick="countClicks(&#39;nav&#39;, &#39;skin-navbar-news&#39;)">新闻</a>
+            </li>
+            <li>
+                <a href="https://q.cnblogs.com/" onclick="countClicks(&#39;nav&#39;, &#39;skin-navbar-q&#39;)">博问</a>
+            </li>
+            <li>
+                <a id="nav_brandzone" href="https://brands.cnblogs.com/" onclick="countClicks(&#39;nav&#39;, &#39;skin-navbar-brands&#39;)">专区</a>
+            </li>
+            <li>
+                <a href="https://ing.cnblogs.com/" onclick="countClicks(&#39;nav&#39;, &#39;skin-navbar-ing&#39;)">闪存</a>
+            </li>
+            <li>
+                <a href="https://edu.cnblogs.com/" onclick="countClicks(&#39;nav&#39;, &#39;skin-navbar-edu&#39;)">班级</a>
+            </li>
+        </ul>
+        <ul id="nav_right" class="navbar-list navbar-right">
+            <li>
+                <form id="zzk_search" class="navbar-search" action="https://zzk.cnblogs.com/s" method="get" role="search">
+                    <input name="w" id="zzk_search_input" placeholder="代码改变世界" type="search" tabindex="3">
+                    <button type="submit" id="zzk_search_button">
+                        <img src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/search.svg" alt="搜索">
+                    </button>
+                </form>
+            </li>
+            <li id="navbar_login_status" class="navbar-list">
+                <a class="navbar-user-info navbar-blog" href="https://i.cnblogs.com/EditPosts.aspx?opt=1" alt="写随笔" title="写随笔" style="display: none;">
+                    <img id="new_post_icon" class="navbar-icon" src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/newpost.svg" alt="写随笔">
+                </a>
+                <a id="navblog-myblog-icon" class="navbar-user-info navbar-blog" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx" alt="我的博客" title="我的博客" style="display: none;">
+                    <img id="myblog_icon" class="navbar-icon" src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/myblog.svg" alt="我的博客">
+                </a>
+                <a class="navbar-user-info navbar-message navbar-icon-wrapper" href="https://msg.cnblogs.com/" alt="短消息" title="短消息" style="display: none;">
+                    <img id="msg_icon" class="navbar-icon" src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/message.svg" alt="短消息">
+                    <span id="msg_count" style="display: none"></span>
+                </a>
+                <a id="navbar_lite_mode_indicator" data-current-page="blog" style="display: none" href="javascript:void(0)" alt="简洁模式" title="简洁模式启用，您在访问他人博客时会使用简洁款皮肤展示">
+                    <img class="navbar-icon" src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/lite-mode-on.svg" alt="简洁模式">
+                </a>
+                <div id="user_info" class="navbar-user-info dropdown" style="display: none;">
+                    <a class="dropdown-button" href="https://home.cnblogs.com/">
+                        <img id="user_icon" class="navbar-avatar" src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/avatar-default.svg" alt="用户头像">
+                    </a>
+                    <div class="dropdown-menu">
+                        <a id="navblog-myblog-text" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx">我的博客</a>
+                        <a href="https://home.cnblogs.com/">我的园子</a>
+                        <a href="https://account.cnblogs.com/settings/account">账号设置</a>
+                        <a href="javascript:void(0)" id="navbar_lite_mode_toggle" title="简洁模式会使用简洁款皮肤显示所有博客">
+    简洁模式 <img id="navbar_lite_mode_on" src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/lite-mode-check.svg" class="hide"><span id="navbar_lite_mode_spinner" class="hide">...</span>
+</a>
+                        <a href="javascript:void(0)" onclick="account.logout();">退出登录</a>
+                    </div>
+                </div>
+                <a class="navbar-anonymous" href="https://account.cnblogs.com/signup" style="display: inline;">注册</a>
+                <a class="navbar-anonymous" href="javascript:void(0);" onclick="account.login()" style="display: inline;">登录</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+
+
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/autumnlj/"><img id="blogLogo" src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/logo.gif" alt="返回主页"></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/autumnlj/">autumnlj</a>
+</h1>
+<h2></h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/autumnlj/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/water-droplet">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="javascript:void(0)" data-rss="https://www.cnblogs.com/autumnlj/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			<span id="stats_post_count">随笔 - 20&nbsp; </span>
+<span id="stats_article_count">文章 - 32&nbsp; </span>
+<span id="stats-comment_count">评论 - 4&nbsp; </span>
+<span id="stats-total-view-count">阅读 - 
+<span title="总阅读数: 157270">
+15万</span></span>
+
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="post_detail">
+    <!--done-->
+    <div id="topics">
+        <div class="post">
+            <h1 class="postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2 vertical-middle" href="https://www.cnblogs.com/autumnlj/articles/14319617.html">
+    <span role="heading" aria-level="2">SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转]</span>
+    
+</a><button class="cnblogs-toc-button" title="显示目录导航" aria-expanded="false"></button>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                <div id="cnblogs_post_body" class="blogpost-body blogpost-body-html">
+<div class="blog-content-box">
+<div class="article-header-box">
+<div class="article-header">&nbsp;</div>
+</div>
+<div id="article_content" class="article_content clearfix">
+<div id="content_views" class="htmledit_views">
+<h2><a name="t0" rel="noopener"></a><a name="t0" rel="noopener"></a><strong>一.Spring Boot设置欢迎页面</strong><button class="cnblogs-toc-button" title="显示目录导航" aria-expanded="false"></button></h2>
+<h3><a name="t1" rel="noopener"></a><a name="t1" rel="noopener"></a><strong>1.默认欢迎页的源码</strong><button class="cnblogs-toc-button" title="显示目录导航" aria-expanded="false"></button></h3>
+<p>在Spring Boot中，默认的欢迎界面是index.html，那为什么这样呢？我们可以看看源码是怎么定义的。</p>
+<br>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre><span style="color: rgba(0, 128, 128, 1)"> 1</span>     <span style="color: rgba(0, 0, 255, 1)">public</span> <span style="color: rgba(0, 0, 255, 1)">class</span><span style="color: rgba(0, 0, 0, 1)"> WebMvcAutoConfiguration {
+</span><span style="color: rgba(0, 128, 128, 1)"> 2</span>     <span style="color: rgba(0, 0, 255, 1)">private</span> Optional&lt;Resource&gt;<span style="color: rgba(0, 0, 0, 1)"> getWelcomePage() {
+</span><span style="color: rgba(0, 128, 128, 1)"> 3</span>     String[] locations = getResourceLocations(<span style="color: rgba(0, 0, 255, 1)">this</span><span style="color: rgba(0, 0, 0, 1)">.resourceProperties.getStaticLocations());
+</span><span style="color: rgba(0, 128, 128, 1)"> 4</span>     <span style="color: rgba(0, 0, 255, 1)">return</span> Arrays.stream(locations).map(<span style="color: rgba(0, 0, 255, 1)">this</span>::getIndexHtml).filter(<span style="color: rgba(0, 0, 255, 1)">this</span><span style="color: rgba(0, 0, 0, 1)">::isReadable).findFirst();
+</span><span style="color: rgba(0, 128, 128, 1)"> 5</span> <span style="color: rgba(0, 0, 0, 1)">    }
+</span><span style="color: rgba(0, 128, 128, 1)"> 6</span>      
+<span style="color: rgba(0, 128, 128, 1)"> 7</span>     <span style="color: rgba(0, 0, 255, 1)">private</span><span style="color: rgba(0, 0, 0, 1)"> Resource getIndexHtml(String location) {
+</span><span style="color: rgba(0, 128, 128, 1)"> 8</span>     <span style="color: rgba(0, 0, 255, 1)">return</span> <span style="color: rgba(0, 0, 255, 1)">this</span>.resourceLoader.getResource(location + "index.html"<span style="color: rgba(0, 0, 0, 1)">);
+</span><span style="color: rgba(0, 128, 128, 1)"> 9</span> <span style="color: rgba(0, 0, 0, 1)">    }
+</span><span style="color: rgba(0, 128, 128, 1)">10</span>     }</pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>&nbsp;</p>
+<p>从源码中我们可以看到，欢迎页的静态资源文件默认就是index.html页面，并且只要该页面存放在resources目录下的默认路径中，就会被"/**"映射。</p>
+<ol class="hljs-ln">
+<li>
+<div class="hljs-ln-code">
+<div class="hljs-ln-line"><span class="hljs-attr">classpath:<span class="hljs-regexp">/META-INF/resources/ </span></span></div>
+</div>
+</li>
+<li>
+<div class="hljs-ln-code">
+<div class="hljs-ln-line"><span class="hljs-attr">classpath:<span class="hljs-regexp">/resources/</span></span></div>
+</div>
+</li>
+<li>
+<div class="hljs-ln-code">
+<div class="hljs-ln-line"><span class="hljs-attr">classpath:<span class="hljs-regexp">/static/ </span></span></div>
+</div>
+</li>
+<li>
+<div class="hljs-ln-code">
+<div class="hljs-ln-line"><span class="hljs-attr">classpath:<span class="hljs-regexp">/public/</span></span></div>
+</div>
+</li>
+<li>
+<div class="hljs-ln-code">
+<div class="hljs-ln-line">/：当前项目的根路径</div>
+</div>
+</li>
+</ol>
+<p>也就是只要index.html页面在以上几个目录内，就会自动被Spring Boot探测到。</p>
+<h3><a name="t2" rel="noopener"></a><a name="t2" rel="noopener"></a><strong>2.实验验证</strong><button class="cnblogs-toc-button" title="显示目录导航" aria-expanded="false"></button></h3>
+<h3><a name="t3" rel="noopener"></a><a name="t3" rel="noopener"></a><strong>2.1 创建web项目(略)</strong><button class="cnblogs-toc-button" title="显示目录导航" aria-expanded="false"></button></h3>
+<p>目录结构如下，在该项目中，我们在resources目录下，创建4个子文件夹，具体参考上一章节。<br> 然后在每个子文件夹中，都存放一个index.html文件，但是文件内容略有不同，每个文件都有自己的编号。</p>
+<p><img src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/aHR0cHM6Ly9waWMxLnpoaW1nLmNvbS84MC92Mi1kMTlmYzM3YmUyYmM1MGMwNTg3NTJiZGMxYWUzOTJiMF83MjB3LmpwZw" alt="" width="846" class="medium-zoom-image"></p>
+<p>每个index.html文件内容的编号不同，以此类推！</p>
+<p><img src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/aHR0cHM6Ly9waWMyLnpoaW1nLmNvbS84MC92Mi03OTMyN2Q0MjQ5ODAwZWEwN2U5NmIyOWYzMzBjZmIzZl83MjB3LmpwZw" alt="" width="1200" class="medium-zoom-image"></p>
+<h3><a name="t4" rel="noopener"></a><a name="t4" rel="noopener"></a><strong>2.2 启动项目测试</strong><button class="cnblogs-toc-button" title="显示目录导航" aria-expanded="false"></button></h3>
+<p>我们启动web项目，输入地址<br><a href="https://link.zhihu.com/?target=http%3A//localhost%3A8080/" rel="noopener">http://localhost:8080</a><br> 会发现，默认加载的是META-INF/resources目录下的index.html文件，为什么呢？这与静态资源文件夹的优先级有关系哦，我们上一章节已经讲过了</p>
+<p><img src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/aHR0cHM6Ly9waWM0LnpoaW1nLmNvbS84MC92Mi1iMjFjZTAwZjNjNGIxMTY1YmQ5MGJhMzU5ZTg0ZmM0OF83MjB3LnBuZw" alt="" width="1200" class="medium-zoom-image"></p>
+<h2><a name="t5" rel="noopener"></a><a name="t5" rel="noopener"></a><strong>二.自定义欢迎页面</strong><button class="cnblogs-toc-button" title="显示目录导航" aria-expanded="false"></button></h2>
+<p>但在实际开发中，我们有时候就希望先访问登录界面，然后登录成功后再跳到主页面，那此时如何将登录页面作为欢迎页面呢？</p>
+<p>这个可以有两种实现方式。</p>
+<ul>
+<li>视图控制器配置方式；</li>
+<li>Controller直接实现方式；</li>
+
+
+
+
+
+</ul>
+<h3><a name="t6" rel="noopener"></a><a name="t6" rel="noopener"></a><strong>1.视图控制器配置方式</strong><button class="cnblogs-toc-button" title="显示目录导航" aria-expanded="false"></button></h3>
+<h3><a name="t7" rel="noopener"></a><a name="t7" rel="noopener"></a><strong>1.1 创建配置类</strong><button class="cnblogs-toc-button" title="显示目录导航" aria-expanded="false"></button></h3>
+<p>我们可以在上面的web项目中，创建一个WebMvcConfigurerAdapter类。</p>
+<p><img src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/aHR0cHM6Ly9waWMyLnpoaW1nLmNvbS84MC92Mi1lZDc3YjYxMmI4YmE5Y2MxNGZmY2ZkMjBkYzI3ZDgyYl83MjB3LmpwZw" alt="" width="1200" class="medium-zoom-image"></p>
+<h3>&nbsp;</h3>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre>    <span style="color: rgba(0, 0, 255, 1)">package</span><span style="color: rgba(0, 0, 0, 1)"> com.yyg.boot.config;
+     
+    </span><span style="color: rgba(0, 0, 255, 1)">import</span><span style="color: rgba(0, 0, 0, 1)"> org.springframework.context.annotation.Configuration;
+    </span><span style="color: rgba(0, 0, 255, 1)">import</span><span style="color: rgba(0, 0, 0, 1)"> org.springframework.core.Ordered;
+    </span><span style="color: rgba(0, 0, 255, 1)">import</span><span style="color: rgba(0, 0, 0, 1)"> org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
+    </span><span style="color: rgba(0, 0, 255, 1)">import</span><span style="color: rgba(0, 0, 0, 1)"> org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
+    </span><span style="color: rgba(0, 0, 255, 1)">import</span><span style="color: rgba(0, 0, 0, 1)"> org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+     
+    </span><span style="color: rgba(0, 128, 0, 1)">/**</span><span style="color: rgba(0, 128, 0, 1)">
+    * @Description Description
+    * @Author 一一哥Sun
+    * @Date Created in 2020/3/21
+    </span><span style="color: rgba(0, 128, 0, 1)">*/</span><span style="color: rgba(0, 0, 0, 1)">
+    @Configuration
+    </span><span style="color: rgba(0, 0, 255, 1)">public</span> <span style="color: rgba(0, 0, 255, 1)">class</span> DefaultViewConfig <span style="color: rgba(0, 0, 255, 1)">extends</span><span style="color: rgba(0, 0, 0, 1)"> WebMvcConfigurerAdapter {
+     
+    @Override
+    </span><span style="color: rgba(0, 0, 255, 1)">public</span> <span style="color: rgba(0, 0, 255, 1)">void</span><span style="color: rgba(0, 0, 0, 1)"> addViewControllers(ViewControllerRegistry registry) {
+    </span><span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)">这里的"/"是访问路径，"forward:home.html"是请求转发到的页面名称</span>
+    registry.addViewController("/").setViewName("forward:home.html"<span style="color: rgba(0, 0, 0, 1)">);
+    </span><span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)">设置优先级</span>
+<span style="color: rgba(0, 0, 0, 1)">    registry.setOrder(Ordered.HIGHEST_PRECEDENCE);
+    </span><span style="color: rgba(0, 0, 255, 1)">super</span><span style="color: rgba(0, 0, 0, 1)">.addViewControllers(registry);
+    }
+     
+    }</span></pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>&nbsp;</p>
+<h3><a name="t8" rel="noopener"></a><a name="t8" rel="noopener"></a><strong>1.2 创建home.html页面</strong><button class="cnblogs-toc-button" title="显示目录导航" aria-expanded="false"></button></h3>
+<p><img src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/aHR0cHM6Ly9waWMxLnpoaW1nLmNvbS84MC92Mi1jYjY0ZjVmNDJjNWQ5MzQ4YzFhYzE3YWM4M2UxNjRhOV83MjB3LmpwZw" alt="" width="856" class="medium-zoom-image"></p>
+<p>我们在static目录下创建一个home.html页面。</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre>    <span style="color: rgba(0, 0, 255, 1)">&lt;!</span><span style="color: rgba(255, 0, 255, 1)">DOCTYPE html</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span>
+    <span style="color: rgba(0, 0, 255, 1)">&lt;</span><span style="color: rgba(128, 0, 0, 1)">html </span><span style="color: rgba(255, 0, 0, 1)">lang</span><span style="color: rgba(0, 0, 255, 1)">="en"</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span>
+    <span style="color: rgba(0, 0, 255, 1)">&lt;</span><span style="color: rgba(128, 0, 0, 1)">head</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span>
+    <span style="color: rgba(0, 0, 255, 1)">&lt;</span><span style="color: rgba(128, 0, 0, 1)">meta </span><span style="color: rgba(255, 0, 0, 1)">charset</span><span style="color: rgba(0, 0, 255, 1)">="UTF-8"</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span>
+    <span style="color: rgba(0, 0, 255, 1)">&lt;</span><span style="color: rgba(128, 0, 0, 1)">title</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span>Home<span style="color: rgba(0, 0, 255, 1)">&lt;/</span><span style="color: rgba(128, 0, 0, 1)">title</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span>
+    <span style="color: rgba(0, 0, 255, 1)">&lt;/</span><span style="color: rgba(128, 0, 0, 1)">head</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span>
+    <span style="color: rgba(0, 0, 255, 1)">&lt;</span><span style="color: rgba(128, 0, 0, 1)">body</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span>
+    <span style="color: rgba(0, 0, 255, 1)">&lt;</span><span style="color: rgba(128, 0, 0, 1)">h1</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span>一一哥的Home页面...<span style="color: rgba(0, 0, 255, 1)">&lt;/</span><span style="color: rgba(128, 0, 0, 1)">h1</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span>
+    <span style="color: rgba(0, 0, 255, 1)">&lt;/</span><span style="color: rgba(128, 0, 0, 1)">body</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span>
+    <span style="color: rgba(0, 0, 255, 1)">&lt;/</span><span style="color: rgba(128, 0, 0, 1)">html</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span></pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>&nbsp;</p>
+<h3><a name="t9" rel="noopener"></a><a name="t9" rel="noopener"></a><strong>1.3 运行测试</strong><button class="cnblogs-toc-button" title="显示目录导航" aria-expanded="false"></button></h3>
+<p>接着我们运行程序，输入地址：<br><a href="https://link.zhihu.com/?target=http%3A//localhost%3A8080/" rel="noopener">http://localhost:8080</a><br> 就可以看到如下欢迎界面。</p>
+<p><img src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/aHR0cHM6Ly9waWNiLnpoaW1nLmNvbS84MC92Mi0zMjBmOTNhYmMwMzI0NzhlMzM4N2YyNGU5MzFiNWFkNV83MjB3LmpwZw" alt="" width="958" class="medium-zoom-image"></p>
+<h3><a name="t10" rel="noopener"></a><a name="t10" rel="noopener"></a><strong>2. Controller直接实现方式</strong><button class="cnblogs-toc-button" title="显示目录导航" aria-expanded="false"></button></h3>
+<p>我们在上一个例子的基础之上，创建一个Controller类。</p>
+<h3><a name="t11" rel="noopener"></a><a name="t11" rel="noopener"></a><strong>注意：</strong><button class="cnblogs-toc-button" title="显示目录导航" aria-expanded="false"></button></h3>
+<p>把上一个案例中DefaultViewConfig配置类的@Configure注解去掉，避免影响到本次实验。</p>
+<h3><a name="t12" rel="noopener"></a><a name="t12" rel="noopener"></a><strong>2.1 项目结构：</strong><button class="cnblogs-toc-button" title="显示目录导航" aria-expanded="false"></button></h3>
+<p><img src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/aHR0cHM6Ly9waWM0LnpoaW1nLmNvbS84MC92Mi01MDFiNmE3YjI0YjlkZTIwZGE0ZTE4YTg5NjFhOTc4OV83MjB3LmpwZw" alt="" width="1200" class="medium-zoom-image"></p>
+<h3><a name="t13" rel="noopener"></a><a name="t13" rel="noopener"></a><strong>2.2 创建Controller</strong><button class="cnblogs-toc-button" title="显示目录导航" aria-expanded="false"></button></h3>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre>    <span style="color: rgba(0, 0, 255, 1)">package</span><span style="color: rgba(0, 0, 0, 1)"> com.yyg.boot.web;
+     
+    </span><span style="color: rgba(0, 0, 255, 1)">import</span><span style="color: rgba(0, 0, 0, 1)"> org.springframework.stereotype.Controller;
+    </span><span style="color: rgba(0, 0, 255, 1)">import</span><span style="color: rgba(0, 0, 0, 1)"> org.springframework.web.bind.annotation.RequestMapping;
+     
+    </span><span style="color: rgba(0, 128, 0, 1)">/**</span><span style="color: rgba(0, 128, 0, 1)">
+    * @Description Description
+    * @Author 一一哥Sun
+    * @Date Created in 2020/3/21
+    </span><span style="color: rgba(0, 128, 0, 1)">*/</span><span style="color: rgba(0, 0, 0, 1)">
+    @Controller
+    </span><span style="color: rgba(0, 0, 255, 1)">public</span> <span style="color: rgba(0, 0, 255, 1)">class</span><span style="color: rgba(0, 0, 0, 1)"> WelcomeController {
+     
+    @RequestMapping(</span>"/"<span style="color: rgba(0, 0, 0, 1)">)
+    </span><span style="color: rgba(0, 0, 255, 1)">public</span><span style="color: rgba(0, 0, 0, 1)"> String view() {
+    </span><span style="color: rgba(0, 0, 255, 1)">return</span> "forward:home.html"<span style="color: rgba(0, 0, 0, 1)">;
+    }
+     
+    }</span></pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>&nbsp;</p>
+<h3><a name="t14" rel="noopener"></a><a name="t14" rel="noopener"></a><strong>2.3 运行测试</strong><button class="cnblogs-toc-button" title="显示目录导航" aria-expanded="false"></button></h3>
+<p>接着我们运行程序，输入地址：<br><a href="https://link.zhihu.com/?target=http%3A//localhost%3A8080/" rel="noopener">http://localhost:8080</a><br> 就可以看到如下欢迎界面。</p>
+<p><img src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/aHR0cHM6Ly9waWM0LnpoaW1nLmNvbS84MC92Mi0yNmVhNjVkYTYzM2U2MmU0MzM2YmI2NzBmM2E2ODU1OV83MjB3LmpwZw" alt="" width="926" class="medium-zoom-image"></p>
+<h2><a name="t15" rel="noopener"></a><a name="t15" rel="noopener"></a><strong>三.结合Thymeleaf模板实现欢迎页面</strong><button class="cnblogs-toc-button" title="显示目录导航" aria-expanded="false"></button></h2>
+<p>我们可以结合Thymeleaf模板，来实现欢迎页面。</p>
+<h3><a name="t16" rel="noopener"></a><a name="t16" rel="noopener"></a><strong>1.添加依赖包</strong><button class="cnblogs-toc-button" title="显示目录导航" aria-expanded="false"></button></h3>
+<p>在该web项目的pom.xml文件中添加依赖包。</p>
+<div class="cnblogs_code">
+<pre>    <span style="color: rgba(0, 0, 255, 1)">&lt;</span><span style="color: rgba(128, 0, 0, 1)">dependencies</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span>
+    <span style="color: rgba(0, 0, 255, 1)">&lt;</span><span style="color: rgba(128, 0, 0, 1)">dependency</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span>
+    <span style="color: rgba(0, 0, 255, 1)">&lt;</span><span style="color: rgba(128, 0, 0, 1)">groupId</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span>org.springframework.boot<span style="color: rgba(0, 0, 255, 1)">&lt;/</span><span style="color: rgba(128, 0, 0, 1)">groupId</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span>
+    <span style="color: rgba(0, 0, 255, 1)">&lt;</span><span style="color: rgba(128, 0, 0, 1)">artifactId</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span>spring-boot-starter-thymeleaf<span style="color: rgba(0, 0, 255, 1)">&lt;/</span><span style="color: rgba(128, 0, 0, 1)">artifactId</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span>
+    <span style="color: rgba(0, 0, 255, 1)">&lt;/</span><span style="color: rgba(128, 0, 0, 1)">dependency</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span>
+    <span style="color: rgba(0, 0, 255, 1)">&lt;/</span><span style="color: rgba(128, 0, 0, 1)">dependencies</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span></pre>
+</div>
+<p>&nbsp;</p>
+<h3><a name="t17" rel="noopener"></a><a name="t17" rel="noopener"></a><strong>2.配置模板路径</strong><button class="cnblogs-toc-button" title="显示目录导航" aria-expanded="false"></button></h3>
+<p>创建application.properties文件，添加如下配置，其实默认也是这个配置。</p>
+<ol class="hljs-ln">
+<li>
+<div class="hljs-ln-code">
+<div class="hljs-ln-line"><span class="hljs-attr">spring.thymeleaf.prefix=classpath:/templates/</span></div>
+</div>
+</li>
+<li>
+<div class="hljs-ln-code">
+<div class="hljs-ln-line"><span class="hljs-attr">spring.thymeleaf.suffix=.html</span></div>
+</div>
+</li>
+</ol>
+<h3><a name="t18" rel="noopener"></a><a name="t18" rel="noopener"></a><strong>3.创建login.html页面</strong><button class="cnblogs-toc-button" title="显示目录导航" aria-expanded="false"></button></h3>
+<p>创建login.html存放到/templates/目录下。</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre>    <span style="color: rgba(0, 0, 255, 1)">&lt;!</span><span style="color: rgba(255, 0, 255, 1)">DOCTYPE html</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span>
+    <span style="color: rgba(0, 0, 255, 1)">&lt;</span><span style="color: rgba(128, 0, 0, 1)">html </span><span style="color: rgba(255, 0, 0, 1)">lang</span><span style="color: rgba(0, 0, 255, 1)">="en"</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span>
+    <span style="color: rgba(0, 0, 255, 1)">&lt;</span><span style="color: rgba(128, 0, 0, 1)">head</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span>
+    <span style="color: rgba(0, 0, 255, 1)">&lt;</span><span style="color: rgba(128, 0, 0, 1)">meta </span><span style="color: rgba(255, 0, 0, 1)">charset</span><span style="color: rgba(0, 0, 255, 1)">="UTF-8"</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span>
+    <span style="color: rgba(0, 0, 255, 1)">&lt;</span><span style="color: rgba(128, 0, 0, 1)">title</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span>Login<span style="color: rgba(0, 0, 255, 1)">&lt;/</span><span style="color: rgba(128, 0, 0, 1)">title</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span>
+    <span style="color: rgba(0, 0, 255, 1)">&lt;/</span><span style="color: rgba(128, 0, 0, 1)">head</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span>
+    <span style="color: rgba(0, 0, 255, 1)">&lt;</span><span style="color: rgba(128, 0, 0, 1)">body</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span>
+    <span style="color: rgba(0, 0, 255, 1)">&lt;</span><span style="color: rgba(128, 0, 0, 1)">h1</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span>一一哥的登录页面...<span style="color: rgba(0, 0, 255, 1)">&lt;/</span><span style="color: rgba(128, 0, 0, 1)">h1</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span>
+    <span style="color: rgba(0, 0, 255, 1)">&lt;/</span><span style="color: rgba(128, 0, 0, 1)">body</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span>
+    <span style="color: rgba(0, 0, 255, 1)">&lt;/</span><span style="color: rgba(128, 0, 0, 1)">html</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span></pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>&nbsp;</p>
+<h3><a name="t19" rel="noopener"></a><a name="t19" rel="noopener"></a><strong>4.创建Controller接口</strong><button class="cnblogs-toc-button" title="显示目录导航" aria-expanded="false"></button></h3>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre>    <span style="color: rgba(0, 0, 255, 1)">package</span><span style="color: rgba(0, 0, 0, 1)"> com.yyg.boot.web;
+     
+    </span><span style="color: rgba(0, 0, 255, 1)">import</span><span style="color: rgba(0, 0, 0, 1)"> org.springframework.stereotype.Controller;
+    </span><span style="color: rgba(0, 0, 255, 1)">import</span><span style="color: rgba(0, 0, 0, 1)"> org.springframework.web.bind.annotation.RequestMapping;
+     
+    </span><span style="color: rgba(0, 128, 0, 1)">/**</span><span style="color: rgba(0, 128, 0, 1)">
+    * @Description Description
+    * @Author 一一哥Sun
+    * @Date Created in 2020/3/21
+    </span><span style="color: rgba(0, 128, 0, 1)">*/</span><span style="color: rgba(0, 0, 0, 1)">
+    @Controller
+    </span><span style="color: rgba(0, 0, 255, 1)">public</span> <span style="color: rgba(0, 0, 255, 1)">class</span><span style="color: rgba(0, 0, 0, 1)"> WelcomeController {
+     
+    </span><span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)"> @RequestMapping("/")
+    </span><span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)"> public String view() {
+    </span><span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)"> return "forward:home.html";
+    </span><span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)"> }</span>
+<span style="color: rgba(0, 0, 0, 1)">     
+    @RequestMapping(</span>"/"<span style="color: rgba(0, 0, 0, 1)">)
+    </span><span style="color: rgba(0, 0, 255, 1)">public</span><span style="color: rgba(0, 0, 0, 1)"> String login() {
+    </span><span style="color: rgba(0, 0, 255, 1)">return</span> "login"<span style="color: rgba(0, 0, 0, 1)">;
+    }
+    }</span></pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>&nbsp;</p>
+<h3><a name="t20" rel="noopener"></a><a name="t20" rel="noopener"></a><strong>5.运行测试</strong><button class="cnblogs-toc-button" title="显示目录导航" aria-expanded="false"></button></h3>
+<p>输入地址，<a href="https://link.zhihu.com/?target=http%3A//localhost%3A8080/" rel="noopener">http://localhost:8080</a><br> 即可看到欢迎界面。</p>
+<p><img src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/aHR0cHM6Ly9waWMyLnpoaW1nLmNvbS84MC92Mi0yMjkzYmI5MDQ4MzM4YTM5MGM0MDJhYzdiZTI3ZDA0N183MjB3LmpwZw" alt="" width="852" class="medium-zoom-image"></p>
+<h2><a name="t21" rel="noopener"></a><a name="t21" rel="noopener"></a><strong>四.设置网站图标Favicon</strong><button class="cnblogs-toc-button" title="显示目录导航" aria-expanded="false"></button></h2>
+<h3><a name="t22" rel="noopener"></a><a name="t22" rel="noopener"></a><strong>1.Favicon简介</strong><button class="cnblogs-toc-button" title="显示目录导航" aria-expanded="false"></button></h3>
+<p>很多时候，企业网站一般都会有一个对应的网站图标(Favicon)，在浏览器访问网站时，对应的浏览器标签上会出现对应的图标。例如csdn网站上的小图标。</p>
+<p><img src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/aHR0cHM6Ly9waWM0LnpoaW1nLmNvbS84MC92Mi05NmM0NzgwYjY3ZGQ0OTkwMTBkNzllZDkyODBlZTM4NF83MjB3LmpwZw" alt="" width="1200" class="medium-zoom-image"></p>
+<h3><a name="t23" rel="noopener"></a><a name="t23" rel="noopener"></a><strong>2.Favicon源码分析</strong><button class="cnblogs-toc-button" title="显示目录导航" aria-expanded="false"></button></h3>
+<p>我们可以看看Spring中关于Favicon的源码。</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre><span style="color: rgba(0, 0, 0, 1)">    @Configuration
+    @ConditionalOnProperty(value </span>= {"spring.mvc.favicon.enabled"},matchIfMissing= <span style="color: rgba(0, 0, 255, 1)">true</span><span style="color: rgba(0, 0, 0, 1)">)
+    </span><span style="color: rgba(0, 0, 255, 1)">public</span> <span style="color: rgba(0, 0, 255, 1)">static</span> <span style="color: rgba(0, 0, 255, 1)">class</span> FaviconConfiguration <span style="color: rgba(0, 0, 255, 1)">implements</span><span style="color: rgba(0, 0, 0, 1)"> ResourceLoaderAware {
+    </span><span style="color: rgba(0, 0, 255, 1)">private</span> <span style="color: rgba(0, 0, 255, 1)">final</span><span style="color: rgba(0, 0, 0, 1)"> ResourceProperties resourceProperties;
+    </span><span style="color: rgba(0, 0, 255, 1)">private</span><span style="color: rgba(0, 0, 0, 1)"> ResourceLoader resourceLoader;
+     
+    </span><span style="color: rgba(0, 0, 255, 1)">public</span><span style="color: rgba(0, 0, 0, 1)"> FaviconConfiguration(ResourceProperties resourceProperties) {
+    </span><span style="color: rgba(0, 0, 255, 1)">this</span>.resourceProperties =<span style="color: rgba(0, 0, 0, 1)"> resourceProperties;
+    }
+     
+    </span><span style="color: rgba(0, 0, 255, 1)">public</span> <span style="color: rgba(0, 0, 255, 1)">void</span><span style="color: rgba(0, 0, 0, 1)">
+    setResourceLoader(ResourceLoader resourceLoader) {
+    </span><span style="color: rgba(0, 0, 255, 1)">this</span>.resourceLoader =<span style="color: rgba(0, 0, 0, 1)"> resourceLoader;
+    }
+     
+    @Bean
+    </span><span style="color: rgba(0, 0, 255, 1)">public</span><span style="color: rgba(0, 0, 0, 1)"> SimpleUrlHandlerMapping faviconHandlerMapping() {
+    SimpleUrlHandlerMapping mapping </span>= <span style="color: rgba(0, 0, 255, 1)">new</span><span style="color: rgba(0, 0, 0, 1)"> SimpleUrlHandlerMapping();
+    mapping.setOrder(</span>-2147483647<span style="color: rgba(0, 0, 0, 1)">);
+    mapping.setUrlMap(Collections.singletonMap(</span>"**/favicon.ico", <span style="color: rgba(0, 0, 255, 1)">this</span><span style="color: rgba(0, 0, 0, 1)">.faviconRequestHandler()));
+    </span><span style="color: rgba(0, 0, 255, 1)">return</span><span style="color: rgba(0, 0, 0, 1)"> mapping;
+    }
+     
+    @Bean
+    </span><span style="color: rgba(0, 0, 255, 1)">public</span><span style="color: rgba(0, 0, 0, 1)"> ResourceHttpRequestHandler faviconRequestHandler() {
+    ResourceHttpRequestHandler
+    requestHandler </span>= <span style="color: rgba(0, 0, 255, 1)">new</span><span style="color: rgba(0, 0, 0, 1)"> ResourceHttpRequestHandler();
+    requestHandler.setLocations(</span><span style="color: rgba(0, 0, 255, 1)">this</span><span style="color: rgba(0, 0, 0, 1)">.resolveFaviconLocations());
+    </span><span style="color: rgba(0, 0, 255, 1)">return</span><span style="color: rgba(0, 0, 0, 1)"> requestHandler;
+    }
+     
+    </span><span style="color: rgba(0, 0, 255, 1)">private</span> List&lt;Resource&gt;<span style="color: rgba(0, 0, 0, 1)"> resolveFaviconLocations() {
+    String[] staticLocations </span>= WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter.getResourceLocations(<span style="color: rgba(0, 0, 255, 1)">this</span><span style="color: rgba(0, 0, 0, 1)">.resourceProperties.getStaticLocations());
+    List</span>&lt;Resource&gt; locations = <span style="color: rgba(0, 0, 255, 1)">new</span> ArrayList(staticLocations.length + 1<span style="color: rgba(0, 0, 0, 1)">);
+    Stream var10000 </span>=<span style="color: rgba(0, 0, 0, 1)"> Arrays.stream(staticLocations);
+    ResourceLoader var10001 </span>= <span style="color: rgba(0, 0, 255, 1)">this</span><span style="color: rgba(0, 0, 0, 1)">.resourceLoader;
+    var10001.getClass();
+    var10000.map(var10001::getResource).forEach(locations::add);
+    locations.add(</span><span style="color: rgba(0, 0, 255, 1)">new</span> ClassPathResource("/"<span style="color: rgba(0, 0, 0, 1)">));
+    </span><span style="color: rgba(0, 0, 255, 1)">return</span><span style="color: rgba(0, 0, 0, 1)">
+    Collections.unmodifiableList(locations);
+    }
+    }</span></pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>&nbsp;</p>
+<h3><a name="t24" rel="noopener"></a><a name="t24" rel="noopener"></a><strong>3.SpringBoot 1.x与2.x版本区别</strong><button class="cnblogs-toc-button" title="显示目录导航" aria-expanded="false"></button></h3>
+<p>在SpringBoot 1.x版本中对Favicon进行了默认支持，并且可以通过如下配置进行关闭操作:</p>
+<pre class="highlighter-hljs" highlighted="true"><code class="hljs ini highlighter-hljs language-ini"><span class="hljs-attr">spring.mvc.favicon.enabled</span>=<span class="hljs-literal">false</span> <span class="hljs-comment">## 关闭</span></code></pre>
+<p>默认的Favicon图标效果：</p>
+<p><img src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/aHR0cHM6Ly9waWMyLnpoaW1nLmNvbS84MC92Mi0xMTE4ZTdmNmQzZWU1NDhkN2MyOTc0MDRkZDYwOGViZF83MjB3LmpwZw" alt="" width="1200" class="medium-zoom-image"></p>
+<p>但到了SpringBoot2.x版本后，在Spring Boot项目的issues中提出，如果用户不进行自定义的Favicon的设置，而Spring Boot项目会提供默认的图标，而如果提供默认的Favicon图标，则可能会导致泄露网站的开发框架这样的信息。</p>
+<p>因此，在Spring Boot2.2.x中，将默认的favicon.ico移除，同时也不再提供上述application.properties中的属性配置。更多详细信息可查看对应的issues：<a href="https://link.zhihu.com/?target=https%3A//github.com/spring-pr" rel="noopener">https://github.com/spring-pr</a></p>
+<h3><a name="t25" rel="noopener"></a><a name="t25" rel="noopener"></a><strong>4.SpringBoot2.x项目中添加Favicon</strong><button class="cnblogs-toc-button" title="显示目录导航" aria-expanded="false"></button></h3>
+<p>在2.x以前的版本，直接将你需要的favicon.ico文件存放在static下面就可以。</p>
+<p>但到了2.2.X以后的版本，去掉了默认的自动配置，需要我们手动在每一个页面添加自己网站的Favicon图标。</p>
+<p>我们可以在static目录下创建一个images目录，里面存放自己的Favicon.ico图标。</p>
+<p><img src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/aHR0cHM6Ly9waWMzLnpoaW1nLmNvbS84MC92Mi1mOTRhMmIxNmNkZGY0NWFlNjhjYzVkYjBjYjdkZjVlMF83MjB3LmpwZw" alt="" width="1200" class="medium-zoom-image"></p>
+<h3><a name="t26" rel="noopener"></a><a name="t26" rel="noopener"></a><strong>4.1 html页面中添加</strong><button class="cnblogs-toc-button" title="显示目录导航" aria-expanded="false"></button></h3>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre>    <span style="color: rgba(0, 0, 255, 1)">&lt;!</span><span style="color: rgba(255, 0, 255, 1)">DOCTYPE html</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span>
+    <span style="color: rgba(0, 0, 255, 1)">&lt;</span><span style="color: rgba(128, 0, 0, 1)">html </span><span style="color: rgba(255, 0, 0, 1)">lang</span><span style="color: rgba(0, 0, 255, 1)">="en"</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span>
+    <span style="color: rgba(0, 0, 255, 1)">&lt;</span><span style="color: rgba(128, 0, 0, 1)">head</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span>
+    <span style="color: rgba(0, 0, 255, 1)">&lt;</span><span style="color: rgba(128, 0, 0, 1)">meta </span><span style="color: rgba(255, 0, 0, 1)">charset</span><span style="color: rgba(0, 0, 255, 1)">="UTF-8"</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span>
+    <span style="color: rgba(0, 0, 255, 1)">&lt;</span><span style="color: rgba(128, 0, 0, 1)">title</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span>Login<span style="color: rgba(0, 0, 255, 1)">&lt;/</span><span style="color: rgba(128, 0, 0, 1)">title</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span>
+    <span style="color: rgba(0, 0, 255, 1)">&lt;</span><span style="color: rgba(128, 0, 0, 1)">link </span><span style="color: rgba(255, 0, 0, 1)">rel</span><span style="color: rgba(0, 0, 255, 1)">="icon"</span><span style="color: rgba(255, 0, 0, 1)"> href</span><span style="color: rgba(0, 0, 255, 1)">="images/Favicon.ico"</span><span style="color: rgba(255, 0, 0, 1)"> type</span><span style="color: rgba(0, 0, 255, 1)">="image/x-icon"</span><span style="color: rgba(0, 0, 255, 1)">/&gt;</span>
+    <span style="color: rgba(0, 0, 255, 1)">&lt;/</span><span style="color: rgba(128, 0, 0, 1)">head</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span>
+    <span style="color: rgba(0, 0, 255, 1)">&lt;</span><span style="color: rgba(128, 0, 0, 1)">body</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span>
+    <span style="color: rgba(0, 0, 255, 1)">&lt;</span><span style="color: rgba(128, 0, 0, 1)">h1</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span>一一哥的登录页面...<span style="color: rgba(0, 0, 255, 1)">&lt;/</span><span style="color: rgba(128, 0, 0, 1)">h1</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span>
+    <span style="color: rgba(0, 0, 255, 1)">&lt;/</span><span style="color: rgba(128, 0, 0, 1)">body</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span>
+    <span style="color: rgba(0, 0, 255, 1)">&lt;/</span><span style="color: rgba(128, 0, 0, 1)">html</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span></pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>&nbsp;</p>
+<h3><a name="t27" rel="noopener"></a><a name="t27" rel="noopener"></a><strong>4.2 Thymeleaf页面中添加</strong><button class="cnblogs-toc-button" title="显示目录导航" aria-expanded="false"></button></h3>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre>    <span style="color: rgba(0, 0, 255, 1)">&lt;!</span><span style="color: rgba(255, 0, 255, 1)">DOCTYPE html</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span>
+    <span style="color: rgba(0, 0, 255, 1)">&lt;</span><span style="color: rgba(128, 0, 0, 1)">html </span><span style="color: rgba(255, 0, 0, 1)">lang</span><span style="color: rgba(0, 0, 255, 1)">="en"</span><span style="color: rgba(255, 0, 0, 1)"> xmlns:th</span><span style="color: rgba(0, 0, 255, 1)">="http://www.thymeleaf.org"</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span>
+    <span style="color: rgba(0, 0, 255, 1)">&lt;</span><span style="color: rgba(128, 0, 0, 1)">head</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span>
+    <span style="color: rgba(0, 0, 255, 1)">&lt;</span><span style="color: rgba(128, 0, 0, 1)">meta </span><span style="color: rgba(255, 0, 0, 1)">charset</span><span style="color: rgba(0, 0, 255, 1)">="UTF-8"</span><span style="color: rgba(0, 0, 255, 1)">/&gt;</span>
+    <span style="color: rgba(0, 0, 255, 1)">&lt;</span><span style="color: rgba(128, 0, 0, 1)">title</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span>Hello Favicon<span style="color: rgba(0, 0, 255, 1)">&lt;/</span><span style="color: rgba(128, 0, 0, 1)">title</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span>
+    <span style="color: rgba(0, 0, 255, 1)">&lt;</span><span style="color: rgba(128, 0, 0, 1)">link </span><span style="color: rgba(255, 0, 0, 1)">rel</span><span style="color: rgba(0, 0, 255, 1)">="icon"</span><span style="color: rgba(255, 0, 0, 1)"> th:href</span><span style="color: rgba(0, 0, 255, 1)">="@{/favicon.ico}"</span><span style="color: rgba(255, 0, 0, 1)"> type</span><span style="color: rgba(0, 0, 255, 1)">="image/x-icon"</span><span style="color: rgba(0, 0, 255, 1)">/&gt;</span>
+    <span style="color: rgba(0, 0, 255, 1)">&lt;/</span><span style="color: rgba(128, 0, 0, 1)">head</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span>
+    <span style="color: rgba(0, 0, 255, 1)">&lt;</span><span style="color: rgba(128, 0, 0, 1)">body</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span>
+    <span style="color: rgba(0, 0, 255, 1)">&lt;</span><span style="color: rgba(128, 0, 0, 1)">h1</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span>Hello 一一哥!<span style="color: rgba(0, 0, 255, 1)">&lt;/</span><span style="color: rgba(128, 0, 0, 1)">h1</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span>
+    <span style="color: rgba(0, 0, 255, 1)">&lt;/</span><span style="color: rgba(128, 0, 0, 1)">body</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span>
+    <span style="color: rgba(0, 0, 255, 1)">&lt;/</span><span style="color: rgba(128, 0, 0, 1)">html</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span></pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>&nbsp;</p>
+<h3><a name="t28" rel="noopener"></a><a name="t28" rel="noopener"></a><strong>5.重启项目测试</strong><button class="cnblogs-toc-button" title="显示目录导航" aria-expanded="false"></button></h3>
+<p>我们重新访问页面，可以看到Favicon图标已经换成了我自己的图标。</p>
+<p><img src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/aHR0cHM6Ly9waWMxLnpoaW1nLmNvbS84MC92Mi01NjJlNWUxNzhkYmQ4YTQwODc1ZDk4OTM0NGMwOTYyM183MjB3LmpwZw" alt="" width="760" class="medium-zoom-image"></p>
+<p>&nbsp;</p>
+<p>转自：https://blog.csdn.net/qfchenjunbo/article/details/108220831?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-2&amp;spm=1001.2101.3001.4242</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+</div>
+<div class="clear"></div>
+<div id="blog_post_info_block" role="contentinfo"><div id="BlogPostCategory">
+    分类: 
+            <a href="https://www.cnblogs.com/autumnlj/category/1911237.html" target="_blank">SpringBoot</a></div>
+
+
+    <div id="blog_post_info">
+<div id="green_channel">
+        <a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(14319617,cb_blogId,1);green_channel_success(this,&#39;谢谢推荐！&#39;);">好文要顶</a>
+        <a id="green_channel_follow" onclick="follow(&#39;91c6153b-ed25-e111-b422-842b2b196315&#39;);" href="javascript:void(0);">关注我</a>
+    <a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);">收藏该文</a>
+    <a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/icon_weibo_24.png" alt=""></a>
+    <a id="green_channel_wechat" href="javascript:void(0);" title="分享至微信" onclick="shareOnWechat()"><img src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/wechat.png" alt=""></a>
+</div>
+<div id="author_profile">
+    <div id="author_profile_info" class="author_profile_info">
+            <a href="https://home.cnblogs.com/u/autumnlj/" target="_blank"><img src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/sample_face.gif" class="author_avatar" alt=""></a>
+        <div id="author_profile_detail" class="author_profile_info">
+            <a href="https://home.cnblogs.com/u/autumnlj/">water-droplet</a><br>
+            <a href="https://home.cnblogs.com/u/autumnlj/followers/">粉丝 - <span class="follower-count">1</span></a>
+            <a href="https://home.cnblogs.com/u/autumnlj/followees/">关注 - <span class="following-count">42</span></a><br>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div id="author_profile_honor"></div>
+    <div id="author_profile_follow" class="follow-tip">
+                <a href="javascript:void(0);" onclick="follow(&#39;91c6153b-ed25-e111-b422-842b2b196315&#39;);return false;">+加关注</a>
+    </div>
+</div>
+<div id="div_digg">
+    <div class="diggit" onclick="votePost(14319617,&#39;Digg&#39;)">
+        <span class="diggnum" id="digg_count">0</span>
+    </div>
+    <div class="buryit" onclick="votePost(14319617,&#39;Bury&#39;)">
+        <span class="burynum" id="bury_count">0</span>
+    </div>
+    <div class="clear"></div>
+    <div class="diggword" id="digg_tips">
+    </div>
+</div>
+
+<script type="text/javascript">
+    currentDiggType = 0;
+</script></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2021-01-23 23:52</span>&nbsp;
+<a href="https://www.cnblogs.com/autumnlj/">water-droplet</a>&nbsp;
+阅读(<span id="post_view_count">107</span>)&nbsp;
+评论(<span id="post_comment_count">0</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditArticles.aspx?postid=14319617" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(14319617);return false;">收藏</a>&nbsp;
+<a href="javascript:void(0)" onclick="reportManager.report({ currentUserId: &#39;&#39;, targetType: &#39;blogPost&#39;, targetId: &#39;14319617&#39;, targetLink: &#39;https://www.cnblogs.com/autumnlj/articles/14319617.html&#39;, title: &#39;SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转]&#39; })">举报</a></div>
+        </div>
+	    
+	    
+    </div><!--end: topics 文章、评论容器-->
+</div>
+
+<script>
+    var cb_entryId = 14319617, cb_entryCreatedDate = '2021-01-23 23:52', cb_postType = 2, cb_postTitle = 'SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转]';
+    var allowComments = true, cb_blogId = 214152, cb_blogApp = 'autumnlj', cb_blogUserGuid = '91c6153b-ed25-e111-b422-842b2b196315';
+    mermaidRender.render()
+    markdown_highlight()
+    zoomManager.apply("#cnblogs_post_body img:not(.code_img_closed):not(.code_img_opened)");
+    updatePostStats(
+            [cb_entryId],
+            function(id, count) { $("#post_view_count").text(count) },
+            function(id, count) { $("#post_comment_count").text(count) })
+</script>
+<a id="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="https://www.cnblogs.com/autumnlj/articles/14319617.html#" onclick="return RefreshPage();">刷新页面</a><a href="https://www.cnblogs.com/autumnlj/articles/14319617.html#top">返回顶部</a></div>
+    <div id="comment_form_container" style="visibility: visible;"><div class="login_tips">
+    登录后才能查看或发表评论，立即 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return account.login(&#39;!comments&#39;);">登录</a> 或者
+    <a href="https://www.cnblogs.com/">逛逛</a> 博客园首页
+</div>
+</div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+        <div id="cnblogs_ch"><a href="https://www.cnblogs.com/cmt/p/16723967.html" target="_blank" onclick="gtag(&#39;event&#39;, &#39;click&#39;, {&#39;event_category&#39;: &#39;ad&#39;, &#39;event_label&#39;: &#39;T2-亚马逊云科技-现代化应用&#39;})">【推荐】当事件驱动架构遇到 Serverless，亚马逊云科技出招了</a><br><a href="https://brands.cnblogs.com/specdd" target="_blank" onclick="gtag(&#39;event&#39;, &#39;click&#39;, {&#39;event_category&#39;: &#39;ad&#39;, &#39;event_label&#39;: &#39;T2-SpecDD专区&#39;})">【推荐】下一步，敏捷！云可达科技SpecDD敏捷开发专区</a><br><a href="https://click.ctyun.cn/?track=source_bokeyuan-medium_cps-content_se430382" target="_blank" onclick="gtag(&#39;event&#39;, &#39;click&#39;, {&#39;event_category&#39;: &#39;ad&#39;, &#39;event_label&#39;: &#39;T2-天翼云&#39;})">【推荐】天翼云新客特惠，云主机1核2G低至33.43元/年</a><br></div>
+    <div id="opt_under_post"></div>
+    <div id="cnblogs_c1" class="under-post-card">
+            <div id="div-gpt-ad-1592365906576-0" style="width: 300px; height: 250px;" data-google-query-id="CKytu-3mrvoCFS7LFgUd_x8Lsg"><div id="google_ads_iframe_/1090369/C1_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/1090369/C1_0" name="google_ads_iframe_/1090369/C1_0" title="3rd party ad content" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" role="region" aria-label="Advertisement" tabindex="0" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" style="border: 0px; vertical-align: bottom;" data-load-complete="true" data-google-container-id="1" src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/saved_resource.html"></iframe></div></div>
+    </div>
+    <div id="under_post_card1"><div class="under-post-card">
+<b>编辑推荐：</b>
+<br>
+
+· <a href="https://www.cnblogs.com/huangxincheng/p/16715237.html" target="_blank">C# 中的那些锁，在内核态都是怎么保证同步的？</a>
+    <br>
+· <a href="https://www.cnblogs.com/CreateMyself/p/16721269.html" target="_blank">.NET Core Web API 类库如何内嵌运行？</a>
+    <br>
+· <a href="https://www.cnblogs.com/dino623/p/gooey_effect_with_win2d.html" target="_blank">使用 Win2D 实现融合效果</a>
+    <br>
+· <a href="https://www.cnblogs.com/coco1s/p/16710203.html" target="_blank">单标签实现复杂的棋盘布局</a>
+    <br>
+· <a href="https://www.cnblogs.com/huangxincheng/p/16707620.html" target="_blank">C# 非托管泄漏中 HEAP_ENTRY 的 Size 对不上是怎么回事？</a>
+    <br>
+</div></div>
+    <div id="under_post_card2"><div class="itnews under-post-card">
+    <b>最新新闻</b>：
+    <br>
+ ·          <a href="https://news.cnblogs.com/n/728868/" target="_blank">粉丝即将破亿，“抖音第一网红”疯狂小杨哥凭什么？</a>
+        <br>
+ ·          <a href="https://news.cnblogs.com/n/728866/" target="_blank">小鹏G9：被骂到“降价”，还想拼一把</a>
+        <br>
+ ·          <a href="https://news.cnblogs.com/n/728867/" target="_blank">冲击高端之路上，Apple Watch Ultra 是苹果的一次「服输」</a>
+        <br>
+ ·          <a href="https://news.cnblogs.com/n/728865/" target="_blank">小鹏用户们的胜利只是暂时的</a>
+        <br>
+ ·          <a href="https://news.cnblogs.com/n/728864/" target="_blank">苹果应用商店大幅涨价背后，专家：汇率因素是主因</a>
+        <br>
+    » <a href="https://news.cnblogs.com/" title="IT 新闻" target="_blank">更多新闻...</a>
+</div></div>
+    <div id="HistoryToday" class="under-post-card"></div>
+    <script type="text/javascript">
+        var commentManager = new blogCommentManager();
+        commentManager.renderComments(0);
+        fixPostBody();
+
+            window.tocManager.displayDisableTocTips = false;
+            window.tocManager.generateToc();
+            
+                setTimeout(function() { countViews(cb_blogId, cb_entryId); }, 50);
+            
+            deliverT2();
+            deliverC1C2();
+            loadNewsAndKb();
+            
+                LoadPostCategoriesTags(cb_blogId, cb_entryId);
+            
+            LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+            GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+            loadOptUnderPost();
+            GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+                </script>
+</div>
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+	<div id="sideBar">
+		<div id="sideBarMain">
+			<div id="sidebar_news" class="newsItem"><!--done-->
+<h3 class="catListTitle">公告</h3>
+
+<div id="blog-news">
+    
+    <div id="profile_block">
+        昵称：
+        <a href="https://home.cnblogs.com/u/autumnlj/">
+            water-droplet
+        </a>
+        <br>
+        园龄：
+        <a href="https://home.cnblogs.com/u/autumnlj/" title="入园时间：2011-12-14">
+            10年9个月
+        </a>
+        <br>
+        粉丝：
+        <a class="follower-count" href="https://home.cnblogs.com/u/autumnlj/followers/">
+            1
+        </a>
+        <br>
+        关注：
+        <a class="folowing-count" href="https://home.cnblogs.com/u/autumnlj/followees/">
+            42
+        </a>
+        <div id="p_b_follow" class="follow-tip">
+<a href="javascript:void(0)" onclick="follow(&#39;91c6153b-ed25-e111-b422-842b2b196315&#39;)">+加关注</a></div>
+        <script>getFollowStatus('91c6153b-ed25-e111-b422-842b2b196315');</script>
+    </div>
+</div>
+
+</div>
+<div id="sidebar_c3"></div>
+			<div id="blog-calendar" style="">
+
+<table id="blogCalendar" class="Cal" cellspacing="0" cellpadding="0" title="Calendar" border="0">
+    <tbody>
+        <tr>
+            <td colspan="7">
+                <table class="CalTitle" cellspacing="0" border="0">
+                    <tbody>
+                        <tr>
+                            <td class="CalNextPrev">
+                                <a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2022/08/25&#39;); return false;">&lt;</a>
+                            </td>
+                            <td align="center">2022年9月</td>
+                            <td align="right" class="CalNextPrev">
+                                <a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2022/10/25&#39;); return false;">&gt;</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    <tr>
+        <th class="CalDayHeader" align="center" abbr="日" scope="col">日</th>
+        <th class="CalDayHeader" align="center" abbr="一" scope="col">一</th>
+        <th class="CalDayHeader" align="center" abbr="二" scope="col">二</th>
+        <th class="CalDayHeader" align="center" abbr="三" scope="col">三</th>
+        <th class="CalDayHeader" align="center" abbr="四" scope="col">四</th>
+        <th class="CalDayHeader" align="center" abbr="五" scope="col">五</th>
+        <th class="CalDayHeader" align="center" abbr="六" scope="col">六</th>
+    </tr>
+            <tr>
+                            <td class="CalOtherMonthDay" align="center">28</td>
+                            <td class="CalOtherMonthDay" align="center">29</td>
+                            <td class="CalOtherMonthDay" align="center">30</td>
+                            <td class="CalOtherMonthDay" align="center">31</td>
+                        <td class="" align="center">
+                            1
+                        </td>
+                        <td class="" align="center">
+                            2
+                        </td>
+                    <td class="CalWeekendDay" align="center">
+                        3
+                    </td>
+            </tr>
+                <tr>
+                        <td class="CalWeekendDay" align="center">
+                            4
+                        </td>
+                            <td class="" align="center">
+                                5
+                            </td>
+                            <td class="" align="center">
+                                6
+                            </td>
+                            <td class="" align="center">
+                                7
+                            </td>
+                            <td class="" align="center">
+                                8
+                            </td>
+                            <td class="" align="center">
+                                9
+                            </td>
+                        <td class="CalWeekendDay" align="center">
+                            10
+                        </td>
+                </tr>
+                <tr>
+                        <td class="CalWeekendDay" align="center">
+                            11
+                        </td>
+                            <td class="" align="center">
+                                12
+                            </td>
+                            <td class="" align="center">
+                                13
+                            </td>
+                            <td class="" align="center">
+                                14
+                            </td>
+                            <td class="" align="center">
+                                15
+                            </td>
+                            <td class="" align="center">
+                                16
+                            </td>
+                        <td class="CalWeekendDay" align="center">
+                            17
+                        </td>
+                </tr>
+                <tr>
+                        <td class="CalWeekendDay" align="center">
+                            18
+                        </td>
+                            <td class="" align="center">
+                                19
+                            </td>
+                            <td class="" align="center">
+                                20
+                            </td>
+                            <td class="" align="center">
+                                21
+                            </td>
+                            <td class="" align="center">
+                                22
+                            </td>
+                            <td class="" align="center">
+                                23
+                            </td>
+                        <td class="CalWeekendDay" align="center">
+                            24
+                        </td>
+                </tr>
+                <tr>
+                        <td class="CalTodayDay" align="center">
+                            25
+                        </td>
+                            <td class="" align="center">
+                                26
+                            </td>
+                            <td class="" align="center">
+                                27
+                            </td>
+                            <td class="" align="center">
+                                28
+                            </td>
+                            <td class="" align="center">
+                                29
+                            </td>
+                            <td class="" align="center">
+                                30
+                            </td>
+                        <td class="CalOtherMonthDay" align="center">
+                            1
+                        </td>
+                </tr>
+                <tr>
+                        <td class="CalOtherMonthDay" align="center">
+                            2
+                        </td>
+                            <td class="CalOtherMonthDay" align="center">
+                                3
+                            </td>
+                            <td class="CalOtherMonthDay" align="center">
+                                4
+                            </td>
+                            <td class="CalOtherMonthDay" align="center">
+                                5
+                            </td>
+                            <td class="CalOtherMonthDay" align="center">
+                                6
+                            </td>
+                            <td class="CalOtherMonthDay" align="center">
+                                7
+                            </td>
+                        <td class="CalOtherMonthDay" align="center">
+                            8
+                        </td>
+                </tr>
+    </tbody>
+</table></div><script>loadBlogDefaultCalendar();</script>			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"><!-- 搜索 -->
+<div id="sidebar_search" class="sidebar-block">
+    <div id="sidebar_search" class="mySearch">
+        <h3 class="catListTitle">搜索</h3>
+        <div id="sidebar_search_box">
+            <div id="widget_my_zzk" class="div_my_zzk">
+                <input type="text" id="q" onkeydown="return zzk_go_enter(event);" class="input_my_zzk">&nbsp;<input onclick="zzk_go()" type="button" value="找找看" id="btnZzk" class="btn_my_zzk">
+            </div>
+            <div id="widget_my_google" class="div_my_zzk">
+                <input type="text" name="google_q" id="google_q" onkeydown="return google_go_enter(event);" class="input_my_zzk">&nbsp;<input onclick="google_go()" type="button" value="谷歌搜索" class="btn_my_zzk">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 常用链接 -->
+<div id="sidebar_shortcut" class="sidebar-block"><div class="catListLink">
+<h3 class="catListTitle">
+常用链接
+</h3>
+<ul>
+    <li><a href="https://www.cnblogs.com/autumnlj/p/" title="我的博客的随笔列表">我的随笔</a></li>
+<li><a href="https://www.cnblogs.com/autumnlj/MyComments.html" title="我的发表过的评论列表">我的评论</a></li>
+<li><a href="https://www.cnblogs.com/autumnlj/OtherPosts.html" title="我评论过的随笔列表">我的参与</a></li>
+<li><a href="https://www.cnblogs.com/autumnlj/comments" title="我的博客的评论列表">最新评论</a></li>
+<li><a href="https://www.cnblogs.com/autumnlj/tag/" title="我的博客的标签列表">我的标签</a></li>
+
+</ul>
+</div>
+
+</div>
+
+<!-- 最新随笔 -->
+
+
+<!-- 我的标签 -->
+<div id="sidebar_toptags" class="sidebar-block"><div class="catListTag">
+<h3 class="catListTitle">我的标签</h3>
+<ul>
+        <li>
+            <a href="https://www.cnblogs.com/autumnlj/tag/SpringBoot/">SpringBoot<span class="tag-count">(4)</span></a>
+        </li>
+        <li>
+            <a href="https://www.cnblogs.com/autumnlj/tag/JavaWeb/">JavaWeb<span class="tag-count">(1)</span></a>
+        </li>
+        <li>
+            <a href="https://www.cnblogs.com/autumnlj/tag/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式<span class="tag-count">(1)</span></a>
+        </li>
+        <li>
+            <a href="https://www.cnblogs.com/autumnlj/tag/Java/">Java<span class="tag-count">(1)</span></a>
+        </li>
+    
+
+</ul>
+</div>
+
+</div>
+
+<!-- 积分与排名 -->
+
+
+<!-- 随笔分类、随笔档案、文章分类、新闻分类、相册、链接 -->
+<div id="sidebar_categories">
+
+    <div id="sidebar_postcategory" class="catListPostCategory sidebar-block">
+        <h3 class="catListTitle">
+            
+    <a class="sidebar-card-title-a" href="https://www.cnblogs.com/autumnlj/categories">随笔分类</a>
+
+
+
+        </h3>
+
+        <ul>
+
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/autumnlj/category/656504.html" class="category-item-link" rel="" target="">Database(5)</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/autumnlj/category/855869.html" class="category-item-link" rel="" target="">Java(1)</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/autumnlj/category/820341.html" class="category-item-link" rel="" target="">Oracle(9)</a>
+ 
+                </li>                
+            
+        </ul>
+
+
+    </div>    
+    <div id="sidebar_postarchive" class="catListPostArchive sidebar-block">
+        <h3 class="catListTitle">
+            
+随笔档案
+
+
+        </h3>
+
+        <ul>
+
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/autumnlj/archive/2016/12.html" class="category-item-link" rel="" target="">2016年12月(1)</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/autumnlj/archive/2016/09.html" class="category-item-link" rel="" target="">2016年9月(1)</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/autumnlj/archive/2016/08.html" class="category-item-link" rel="" target="">2016年8月(12)</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/autumnlj/archive/2016/07.html" class="category-item-link" rel="" target="">2016年7月(1)</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/autumnlj/archive/2016/03.html" class="category-item-link" rel="" target="">2016年3月(1)</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/autumnlj/archive/2015/02.html" class="category-item-link" rel="" target="">2015年2月(4)</a>
+ 
+                </li>                
+            
+        </ul>
+
+
+    </div>    
+    <div id="sidebar_articlecategory" class="catListArticleCategory sidebar-block">
+        <h3 class="catListTitle">
+            
+    <a class="sidebar-card-title-a" href="https://www.cnblogs.com/autumnlj/categories">文章分类</a>
+
+
+
+        </h3>
+
+        <ul>
+
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/autumnlj/category/1915484.html" class="category-item-link" rel="" target="">Basic(1)</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/autumnlj/category/1919127.html" class="category-item-link" rel="" target="">IntelliJ IDEA(2)</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/autumnlj/category/855868.html" class="category-item-link" rel="" target="">Java(3)</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/autumnlj/category/1899035.html" class="category-item-link" rel="" target="">JavaScript(6)</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/autumnlj/category/1899034.html" class="category-item-link" rel="" target="">JavaWeb(14)</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/autumnlj/category/1899036.html" class="category-item-link" rel="" target="">jQuery(2)</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/autumnlj/category/1916818.html" class="category-item-link" rel="" target="">MyBatis(1)</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/autumnlj/category/865433.html" class="category-item-link" rel="" target="">Oracle(8)</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/autumnlj/category/1915451.html" class="category-item-link" rel="" target="">Oracle自带包(1)</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/autumnlj/category/1915455.html" class="category-item-link" rel="" target="">PL/SQL Developer(1)</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/autumnlj/category/1914797.html" class="category-item-link" rel="" target="">RegularExpression(3)</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/autumnlj/category/1911237.html" class="category-item-link" rel="" target="">SpringBoot(1)</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/autumnlj/category/1911236.html" class="category-item-link" rel="" target="">SpringMVC(2)</a>
+ 
+                </li>                
+            
+        </ul>
+
+
+    </div>    
+</div>
+
+<!-- 最新评论 -->
+<!-- 阅读排行榜 -->
+<div id="sidebar_topviewedposts" class="sidebar-block"><div class="catListView">
+    <h3 class="catListTitle">
+        <a href="https://www.cnblogs.com/autumnlj/most-viewed" class="sidebar-card-title-a">
+    阅读排行榜
+</a>
+
+    </h3>
+    <div id="TopViewPostsBlock">
+        <ul style="word-break:break-all">
+                    <li>
+                        <a href="https://www.cnblogs.com/autumnlj/p/4300718.html">
+                            1. oracle 监听启动、停止、查看命令(70632)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/autumnlj/p/5754372.html">
+                            2. [转]ORACLE中Like与Instr模糊查询性能大比拼(18508)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/autumnlj/p/5814852.html">
+                            3. 【转】oracle中rowid的用法 （全面）(11631)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/autumnlj/p/5734078.html">
+                            4. 【转】有关Oracle随机字符串的生成方法及具体应用(7709)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/autumnlj/p/5736299.html">
+                            5. 【转】oracle 中随机取一条记录的两种方法(5827)
+                        </a>
+                    </li>
+        </ul>
+    </div>
+</div></div>
+
+<!-- 评论排行榜 -->
+<div id="sidebar_topcommentedposts" class="sidebar-block"><div class="catListFeedback">
+    <h3 class="catListTitle">
+        <a href="https://www.cnblogs.com/autumnlj/most-commented" class="sidebar-card-title-a">评论排行榜</a>
+
+    </h3>
+    <div id="TopFeedbackPostsBlock">
+        <ul style="word-break:break-all">
+                    <li>
+                        <a href="https://www.cnblogs.com/autumnlj/p/5754372.html">
+                            1. [转]ORACLE中Like与Instr模糊查询性能大比拼(3)
+                        </a>
+                    </li>
+        </ul>
+    </div>
+</div></div>
+
+<!-- 推荐排行榜 -->
+<div id="sidebar_topdiggedposts" class="sidebar-block">
+<div id="topdigg_posts_wrap">
+    <div class="catListView">
+        <h3 class="catListTitle">
+            <a href="https://www.cnblogs.com/autumnlj/most-liked" class="sidebar-card-title-a">推荐排行榜</a>
+
+        </h3>
+        <div id="TopDiggPostsBlock">
+            <ul style="word-break: break-all">
+                        <li>
+                            <a href="https://www.cnblogs.com/autumnlj/p/5815210.html">
+                                1. oracle中row_number和rownum的区别和联系(翻译)(1)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.cnblogs.com/autumnlj/p/5814852.html">
+                                2. 【转】oracle中rowid的用法 （全面）(1)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.cnblogs.com/autumnlj/p/5754372.html">
+                                3. [转]ORACLE中Like与Instr模糊查询性能大比拼(1)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.cnblogs.com/autumnlj/p/4301116.html">
+                                4. oracle的sqlnet.ora,tnsnames.ora,listener.ora三个配置文件(1)
+                            </a>
+                        </li>
+            </ul>
+        </div>
+    </div>
+</div></div><div id="sidebar_recentcomments" class="sidebar-block"><div class="catListComment">
+<h3 class="catListTitle"><a href="https://www.cnblogs.com/autumnlj/comments" class="sidebar-card-title-a">最新评论</a></h3>
+    <div class="RecentCommentBlock">
+        <ul>
+                <li class="recent_comment_title"><a href="https://www.cnblogs.com/autumnlj/articles/14550071.html">1. Re:IDEA Http Client 请求时设置Cookie</a></li>
+                <li class="recent_comment_body"><p>我用大写的Cookie一直没用，谢谢谢谢！</p>
+</li>
+                <li class="recent_comment_author">--FrankZhou2017</li>
+                <li class="recent_comment_title"><a href="https://www.cnblogs.com/autumnlj/p/5754372.html">2. Re:[转]ORACLE中Like与Instr模糊查询性能大比拼</a></li>
+                <li class="recent_comment_body">instr是不走索引的</li>
+                <li class="recent_comment_author">--Annmi</li>
+                <li class="recent_comment_title"><a href="https://www.cnblogs.com/autumnlj/p/5754372.html">3. Re:[转]ORACLE中Like与Instr模糊查询性能大比拼</a></li>
+                <li class="recent_comment_body">看错了instr('手册' ，title)&gt;0 相当于 title like '%手册%' 是不可以的想要实现 instr(title,'手册，手册1，手册2，。。。。')&gt;0 这种效果怎么做呢等同于...</li>
+                <li class="recent_comment_author">--雪儿666</li>
+                <li class="recent_comment_title"><a href="https://www.cnblogs.com/autumnlj/p/5754372.html">4. Re:[转]ORACLE中Like与Instr模糊查询性能大比拼</a></li>
+                <li class="recent_comment_body">select * from a where instr(title,'手册')&gt;0这个语句不能查出字段为 ‘手册kkk’ 的数据，但是下面的语句可以select * from a where titl...</li>
+                <li class="recent_comment_author">--雪儿666</li>
+        </ul>
+    </div>
+</div>
+
+</div>
+
+
+</div>
+                    <script>loadBlogSideColumn();</script>
+			</div>			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright © 2022 water-droplet
+<br><span id="poweredby">Powered by .NET 6 on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+
+
+
+<input type="hidden" id="antiforgery_token" value="CfDJ8NfDHj8mnYFAmPyhfXwJojdWBxfVYbDlMJ8oRzMDL_ALQhMeZr9WaCbdtBUbCiTfDMoqkRJP5mXnnmrN3MQebdyjockPkiD9ObEX5GSLcmDTdxoUCdmzb_A5cYCP0gVdSRDkNY1R_3nvsCYBgL7pwiU">
+<script async="" src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/js"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var kv = getGACustom();
+    if (kv) {
+        gtag('set', kv);
+    }
+    gtag('config', 'UA-476124-1');
+</script>
+<script defer="" src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/hm.js.下載"></script><iframe src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/container.html" style="visibility: hidden; display: none;"></iframe>
+
+<iframe src="./SpringBoot2.x系列教程25--整合SpringMVC之欢迎页面与自定义Favicon [转] - water-droplet - 博客园_files/aframe.html" width="0" height="0" style="display: none;"></iframe></body></html>

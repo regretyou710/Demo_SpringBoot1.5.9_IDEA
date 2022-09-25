@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html lang="zh-HK"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Required meta tags -->
+
+
+<meta name="robots" content="all">
+<meta name="renderer" content="webkit">
+<meta name="force-rendering" content="webkit">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Cloudflare CDN -->
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com/">
+
+<!-- Google CDN -->
+<link rel="dns-prefetch" href="https://ajax.googleapis.com/">
+
+<!-- Google API -->
+<link rel="dns-prefetch" href="https://apis.google.com/">
+
+<!-- Google Fonts -->
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+
+<!-- Google Analytics -->
+<link rel="dns-prefetch" href="https://www.google-analytics.com/">
+
+<!-- Google Tag Manager -->
+<link rel="dns-prefetch" href="https://www.googletagmanager.com/">
+
+<!-- Google Publisher Tag -->
+<link rel="dns-prefetch" href="https://www.googletagservices.com/">
+
+<!-- Google AdSense -->
+<link rel="dns-prefetch" href="https://adservice.google.com/">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com/">
+<link rel="dns-prefetch" href="https://tpc.googlesyndication.com/">
+
+<!-- jQuery CDN -->
+<link rel="dns-prefetch" href="https://code.jquery.com/">
+
+<!-- Bootstrap CDN -->
+<link rel="dns-prefetch" href="https://stackpath.bootstrapcdn.com/">
+
+<!-- Font Awesome CDN -->
+<link rel="dns-prefetch" href="https://use.fontawesome.com/">
+
+<title>html歡迎界面_SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon - JAVA366</title>
+<meta id="meta-application-name" name="application-name" content="JAVA366">
+<meta id="meta-description" name="description" content="SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon 作者：一一哥 一.Spring Boot設置歡迎頁面 1.默認歡迎頁的源...">
+<meta id="meta-keywords" name="keywords" content="Html歡迎界面,Html登錄頁面源碼,Html頁面源碼,Spring Boot 自動跳轉登錄頁面,JAVA366">
+
+<!-- Schema.org markup for Google+ -->
+<meta id="meta-item-name" itemprop="name" content="html歡迎界面_SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon - JAVA366">
+<meta id="meta-item-description" itemprop="description" content="SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon 作者：一一哥 一.Spring Boot設置歡迎頁面 1.默認歡迎頁的源...">
+<script src="./html歡迎界面_SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon - JAVA366_files/f(2).txt"></script><script src="./html歡迎界面_SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon - JAVA366_files/f(3).txt" id="google_shimpl"></script><script async="" src="./html歡迎界面_SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon - JAVA366_files/f(4).txt" crossorigin="anonymous" data-checked-head="true"></script>
+    <!-- Fonts -->
+<link href="./html歡迎界面_SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon - JAVA366_files/css2" rel="stylesheet">
+<link href="./html歡迎界面_SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon - JAVA366_files/all.min.css" rel="stylesheet">
+
+<link href="./html歡迎界面_SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon - JAVA366_files/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<link href="./html歡迎界面_SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon - JAVA366_files/style.css" rel="stylesheet">
+<link href="./html歡迎界面_SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon - JAVA366_files/java.css" rel="stylesheet">
+    <link rel="stylesheet" href="./html歡迎界面_SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon - JAVA366_files/codemirror.css">
+    <link rel="stylesheet" href="./html歡迎界面_SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon - JAVA366_files/night.css">
+    <link rel="stylesheet" href="./html歡迎界面_SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon - JAVA366_files/md.css">
+    <link rel="stylesheet" href="./html歡迎界面_SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon - JAVA366_files/prettify.css">
+<meta http-equiv="origin-trial" content="A+cA2PUOfIOKAdSDJOW5CP9ZlxONy1yu+hqAq72zUtKw4rLdihqRp6Nui/jUyCyegr+BUtH+C+Elv0ufn05yBQEAAACFeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjY5NzY2Mzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A+zsdH3aNZT/bkjT8U/o5ACzyaeNYzTvtoVmwf/KOilfv39pxY2AIsOwhQJv+YnXp98i3TqrQibIVtMWs5UHjgoAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjY5NzY2Mzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="AxceVEhIegcDEHqLXFQ2+vPKqzCppoJYsRCZ/BdfVnbM/sUUF2BXV8lwNosyYjvoxnTh2FC8cOlAnA5uULr/zAUAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjY5NzY2Mzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><link rel="preload" href="./html歡迎界面_SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon - JAVA366_files/f(5).txt" as="script"><script type="text/javascript" src="./html歡迎界面_SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon - JAVA366_files/f(5).txt"></script><link rel="preload" href="./html歡迎界面_SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon - JAVA366_files/f(6).txt" as="script"><script type="text/javascript" src="./html歡迎界面_SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon - JAVA366_files/f(6).txt"></script><link rel="stylesheet" type="text/css" href="./html歡迎界面_SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon - JAVA366_files/prettify(1).css"><meta http-equiv="origin-trial" content="A+cA2PUOfIOKAdSDJOW5CP9ZlxONy1yu+hqAq72zUtKw4rLdihqRp6Nui/jUyCyegr+BUtH+C+Elv0ufn05yBQEAAACFeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjY5NzY2Mzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A+zsdH3aNZT/bkjT8U/o5ACzyaeNYzTvtoVmwf/KOilfv39pxY2AIsOwhQJv+YnXp98i3TqrQibIVtMWs5UHjgoAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjY5NzY2Mzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="AxceVEhIegcDEHqLXFQ2+vPKqzCppoJYsRCZ/BdfVnbM/sUUF2BXV8lwNosyYjvoxnTh2FC8cOlAnA5uULr/zAUAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjY5NzY2Mzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A+cA2PUOfIOKAdSDJOW5CP9ZlxONy1yu+hqAq72zUtKw4rLdihqRp6Nui/jUyCyegr+BUtH+C+Elv0ufn05yBQEAAACFeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjY5NzY2Mzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A+zsdH3aNZT/bkjT8U/o5ACzyaeNYzTvtoVmwf/KOilfv39pxY2AIsOwhQJv+YnXp98i3TqrQibIVtMWs5UHjgoAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjY5NzY2Mzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="AxceVEhIegcDEHqLXFQ2+vPKqzCppoJYsRCZ/BdfVnbM/sUUF2BXV8lwNosyYjvoxnTh2FC8cOlAnA5uULr/zAUAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjY5NzY2Mzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A+cA2PUOfIOKAdSDJOW5CP9ZlxONy1yu+hqAq72zUtKw4rLdihqRp6Nui/jUyCyegr+BUtH+C+Elv0ufn05yBQEAAACFeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjY5NzY2Mzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A+zsdH3aNZT/bkjT8U/o5ACzyaeNYzTvtoVmwf/KOilfv39pxY2AIsOwhQJv+YnXp98i3TqrQibIVtMWs5UHjgoAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjY5NzY2Mzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="AxceVEhIegcDEHqLXFQ2+vPKqzCppoJYsRCZ/BdfVnbM/sUUF2BXV8lwNosyYjvoxnTh2FC8cOlAnA5uULr/zAUAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjY5NzY2Mzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A+cA2PUOfIOKAdSDJOW5CP9ZlxONy1yu+hqAq72zUtKw4rLdihqRp6Nui/jUyCyegr+BUtH+C+Elv0ufn05yBQEAAACFeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjY5NzY2Mzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A+zsdH3aNZT/bkjT8U/o5ACzyaeNYzTvtoVmwf/KOilfv39pxY2AIsOwhQJv+YnXp98i3TqrQibIVtMWs5UHjgoAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjY5NzY2Mzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="AxceVEhIegcDEHqLXFQ2+vPKqzCppoJYsRCZ/BdfVnbM/sUUF2BXV8lwNosyYjvoxnTh2FC8cOlAnA5uULr/zAUAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjY5NzY2Mzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="></head>
+<body class="antialiased bg-color">
+
+<header class="navbar navbar-expand-md navbar-dark bd-navbar">
+    <nav class="container-xxl flex-wrap flex-md-nowrap" aria-label="Main navigation">
+        <a class="navbar-brand p-0 me-2 fs-4" href="https://hk.java366.com/">
+            JAVA366
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#bdNavbar" aria-controls="bdNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" class="bi" fill="currentColor" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"></path>
+            </svg>
+
+        </button>
+
+        <div class="collapse navbar-collapse" id="bdNavbar">
+            <ul class="navbar-nav flex-row flex-wrap bd-navbar-nav pt-2 py-md-0">
+                <li class="nav-item col-6 col-md-auto">
+                    <a class="nav-link p-2" href="https://hk.java366.com/">首頁</a>
+                </li>
+                <li class="nav-item col-6 col-md-auto">
+                    <a class="nav-link p-2" href="https://hk.java366.com/blogs">JAVA技術博客</a>
+                </li>
+                
+            </ul>
+
+            <hr class="d-md-none text-white-50">
+
+            <ul class="navbar-nav flex-row flex-wrap ms-md-auto">
+                <li class="nav-item col-6 col-md-auto">
+                    <a class="nav-link p-2" href="mailto:contactus@java366.com">
+                        聯繫我們
+                    </a>
+                </li>
+                <li class="nav-item col-6 col-md-auto">
+                    <a class="nav-link p-2" href="https://hk.java366.com/copyright">
+                        版權申明
+                    </a>
+                </li>
+                <li class="nav-item col-6 col-md-auto">
+                    <a class="nav-link p-2" href="https://hk.java366.com/privacypolicy">
+                        隱私條款
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+    </nav>
+</header>
+
+<nav class="bd-subnavbar py-2" aria-label="Secondary navigation">
+    <div class="container-xxl d-flex align-items-md-center">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="https://hk.java366.com/">首頁</a></li>
+                    <li class="breadcrumb-item"><a href="https://hk.java366.com/blogs">JAVA技術博客</a></li>
+    <li class="breadcrumb-item active" aria-current="page">html歡迎界面_SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自...</li>
+            </ol>
+        </nav>
+    </div>
+</nav>
+
+
+<div class="main container mt-5" style="height: auto !important;">
+            <div id="wrapper_box" style="height: auto !important;">
+        <div id="main_box" style="height: auto !important;">
+                <div class="py-2 mb-2">
+        <div class="container">
+            <div class="px-0">
+                <h1 class="fs-2 fw-bold">html歡迎界面_SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon</h1>
+                <div class="tag-list mt-2 mb-2">
+                    <span class="badge  bg-badge text-white mb-2">
+            <a href="https://hk.java366.com/blog/tag/html%E6%AC%A2%E8%BF%8E%E7%95%8C%E9%9D%A2" class="text-white">
+                Html歡迎界面
+            </a>
+        </span>
+                            <span class="badge  bg-badge text-white mb-2">
+            <a href="https://hk.java366.com/blog/tag/html%E7%99%BB%E5%BD%95%E9%A1%B5%E9%9D%A2%E6%BA%90%E7%A0%81" class="text-white">
+                Html登錄頁面源碼
+            </a>
+        </span>
+                            <span class="badge  bg-badge text-white mb-2">
+            <a href="https://hk.java366.com/blog/tag/html%E9%A1%B5%E9%9D%A2%E6%BA%90%E7%A0%81" class="text-white">
+                Html頁面源碼
+            </a>
+        </span>
+                            <span class="badge  bg-badge text-white mb-2">
+            <a href="https://hk.java366.com/blog/tag/spring%20boot%20%E8%87%AA%E5%8A%A8%E8%B7%B3%E8%BD%AC%E7%99%BB%E5%BD%95%E9%A1%B5%E9%9D%A2" class="text-white">
+                Spring Boot 自動跳轉登錄頁面
+            </a>
+        </span>
+            </div>
+            </div>
+        </div>
+    </div>
+    <article class="blog-post markdown_views prism-atom-one-dark p-4 p-md-4 mb-5 bg-white text-break radius-75 card-border overflow-hidden " id="content_views" style="height: auto !important;">
+        <div class="clearfix">
+            <div id="ads_article_top"><script async="" src="./html歡迎界面_SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon - JAVA366_files/f(4).txt" crossorigin="anonymous" data-checked-head="true"></script>
+<ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-2567657924370618" data-ad-slot="4790161247" data-ad-format="auto" data-full-width-responsive="true" data-adsbygoogle-status="done" data-ad-status="unfilled"><div id="aswift_3_host" tabindex="0" title="Advertisement" aria-label="Advertisement" style="border: none; height: 280px; width: 918px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block; overflow: visible;"><iframe id="aswift_3" name="aswift_3" style="left:0;position:absolute;top:0;border:0;width:918px;height:280px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="918" height="280" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="./html歡迎界面_SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon - JAVA366_files/ads.html" data-google-container-id="a!4" data-google-query-id="COfhj4LnrvoCFdp5iwodK2sHEQ" data-load-complete="true"></iframe></div></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+        </div>
+        <div class="" id="content_views">
+<div>
+<h2><b>SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon</b></h2>
+<p><b>作者：一一哥</b></p>
+<h2><b>一.Spring Boot設置歡迎頁面</b></h2>
+<h3><b>1.默認歡迎頁的源碼</b></h3>
+<p>在Spring Boot中，默認的歡迎界面是index.html，那為什麼這樣呢？我們可以看看源碼是怎麼定義的。</p>
+<div class="has">
+<pre class="prettyprint prettyprinted" style=""><code class="has-numbering"><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">WebMvcAutoConfiguration</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+   </span><span class="kwd">private</span><span class="pln"> </span><span class="typ">Optional</span><span class="pun">&lt;</span><span class="typ">Resource</span><span class="pun">&gt;</span><span class="pln"> getWelcomePage</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+       </span><span class="typ">String</span><span class="pun">[]</span><span class="pln"> locations </span><span class="pun">=</span><span class="pln"> getResourceLocations</span><span class="pun">(</span><span class="kwd">this</span><span class="pun">.</span><span class="pln">resourceProperties</span><span class="pun">.</span><span class="pln">getStaticLocations</span><span class="pun">());</span><span class="pln">
+       </span><span class="kwd">return</span><span class="pln"> </span><span class="typ">Arrays</span><span class="pun">.</span><span class="pln">stream</span><span class="pun">(</span><span class="pln">locations</span><span class="pun">).</span><span class="pln">map</span><span class="pun">(</span><span class="kwd">this</span><span class="pun">::</span><span class="pln">getIndexHtml</span><span class="pun">).</span><span class="pln">filter</span><span class="pun">(</span><span class="kwd">this</span><span class="pun">::</span><span class="pln">isReadable</span><span class="pun">).</span><span class="pln">findFirst</span><span class="pun">();</span><span class="pln">
+   </span><span class="pun">}</span><span class="pln">
+
+    </span><span class="kwd">private</span><span class="pln"> </span><span class="typ">Resource</span><span class="pln"> getIndexHtml</span><span class="pun">(</span><span class="typ">String</span><span class="pln"> location</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">resourceLoader</span><span class="pun">.</span><span class="pln">getResource</span><span class="pun">(</span><span class="pln">location </span><span class="pun">+</span><span class="pln"> </span><span class="str">"index.html"</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+</span></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);"><span class="lit">1</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">2</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">3</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">4</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">5</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">6</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">7</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">8</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">9</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">10</span></li></ul></pre>
+</div>
+<p>從源碼中我們可以看到，歡迎頁的靜態資源文件默認就是index.html頁面，並且只要該頁面存放在resources目錄下的默認路徑中，就會被"/**"映射。</p>
+<div class="has">
+<pre class="prettyprint prettyprinted" style=""><code class="has-numbering"><span class="pln">classpath</span><span class="pun">:</span><span class="str">/META-INF/</span><span class="pln">resources</span><span class="pun">/</span><span class="pln"> 
+classpath</span><span class="pun">:</span><span class="str">/resources/</span><span class="pln">
+classpath</span><span class="pun">:</span><span class="str">/static/</span><span class="pln"> 
+classpath</span><span class="pun">:</span><span class="str">/public/</span><span class="pln">
+</span><span class="pun">/：當前項目的根路徑</span><span class="pln">
+</span></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);"><span class="lit">1</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">2</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">3</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">4</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">5</span></li></ul></pre>
+</div>
+<p>也就是隻要index.html頁面在以上幾個目錄內，就會自動被Spring Boot探測到。</p>
+<h3><b>2.實驗驗證</b></h3>
+<h3><b>2.1 創建web項目(略)</b></h3>
+<p>目錄結構如下，在該項目中，我們在resources目錄下，創建4個子文件夾，具體參考上一章節。<br>然後在每個子文件夾中，都存放一個index.html文件，但是文件內容略有不同，每個文件都有自己的編號。</p>
+<p></p>
+<div>
+<img alt="v2-d19fc37be2bc50c058752bdc1ae392b0_b.jpg" data-src="/image/http://img-01.proxy.5ce.com/view/image?&amp;type=2&amp;guid=2af8b4a2-2c2f-eb11-8da9-e4434bdf6706&amp;url=https://pic1.zhimg.com/v2-d19fc37be2bc50c058752bdc1ae392b0_b.jpg" src="./html歡迎界面_SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon - JAVA366_files/image" class="d-block">
+</div>
+<p>每個index.html文件內容的編號不同，以此類推！</p>
+<p></p>
+<div>
+<img alt="v2-79327d4249800ea07e96b29f330cfb3f_b.jpg" data-src="/image/http://img-01.proxy.5ce.com/view/image?&amp;type=2&amp;guid=2af8b4a2-2c2f-eb11-8da9-e4434bdf6706&amp;url=https://pic4.zhimg.com/v2-79327d4249800ea07e96b29f330cfb3f_b.jpg" src="./html歡迎界面_SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon - JAVA366_files/image(1)" class="d-block">
+</div>
+<h3><b>2.2 啓動項目測試</b></h3>
+<p>我們啓動web項目，輸入地址<br>http://localhost:8080<br>會發現，默認加載的是META-INF/resources目錄下的index.html文件，為什麼呢？這與靜態資源文件夾的優先級有關係哦，我們上一章節已經講過了</p>
+<p></p>
+<div>
+<img alt="v2-b21ce00f3c4b1165bd90ba359e84fc48_b.png" data-src="/image/http://img-02.proxy.5ce.com/view/image?&amp;type=2&amp;guid=2af8b4a2-2c2f-eb11-8da9-e4434bdf6706&amp;url=https://pic1.zhimg.com/v2-b21ce00f3c4b1165bd90ba359e84fc48_b.png" src="./html歡迎界面_SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon - JAVA366_files/image(2)" class="d-block">
+</div>
+<h2><b>二.自定義歡迎頁面</b></h2>
+<p>但在實際開發中，我們有時候就希望先訪問登錄界面，然後登錄成功後再跳到主頁面，那此時如何將登錄頁面作為歡迎頁面呢？</p>
+<p>這個可以有兩種實現方式。</p>
+<ul><li>視圖控制器配置方式；</li><li>Controller直接實現方式；</li></ul>
+<h3><b>1.視圖控制器配置方式</b></h3>
+<h3><b>1.1 創建配置類</b></h3>
+<p>我們可以在上面的web項目中，創建一個WebMvcConfigurerAdapter類。</p>
+<p></p>
+<div>
+<img alt="v2-ed77b612b8ba9cc14ffcfd20dc27d82b_b.jpg" data-src="/image/http://img-01.proxy.5ce.com/view/image?&amp;type=2&amp;guid=2af8b4a2-2c2f-eb11-8da9-e4434bdf6706&amp;url=https://pic4.zhimg.com/v2-ed77b612b8ba9cc14ffcfd20dc27d82b_b.jpg" src="./html歡迎界面_SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon - JAVA366_files/image(3)" class="d-block">
+</div>
+<div class="has">
+<pre class="prettyprint prettyprinted" style=""><code class="has-numbering"><span class="kwd">package</span><span class="pln"> com</span><span class="pun">.</span><span class="pln">yyg</span><span class="pun">.</span><span class="pln">boot</span><span class="pun">.</span><span class="pln">config</span><span class="pun">;</span><span class="pln">
+
+</span><span class="kwd">import</span><span class="pln"> org</span><span class="pun">.</span><span class="pln">springframework</span><span class="pun">.</span><span class="pln">context</span><span class="pun">.</span><span class="pln">annotation</span><span class="pun">.</span><span class="typ">Configuration</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">import</span><span class="pln"> org</span><span class="pun">.</span><span class="pln">springframework</span><span class="pun">.</span><span class="pln">core</span><span class="pun">.</span><span class="typ">Ordered</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">import</span><span class="pln"> org</span><span class="pun">.</span><span class="pln">springframework</span><span class="pun">.</span><span class="pln">web</span><span class="pun">.</span><span class="pln">servlet</span><span class="pun">.</span><span class="pln">config</span><span class="pun">.</span><span class="pln">annotation</span><span class="pun">.</span><span class="typ">ViewControllerRegistry</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">import</span><span class="pln"> org</span><span class="pun">.</span><span class="pln">springframework</span><span class="pun">.</span><span class="pln">web</span><span class="pun">.</span><span class="pln">servlet</span><span class="pun">.</span><span class="pln">config</span><span class="pun">.</span><span class="pln">annotation</span><span class="pun">.</span><span class="typ">WebMvcConfigurationSupport</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">import</span><span class="pln"> org</span><span class="pun">.</span><span class="pln">springframework</span><span class="pun">.</span><span class="pln">web</span><span class="pun">.</span><span class="pln">servlet</span><span class="pun">.</span><span class="pln">config</span><span class="pun">.</span><span class="pln">annotation</span><span class="pun">.</span><span class="typ">WebMvcConfigurerAdapter</span><span class="pun">;</span><span class="pln">
+
+</span><span class="com">/**
+ * @Description Description
+ * @Author 一一哥Sun
+ * @Date Created in 2020/3/21
+ */</span><span class="pln">
+</span><span class="lit">@Configuration</span><span class="pln">
+</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">DefaultViewConfig</span><span class="pln"> </span><span class="kwd">extends</span><span class="pln"> </span><span class="typ">WebMvcConfigurerAdapter</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+    </span><span class="lit">@Override</span><span class="pln">
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> addViewControllers</span><span class="pun">(</span><span class="typ">ViewControllerRegistry</span><span class="pln"> registry</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="com">//這裏的"/"是訪問路徑，"forward:home.html"是請求轉發到的頁面名稱</span><span class="pln">
+        registry</span><span class="pun">.</span><span class="pln">addViewController</span><span class="pun">(</span><span class="str">"/"</span><span class="pun">).</span><span class="pln">setViewName</span><span class="pun">(</span><span class="str">"forward:home.html"</span><span class="pun">);</span><span class="pln">
+        </span><span class="com">//設置優先級</span><span class="pln">
+        registry</span><span class="pun">.</span><span class="pln">setOrder</span><span class="pun">(</span><span class="typ">Ordered</span><span class="pun">.</span><span class="pln">HIGHEST_PRECEDENCE</span><span class="pun">);</span><span class="pln">
+        </span><span class="kwd">super</span><span class="pun">.</span><span class="pln">addViewControllers</span><span class="pun">(</span><span class="pln">registry</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+
+</span><span class="pun">}</span><span class="pln">
+</span></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);"><span class="lit">1</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">2</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">3</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">4</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">5</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">6</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">7</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">8</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">9</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">10</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">11</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">12</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">13</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">14</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">15</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">16</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">17</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">18</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">19</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">20</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">21</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">22</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">23</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">24</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">25</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">26</span></li></ul></pre>
+</div>
+<h3><b>1.2 創建home.html頁面</b></h3>
+<p></p>
+<div>
+<img alt="v2-cb64f5f42c5d9348c1ac17ac83e164a9_b.jpg" data-src="/image/http://img-01.proxy.5ce.com/view/image?&amp;type=2&amp;guid=2af8b4a2-2c2f-eb11-8da9-e4434bdf6706&amp;url=https://pic2.zhimg.com/v2-cb64f5f42c5d9348c1ac17ac83e164a9_b.jpg" src="./html歡迎界面_SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon - JAVA366_files/photo.gif" class="d-block">
+</div>
+<p>我們在static目錄下創建一個home.html頁面。</p>
+<div class="has">
+<pre class="prettyprint prettyprinted" style=""><code class="has-numbering"><span class="dec">&lt;!DOCTYPE html&gt;</span><span class="pln">
+</span><span class="tag">&lt;html</span><span class="pln"> </span><span class="tag">&gt;</span><span class="pln">
+</span><span class="tag">&lt;head&gt;</span><span class="pln">
+    </span><span class="tag">&lt;meta</span><span class="pln"> </span><span class="atn">charset</span><span class="pun">=</span><span class="atv">"UTF-8"</span><span class="tag">&gt;</span><span class="pln">
+    </span><span class="tag">&lt;title&gt;</span><span class="pln">Home</span><span class="tag">&lt;/title&gt;</span><span class="pln">
+</span><span class="tag">&lt;/head&gt;</span><span class="pln">
+</span><span class="tag">&lt;body&gt;</span><span class="pln">
+    </span><span class="tag">&lt;h1&gt;</span><span class="pln">一一哥的Home頁面...</span><span class="tag">&lt;/h1&gt;</span><span class="pln">
+</span><span class="tag">&lt;/body&gt;</span><span class="pln">
+</span><span class="tag">&lt;/html&gt;</span><span class="pln">
+</span></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);"><span class="pln">1</span></li><li style="color: rgb(153, 153, 153);"><span class="pln">2</span></li><li style="color: rgb(153, 153, 153);"><span class="pln">3</span></li><li style="color: rgb(153, 153, 153);"><span class="pln">4</span></li><li style="color: rgb(153, 153, 153);"><span class="pln">5</span></li><li style="color: rgb(153, 153, 153);"><span class="pln">6</span></li><li style="color: rgb(153, 153, 153);"><span class="pln">7</span></li><li style="color: rgb(153, 153, 153);"><span class="pln">8</span></li><li style="color: rgb(153, 153, 153);"><span class="pln">9</span></li><li style="color: rgb(153, 153, 153);"><span class="pln">10</span></li></ul></pre>
+</div>
+<h3><b>1.3 運行測試</b></h3>
+<p>接着我們運行程序，輸入地址：<br>http://localhost:8080<br>就可以看到如下歡迎界面。</p>
+<p></p>
+<div>
+<img alt="v2-320f93abc032478e3387f24e931b5ad5_b.jpg" data-src="/image/http://img-01.proxy.5ce.com/view/image?&amp;type=2&amp;guid=2af8b4a2-2c2f-eb11-8da9-e4434bdf6706&amp;url=https://pic2.zhimg.com/v2-320f93abc032478e3387f24e931b5ad5_b.jpg" src="./html歡迎界面_SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon - JAVA366_files/photo.gif" class="d-block">
+</div>
+<h3><b>2. Controller直接實現方式</b></h3>
+<p>我們在上一個例子的基礎之上，創建一個Controller類。</p>
+<h3><b>注意：</b></h3>
+<p>把上一個案例中DefaultViewConfig配置類的@Configure註解去掉，避免影響到本次實驗。</p>
+<h3><b>2.1 項目結構：</b></h3>
+<p></p>
+<div>
+<img alt="v2-501b6a7b24b9de20da4e18a8961a9789_b.jpg" data-src="/image/http://img-01.proxy.5ce.com/view/image?&amp;type=2&amp;guid=2af8b4a2-2c2f-eb11-8da9-e4434bdf6706&amp;url=https://pic2.zhimg.com/v2-501b6a7b24b9de20da4e18a8961a9789_b.jpg" src="./html歡迎界面_SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon - JAVA366_files/photo.gif" class="d-block">
+</div>
+<h3><b>2.2 創建Controller</b></h3>
+<div class="has">
+<pre class="prettyprint prettyprinted" style=""><code class="has-numbering"><span class="kwd">package</span><span class="pln"> com</span><span class="pun">.</span><span class="pln">yyg</span><span class="pun">.</span><span class="pln">boot</span><span class="pun">.</span><span class="pln">web</span><span class="pun">;</span><span class="pln">
+
+</span><span class="kwd">import</span><span class="pln"> org</span><span class="pun">.</span><span class="pln">springframework</span><span class="pun">.</span><span class="pln">stereotype</span><span class="pun">.</span><span class="typ">Controller</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">import</span><span class="pln"> org</span><span class="pun">.</span><span class="pln">springframework</span><span class="pun">.</span><span class="pln">web</span><span class="pun">.</span><span class="pln">bind</span><span class="pun">.</span><span class="pln">annotation</span><span class="pun">.</span><span class="typ">RequestMapping</span><span class="pun">;</span><span class="pln">
+
+</span><span class="com">/**
+ * @Description Description
+ * @Author 一一哥Sun
+ * @Date Created in 2020/3/21
+ */</span><span class="pln">
+</span><span class="lit">@Controller</span><span class="pln">
+</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">WelcomeController</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+    </span><span class="lit">@RequestMapping</span><span class="pun">(</span><span class="str">"/"</span><span class="pun">)</span><span class="pln">
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">String</span><span class="pln"> view</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">return</span><span class="pln"> </span><span class="str">"forward:home.html"</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+
+</span><span class="pun">}</span><span class="pln">
+</span></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);"><span class="lit">1</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">2</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">3</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">4</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">5</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">6</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">7</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">8</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">9</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">10</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">11</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">12</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">13</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">14</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">15</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">16</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">17</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">18</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">19</span></li></ul></pre>
+</div>
+<h3><b>2.3 運行測試</b></h3>
+<p>接着我們運行程序，輸入地址：<br>http://localhost:8080<br>就可以看到如下歡迎界面。</p>
+<p></p>
+<div>
+<img alt="v2-26ea65da633e62e4336bb670f3a68559_b.jpg" data-src="/image/http://img-01.proxy.5ce.com/view/image?&amp;type=2&amp;guid=2af8b4a2-2c2f-eb11-8da9-e4434bdf6706&amp;url=https://pic2.zhimg.com/v2-26ea65da633e62e4336bb670f3a68559_b.jpg" src="./html歡迎界面_SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon - JAVA366_files/photo.gif" class="d-block">
+</div>
+<h2><b>三.結合Thymeleaf模板實現歡迎頁面</b></h2>
+<p>我們可以結合Thymeleaf模板，來實現歡迎頁面。</p>
+<h3><b>1.添加依賴包</b></h3>
+<p>在該web項目的pom.xml文件中添加依賴包。</p>
+<div class="has">
+<pre class="prettyprint prettyprinted" style=""><code class="has-numbering"><span class="tag">&lt;dependencies&gt;</span><span class="pln">
+    </span><span class="tag">&lt;dependency&gt;</span><span class="pln">
+        </span><span class="tag">&lt;groupId&gt;</span><span class="pln">org.springframework.boot</span><span class="tag">&lt;/groupId&gt;</span><span class="pln">
+        </span><span class="tag">&lt;artifactId&gt;</span><span class="pln">spring-boot-starter-thymeleaf</span><span class="tag">&lt;/artifactId&gt;</span><span class="pln">
+    </span><span class="tag">&lt;/dependency&gt;</span><span class="pln">
+</span><span class="tag">&lt;/dependencies&gt;</span><span class="pln">
+</span></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);"><span class="pln">1</span></li><li style="color: rgb(153, 153, 153);"><span class="pln">2</span></li><li style="color: rgb(153, 153, 153);"><span class="pln">3</span></li><li style="color: rgb(153, 153, 153);"><span class="pln">4</span></li><li style="color: rgb(153, 153, 153);"><span class="pln">5</span></li><li style="color: rgb(153, 153, 153);"><span class="pln">6</span></li></ul></pre>
+</div>
+<h3><b>2.配置模板路徑</b></h3>
+<p>創建application.properties文件，添加如下配置，其實默認也是這個配置。</p>
+<div class="has">
+<pre class="prettyprint prettyprinted" style=""><code class="has-numbering"><span class="pln">spring</span><span class="pun">.</span><span class="pln">thymeleaf</span><span class="pun">.</span><span class="pln">prefix</span><span class="pun">=</span><span class="pln">classpath</span><span class="pun">:</span><span class="str">/templates/</span><span class="pln">
+spring</span><span class="pun">.</span><span class="pln">thymeleaf</span><span class="pun">.</span><span class="pln">suffix</span><span class="pun">=.</span><span class="pln">html
+</span></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);"><span class="lit">1</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">2</span></li></ul></pre>
+</div>
+<h3><b>3.創建login.html頁面</b></h3>
+<p>創建login.html存放到/templates/目錄下。</p>
+<div class="has">
+<pre class="prettyprint prettyprinted" style=""><code class="has-numbering"><span class="dec">&lt;!DOCTYPE html&gt;</span><span class="pln">
+</span><span class="tag">&lt;html</span><span class="pln"> </span><span class="tag">&gt;</span><span class="pln">
+</span><span class="tag">&lt;head&gt;</span><span class="pln">
+    </span><span class="tag">&lt;meta</span><span class="pln"> </span><span class="atn">charset</span><span class="pun">=</span><span class="atv">"UTF-8"</span><span class="tag">&gt;</span><span class="pln">
+    </span><span class="tag">&lt;title&gt;</span><span class="pln">Login</span><span class="tag">&lt;/title&gt;</span><span class="pln">
+</span><span class="tag">&lt;/head&gt;</span><span class="pln">
+</span><span class="tag">&lt;body&gt;</span><span class="pln">
+    </span><span class="tag">&lt;h1&gt;</span><span class="pln">一一哥的登錄頁面...</span><span class="tag">&lt;/h1&gt;</span><span class="pln">
+</span><span class="tag">&lt;/body&gt;</span><span class="pln">
+</span><span class="tag">&lt;/html&gt;</span><span class="pln">
+</span></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);"><span class="pln">1</span></li><li style="color: rgb(153, 153, 153);"><span class="pln">2</span></li><li style="color: rgb(153, 153, 153);"><span class="pln">3</span></li><li style="color: rgb(153, 153, 153);"><span class="pln">4</span></li><li style="color: rgb(153, 153, 153);"><span class="pln">5</span></li><li style="color: rgb(153, 153, 153);"><span class="pln">6</span></li><li style="color: rgb(153, 153, 153);"><span class="pln">7</span></li><li style="color: rgb(153, 153, 153);"><span class="pln">8</span></li><li style="color: rgb(153, 153, 153);"><span class="pln">9</span></li><li style="color: rgb(153, 153, 153);"><span class="pln">10</span></li></ul></pre>
+</div>
+<h3><b>4.創建Controller接口</b></h3>
+<div class="has">
+<pre class="prettyprint prettyprinted" style=""><code class="has-numbering"><span class="kwd">package</span><span class="pln"> com</span><span class="pun">.</span><span class="pln">yyg</span><span class="pun">.</span><span class="pln">boot</span><span class="pun">.</span><span class="pln">web</span><span class="pun">;</span><span class="pln">
+
+</span><span class="kwd">import</span><span class="pln"> org</span><span class="pun">.</span><span class="pln">springframework</span><span class="pun">.</span><span class="pln">stereotype</span><span class="pun">.</span><span class="typ">Controller</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">import</span><span class="pln"> org</span><span class="pun">.</span><span class="pln">springframework</span><span class="pun">.</span><span class="pln">web</span><span class="pun">.</span><span class="pln">bind</span><span class="pun">.</span><span class="pln">annotation</span><span class="pun">.</span><span class="typ">RequestMapping</span><span class="pun">;</span><span class="pln">
+
+</span><span class="com">/**
+ * @Description Description
+ * @Author 一一哥Sun
+ * @Date Created in 2020/3/21
+ */</span><span class="pln">
+</span><span class="lit">@Controller</span><span class="pln">
+</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">WelcomeController</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+</span><span class="com">//    @RequestMapping("/")</span><span class="pln">
+</span><span class="com">//    public String view() {</span><span class="pln">
+</span><span class="com">//        return "forward:home.html";</span><span class="pln">
+</span><span class="com">//    }</span><span class="pln">
+
+    </span><span class="lit">@RequestMapping</span><span class="pun">(</span><span class="str">"/"</span><span class="pun">)</span><span class="pln">
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">String</span><span class="pln"> login</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">return</span><span class="pln"> </span><span class="str">"login"</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+</span></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);"><span class="lit">1</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">2</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">3</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">4</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">5</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">6</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">7</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">8</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">9</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">10</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">11</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">12</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">13</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">14</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">15</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">16</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">17</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">18</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">19</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">20</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">21</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">22</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">23</span></li></ul></pre>
+</div>
+<h3><b>5.運行測試</b></h3>
+<p>輸入地址，http://localhost:8080<br>即可看到歡迎界面。</p>
+<p></p>
+<div>
+<img alt="v2-2293bb9048338a390c402ac7be27d047_b.jpg" data-src="/image/http://img-03.proxy.5ce.com/view/image?&amp;type=2&amp;guid=2af8b4a2-2c2f-eb11-8da9-e4434bdf6706&amp;url=https://pic4.zhimg.com/v2-2293bb9048338a390c402ac7be27d047_b.jpg" src="./html歡迎界面_SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon - JAVA366_files/photo.gif" class="d-block">
+</div>
+<h2><b>四.設置網站圖標Favicon</b></h2>
+<h3><b>1.Favicon簡介</b></h3>
+<p>很多時候，企業網站一般都會有一個對應的網站圖標(Favicon)，在瀏覽器訪問網站時，對應的瀏覽器標籤上會出現對應的圖標。例如csdn網站上的小圖標。</p>
+<p></p>
+<div>
+<img alt="v2-96c4780b67dd499010d79ed9280ee384_b.jpg" data-src="/image/http://img-02.proxy.5ce.com/view/image?&amp;type=2&amp;guid=2af8b4a2-2c2f-eb11-8da9-e4434bdf6706&amp;url=https://pic1.zhimg.com/v2-96c4780b67dd499010d79ed9280ee384_b.jpg" src="./html歡迎界面_SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon - JAVA366_files/photo.gif" class="d-block">
+</div>
+<h3><b>2.Favicon源碼分析</b></h3>
+<p>我們可以看看Spring中關於Favicon的源碼。</p>
+<div class="has">
+<pre class="prettyprint prettyprinted" style=""><code class="has-numbering"><span class="lit">@Configuration</span><span class="pln">
+</span><span class="lit">@ConditionalOnProperty</span><span class="pun">(</span><span class="kwd">value</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="str">"spring.mvc.favicon.enabled"</span><span class="pun">},</span><span class="pln">matchIfMissing</span><span class="pun">=</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">)</span><span class="pln">
+</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">FaviconConfiguration</span><span class="pln"> </span><span class="kwd">implements</span><span class="pln"> </span><span class="typ">ResourceLoaderAware</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">private</span><span class="pln"> </span><span class="kwd">final</span><span class="pln"> </span><span class="typ">ResourceProperties</span><span class="pln"> resourceProperties</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">private</span><span class="pln"> </span><span class="typ">ResourceLoader</span><span class="pln"> resourceLoader</span><span class="pun">;</span><span class="pln">
+
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">FaviconConfiguration</span><span class="pun">(</span><span class="typ">ResourceProperties</span><span class="pln"> resourceProperties</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">resourceProperties </span><span class="pun">=</span><span class="pln"> resourceProperties</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln">
+    setResourceLoader</span><span class="pun">(</span><span class="typ">ResourceLoader</span><span class="pln"> resourceLoader</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">resourceLoader </span><span class="pun">=</span><span class="pln"> resourceLoader</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+
+    </span><span class="lit">@Bean</span><span class="pln">
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">SimpleUrlHandlerMapping</span><span class="pln"> faviconHandlerMapping</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="typ">SimpleUrlHandlerMapping</span><span class="pln"> mapping </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">SimpleUrlHandlerMapping</span><span class="pun">();</span><span class="pln">
+        mapping</span><span class="pun">.</span><span class="pln">setOrder</span><span class="pun">(-</span><span class="lit">2147483647</span><span class="pun">);</span><span class="pln">
+        mapping</span><span class="pun">.</span><span class="pln">setUrlMap</span><span class="pun">(</span><span class="typ">Collections</span><span class="pun">.</span><span class="pln">singletonMap</span><span class="pun">(</span><span class="str">"**/favicon.ico"</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">faviconRequestHandler</span><span class="pun">()));</span><span class="pln">
+        </span><span class="kwd">return</span><span class="pln"> mapping</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+
+    </span><span class="lit">@Bean</span><span class="pln">
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">ResourceHttpRequestHandler</span><span class="pln"> faviconRequestHandler</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="typ">ResourceHttpRequestHandler</span><span class="pln">
+        requestHandler </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">ResourceHttpRequestHandler</span><span class="pun">();</span><span class="pln">
+        requestHandler</span><span class="pun">.</span><span class="pln">setLocations</span><span class="pun">(</span><span class="kwd">this</span><span class="pun">.</span><span class="pln">resolveFaviconLocations</span><span class="pun">());</span><span class="pln">
+        </span><span class="kwd">return</span><span class="pln"> requestHandler</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+
+    </span><span class="kwd">private</span><span class="pln"> </span><span class="typ">List</span><span class="pun">&lt;</span><span class="typ">Resource</span><span class="pun">&gt;</span><span class="pln"> resolveFaviconLocations</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="typ">String</span><span class="pun">[]</span><span class="pln"> staticLocations </span><span class="pun">=</span><span class="pln"> </span><span class="typ">WebMvcAutoConfiguration</span><span class="pun">.</span><span class="typ">WebMvcAutoConfigurationAdapter</span><span class="pun">.</span><span class="pln">getResourceLocations</span><span class="pun">(</span><span class="kwd">this</span><span class="pun">.</span><span class="pln">resourceProperties</span><span class="pun">.</span><span class="pln">getStaticLocations</span><span class="pun">());</span><span class="pln">
+    </span><span class="typ">List</span><span class="pun">&lt;</span><span class="typ">Resource</span><span class="pun">&gt;</span><span class="pln"> locations </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">ArrayList</span><span class="pun">(</span><span class="pln">staticLocations</span><span class="pun">.</span><span class="pln">length </span><span class="pun">+</span><span class="pln"> </span><span class="lit">1</span><span class="pun">);</span><span class="pln">
+    </span><span class="typ">Stream</span><span class="pln"> var10000 </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Arrays</span><span class="pun">.</span><span class="pln">stream</span><span class="pun">(</span><span class="pln">staticLocations</span><span class="pun">);</span><span class="pln">
+    </span><span class="typ">ResourceLoader</span><span class="pln"> var10001 </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">resourceLoader</span><span class="pun">;</span><span class="pln">
+    var10001</span><span class="pun">.</span><span class="pln">getClass</span><span class="pun">();</span><span class="pln">
+    var10000</span><span class="pun">.</span><span class="pln">map</span><span class="pun">(</span><span class="pln">var10001</span><span class="pun">::</span><span class="pln">getResource</span><span class="pun">).</span><span class="pln">forEach</span><span class="pun">(</span><span class="pln">locations</span><span class="pun">::</span><span class="kwd">add</span><span class="pun">);</span><span class="pln">
+    locations</span><span class="pun">.</span><span class="kwd">add</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">ClassPathResource</span><span class="pun">(</span><span class="str">"/"</span><span class="pun">));</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln">
+    </span><span class="typ">Collections</span><span class="pun">.</span><span class="pln">unmodifiableList</span><span class="pun">(</span><span class="pln">locations</span><span class="pun">);</span><span class="pln">
+   </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+</span></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);"><span class="lit">1</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">2</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">3</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">4</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">5</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">6</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">7</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">8</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">9</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">10</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">11</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">12</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">13</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">14</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">15</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">16</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">17</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">18</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">19</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">20</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">21</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">22</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">23</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">24</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">25</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">26</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">27</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">28</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">29</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">30</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">31</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">32</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">33</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">34</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">35</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">36</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">37</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">38</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">39</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">40</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">41</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">42</span></li><li style="color: rgb(153, 153, 153);"><span class="lit">43</span></li></ul></pre>
+</div>
+<h3><b>3.SpringBoot 1.x與2.x版本區別</b></h3>
+<p>在SpringBoot 1.x版本中對Favicon進行了默認支持，並且可以通過如下配置進行關閉操作:</p>
+<div class="has">
+<pre class="prettyprint prettyprinted" style=""><code class="has-numbering"><span class="pln">spring</span><span class="pun">.</span><span class="pln">mvc</span><span class="pun">.</span><span class="pln">favicon</span><span class="pun">.</span><span class="pln">enabled</span><span class="pun">=</span><span class="kwd">false</span><span class="pln"> </span><span class="com">## 關閉</span><span class="pln">
+</span></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);"><span class="lit">1</span></li></ul></pre>
+</div>
+<p>默認的Favicon圖標效果：</p>
+<p></p>
+<div>
+<img alt="v2-1118e7f6d3ee548d7c297404dd608ebd_b.jpg" data-src="/image/http://img-03.proxy.5ce.com/view/image?&amp;type=2&amp;guid=2af8b4a2-2c2f-eb11-8da9-e4434bdf6706&amp;url=https://pic2.zhimg.com/v2-1118e7f6d3ee548d7c297404dd608ebd_b.jpg" src="./html歡迎界面_SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon - JAVA366_files/photo.gif" class="d-block">
+</div>
+<p>但到了SpringBoot2.x版本後，在Spring Boot項目的issues中提出，如果用户不進行自定義的Favicon的設置，而Spring Boot項目會提供默認的圖標，而如果提供默認的Favicon圖標，則可能會導致泄露網站的開發框架這樣的信息。</p>
+<p>因此，在Spring Boot2.2.x中，將默認的favicon.ico移除，同時也不再提供上述application.properties中的屬性配置。更多詳細信息可查看對應的issues：https://github.com/spring-pr</p>
+<h3><b>4.SpringBoot2.x項目中添加Favicon</b></h3>
+<p>在2.x以前的版本，直接將你需要的favicon.ico文件存放在static下面就可以。</p>
+<p>但到了2.2.X以後的版本，去掉了默認的自動配置，需要我們手動在每一個頁面添加自己網站的Favicon圖標。</p>
+<p>我們可以在static目錄下創建一個images目錄，裏面存放自己的Favicon.ico圖標。</p>
+<p></p>
+<div>
+<img alt="v2-f94a2b16cddf45ae68cc5db0cb7df5e0_b.jpg" data-src="/image/http://img-01.proxy.5ce.com/view/image?&amp;type=2&amp;guid=2af8b4a2-2c2f-eb11-8da9-e4434bdf6706&amp;url=https://pic1.zhimg.com/v2-f94a2b16cddf45ae68cc5db0cb7df5e0_b.jpg" src="./html歡迎界面_SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon - JAVA366_files/photo.gif" class="d-block">
+</div>
+<h3><b>4.1 html頁面中添加</b></h3>
+<div class="has">
+<pre class="prettyprint prettyprinted" style=""><code class="has-numbering"><span class="dec">&lt;!DOCTYPE html&gt;</span><span class="pln">
+</span><span class="tag">&lt;html</span><span class="pln"> </span><span class="tag">&gt;</span><span class="pln">
+</span><span class="tag">&lt;head&gt;</span><span class="pln">
+    </span><span class="tag">&lt;meta</span><span class="pln"> </span><span class="atn">charset</span><span class="pun">=</span><span class="atv">"UTF-8"</span><span class="tag">&gt;</span><span class="pln">
+    </span><span class="tag">&lt;title&gt;</span><span class="pln">Login</span><span class="tag">&lt;/title&gt;</span><span class="pln">
+    </span><span class="tag">&lt;link</span><span class="pln"> </span><span class="atn">rel</span><span class="pun">=</span><span class="atv">"icon"</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"images/Favicon.ico"</span><span class="pln"> </span><span class="atn">target</span><span class="pun">=</span><span class="atv">"_blank"</span><span class="pln"> </span><span class="atn">rel</span><span class="pun">=</span><span class="atv">"external nofollow"</span><span class="pln">  </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"image/x-icon"</span><span class="tag">/&gt;</span><span class="pln">
+</span><span class="tag">&lt;/head&gt;</span><span class="pln">
+</span><span class="tag">&lt;body&gt;</span><span class="pln">
+</span><span class="tag">&lt;h1&gt;</span><span class="pln">一一哥的登錄頁面...</span><span class="tag">&lt;/h1&gt;</span><span class="pln">
+</span><span class="tag">&lt;/body&gt;</span><span class="pln">
+</span><span class="tag">&lt;/html&gt;</span><span class="pln">
+</span></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);"><span class="pln">1</span></li><li style="color: rgb(153, 153, 153);"><span class="pln">2</span></li><li style="color: rgb(153, 153, 153);"><span class="pln">3</span></li><li style="color: rgb(153, 153, 153);"><span class="pln">4</span></li><li style="color: rgb(153, 153, 153);"><span class="pln">5</span></li><li style="color: rgb(153, 153, 153);"><span class="pln">6</span></li><li style="color: rgb(153, 153, 153);"><span class="pln">7</span></li><li style="color: rgb(153, 153, 153);"><span class="pln">8</span></li><li style="color: rgb(153, 153, 153);"><span class="pln">9</span></li><li style="color: rgb(153, 153, 153);"><span class="pln">10</span></li><li style="color: rgb(153, 153, 153);"><span class="pln">11</span></li></ul></pre>
+</div>
+<h3><b>4.2 Thymeleaf頁面中添加</b></h3>
+<div class="has">
+<pre class="prettyprint prettyprinted" style=""><code class="has-numbering"><span class="dec">&lt;!DOCTYPE html&gt;</span><span class="pln">
+</span><span class="tag">&lt;html</span><span class="pln">  </span><span class="atn">xmlns:th</span><span class="pun">=</span><span class="atv">"http://www.thymeleaf.org"</span><span class="tag">&gt;</span><span class="pln">
+</span><span class="tag">&lt;head&gt;</span><span class="pln">
+</span><span class="tag">&lt;meta</span><span class="pln"> </span><span class="atn">charset</span><span class="pun">=</span><span class="atv">"UTF-8"</span><span class="tag">/&gt;</span><span class="pln">
+</span><span class="tag">&lt;title&gt;</span><span class="pln">Hello Favicon</span><span class="tag">&lt;/title&gt;</span><span class="pln">
+</span><span class="tag">&lt;link</span><span class="pln"> </span><span class="atn">rel</span><span class="pun">=</span><span class="atv">"icon"</span><span class="pln"> </span><span class="atn">th:href</span><span class="pun">=</span><span class="atv">"@{/favicon.ico}"</span><span class="pln"> </span><span class="atn">target</span><span class="pun">=</span><span class="atv">"_blank"</span><span class="pln"> </span><span class="atn">rel</span><span class="pun">=</span><span class="atv">"external nofollow"</span><span class="pln">  </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"image/x-icon"</span><span class="tag">/&gt;</span><span class="pln">
+</span><span class="tag">&lt;/head&gt;</span><span class="pln">
+</span><span class="tag">&lt;body&gt;</span><span class="pln">
+</span><span class="tag">&lt;h1&gt;</span><span class="pln">Hello 一一哥!</span><span class="tag">&lt;/h1&gt;</span><span class="pln">
+</span><span class="tag">&lt;/body&gt;</span><span class="pln">
+</span><span class="tag">&lt;/html&gt;</span><span class="pln">
+</span></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);"><span class="pln">1</span></li><li style="color: rgb(153, 153, 153);"><span class="pln">2</span></li><li style="color: rgb(153, 153, 153);"><span class="pln">3</span></li><li style="color: rgb(153, 153, 153);"><span class="pln">4</span></li><li style="color: rgb(153, 153, 153);"><span class="pln">5</span></li><li style="color: rgb(153, 153, 153);"><span class="pln">6</span></li><li style="color: rgb(153, 153, 153);"><span class="pln">7</span></li><li style="color: rgb(153, 153, 153);"><span class="pln">8</span></li><li style="color: rgb(153, 153, 153);"><span class="pln">9</span></li><li style="color: rgb(153, 153, 153);"><span class="pln">10</span></li><li style="color: rgb(153, 153, 153);"><span class="pln">11</span></li></ul></pre>
+</div>
+<h3><b>5.重啓項目測試</b></h3>
+<p>我們重新訪問頁面，可以看到Favicon圖標已經換成了我自己的圖標。</p>
+<p></p>
+<div>
+<img alt="v2-562e5e178dbd8a40875d989344c09623_b.jpg" data-src="/image/http://img-01.proxy.5ce.com/view/image?&amp;type=2&amp;guid=2af8b4a2-2c2f-eb11-8da9-e4434bdf6706&amp;url=https://pic4.zhimg.com/v2-562e5e178dbd8a40875d989344c09623_b.jpg" src="./html歡迎界面_SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon - JAVA366_files/photo.gif" class="d-block">
+</div>
+</div>
+</div>
+
+        <div class="clearfix">
+            <div id="ads_article_bottom"><script async="" src="./html歡迎界面_SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon - JAVA366_files/f(4).txt" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-2567657924370618" data-ad-slot="4790161247" data-ad-format="auto" data-full-width-responsive="true" data-adsbygoogle-status="done"><div id="aswift_4_host" style="border: none; height: 280px; width: 918px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"></div></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+        </div>
+
+        
+            <div class="copyright-notice">
+                版權聲明：本文為CSDN博主「weixin_39524834」的原創文章，遵循CC 4.0 BY-SA版權協議，轉載請附上原文出處鏈接及本聲明。<br>
+                原文鏈接：<a target="_blank" href="https://blog.csdn.net/weixin_39524834/article/details/110511185">https://blog.csdn.net/weixin_39524834/article/details/110511185</a>
+            </div>
+            </article>
+
+
+
+
+    <div class="container">
+        <h2 class="fs-4">隨機推薦</h2>
+        <div class="row mb-2">
+                            <div class="col-md-6">
+                    <div class="row g-0 radius-75 overflow-hidden flex-md-row bg-white mb-4 h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+
+                            <h3 class="mb-2 fs-6 font-weight-bolder">
+                                <a href="https://hk.java366.com/blog/detail/e388f79ddf9c8797e20e65b049f0ee5d">
+                                    如何捕獲java線程中的逃逸的異常
+                                </a>
+                            </h3>
+
+
+                        </div>
+
+                    </div>
+                </div>
+                            <div class="col-md-6">
+                    <div class="row g-0 radius-75 overflow-hidden flex-md-row bg-white mb-4 h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+
+                            <h3 class="mb-2 fs-6 font-weight-bolder">
+                                <a href="https://hk.java366.com/blog/detail/f67111fc7831ab06391951d38aab31ac">
+                                    [java-1-Day1-02] JAVA自動關機程序與JAVA語句分類
+                                </a>
+                            </h3>
+
+
+                        </div>
+
+                    </div>
+                </div>
+                            <div class="col-md-6">
+                    <div class="row g-0 radius-75 overflow-hidden flex-md-row bg-white mb-4 h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+
+                            <h3 class="mb-2 fs-6 font-weight-bolder">
+                                <a href="https://hk.java366.com/blog/detail/ce61e7e3b74c19c1922b8096a7e246a1">
+                                    mysql數據庫二進制類型_用jdbc訪問二進制類型的數據
+                                </a>
+                            </h3>
+
+
+                        </div>
+
+                    </div>
+                </div>
+                            <div class="col-md-6">
+                    <div class="row g-0 radius-75 overflow-hidden flex-md-row bg-white mb-4 h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+
+                            <h3 class="mb-2 fs-6 font-weight-bolder">
+                                <a href="https://hk.java366.com/blog/detail/c9334ff3e3d744577c3bc67341b73eb5">
+                                    java分佈服務：我打賭，沒人可以這麼精短的講出分佈服務架構吧
+                                </a>
+                            </h3>
+
+
+                        </div>
+
+                    </div>
+                </div>
+                            <div class="col-md-6">
+                    <div class="row g-0 radius-75 overflow-hidden flex-md-row bg-white mb-4 h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+
+                            <h3 class="mb-2 fs-6 font-weight-bolder">
+                                <a href="https://hk.java366.com/blog/detail/5444ea3fd6f795fff75a763669dfe9c2">
+                                    The local variable XXXX is never read
+                                </a>
+                            </h3>
+
+
+                        </div>
+
+                    </div>
+                </div>
+                            <div class="col-md-6">
+                    <div class="row g-0 radius-75 overflow-hidden flex-md-row bg-white mb-4 h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+
+                            <h3 class="mb-2 fs-6 font-weight-bolder">
+                                <a href="https://hk.java366.com/blog/detail/5867415ae1dc48a7a9361993a0a20152">
+                                    (收藏）Spring MVC 更靈活的控制 json 返回（自定義過濾字段）
+                                </a>
+                            </h3>
+
+
+                        </div>
+
+                    </div>
+                </div>
+                            <div class="col-md-6">
+                    <div class="row g-0 radius-75 overflow-hidden flex-md-row bg-white mb-4 h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+
+                            <h3 class="mb-2 fs-6 font-weight-bolder">
+                                <a href="https://hk.java366.com/blog/detail/6667f85543cf01aa2c7c0556ba41b016">
+                                    Java SE第三課：邏輯控制和方法使用
+                                </a>
+                            </h3>
+
+
+                        </div>
+
+                    </div>
+                </div>
+                            <div class="col-md-6">
+                    <div class="row g-0 radius-75 overflow-hidden flex-md-row bg-white mb-4 h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+
+                            <h3 class="mb-2 fs-6 font-weight-bolder">
+                                <a href="https://hk.java366.com/blog/detail/daf032cf092a6c3f142c9f12f9188db8">
+                                    DWR的基本配置例子：
+                                </a>
+                            </h3>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            
+        </div>
+    </div>
+
+
+        </div>
+        <div class="d-none d-md-block d-lg-block" id="right_sidebar">
+                <div class="position-sticky" style="top: 2rem; margin-top: 9rem;">
+        <div id="ads_sidebar_top" class="mb-3"><script async="" src="./html歡迎界面_SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon - JAVA366_files/f(4).txt" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:300px" data-ad-client="ca-pub-2567657924370618" data-ad-slot="5802832348" data-adsbygoogle-status="done" data-ad-status="filled"><div id="aswift_1_host" tabindex="0" title="Advertisement" aria-label="Advertisement" style="border: none; height: 300px; width: 300px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:300px;height:300px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="300" height="300" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="./html歡迎界面_SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon - JAVA366_files/ads(1).html" data-google-container-id="a!2" data-google-query-id="CO3Kj4LnrvoCFZWDwgodNmQKsg" data-load-complete="true"></iframe></div></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+        <div>
+            <h2 class="fs-4">更多相關推薦</h2>
+            <ul class="list-group list-group-flush rounded-8 bg-white p-2  border-0 mb-3">
+                                    <li class="list-group-item rand-border">
+                        <a href="https://hk.java366.com/blog/detail/fbad412699d93af9734034bd2735898b">
+                            html歡迎界面_整合SpringMVC之歡迎頁面與自定義Favicon
+                        </a>
+                    </li>
+                                    <li class="list-group-item rand-border">
+                        <a href="https://hk.java366.com/blog/detail/f0a4f46a61895db39c1efc5865606cfb">
+                            Springboot-歡迎頁-自定義Favicon
+                        </a>
+                    </li>
+                                    <li class="list-group-item rand-border">
+                        <a href="https://hk.java366.com/blog/detail/22b7e662d6c49ed7c25a7f7e36a14ec2">
+                            springboot2.x版本自定義CacheManager
+                        </a>
+                    </li>
+                                    <li class="list-group-item rand-border">
+                        <a href="https://hk.java366.com/blog/detail/64d9d93486da0f2b8d232ee3b14a88a2">
+                            登錄授權HTML頁面,spring-security 個性化用户認證流程——自定義...
+                        </a>
+                    </li>
+                                    <li class="list-group-item rand-border">
+                        <a href="https://hk.java366.com/blog/detail/7ba4af8cbea6f432150f0a0c88f27bfe">
+                            Spring Securty 應用（2）-- 自定義登錄界面
+                        </a>
+                    </li>
+                                    <li class="list-group-item rand-border">
+                        <a href="https://hk.java366.com/blog/detail/062a7cc7c288da9658acc8e5d42cd106">
+                            asp登錄頁面跳轉到註冊頁面_SpringBoot項目訪問任意接口都跳轉到...
+                        </a>
+                    </li>
+                                    <li class="list-group-item rand-border">
+                        <a href="https://hk.java366.com/blog/detail/a9c74888d9d1d0a28dcf8a57c0bfaaa0">
+                            SpringBoot2.x自定義攔截器
+                        </a>
+                    </li>
+                                    <li class="list-group-item rand-border">
+                        <a href="https://hk.java366.com/blog/detail/235078d75957fa3b504ad9e862943d67">
+                            SpringBoot2.x配置全局異常返回自定義頁面
+                        </a>
+                    </li>
+                                    <li class="list-group-item rand-border">
+                        <a href="https://hk.java366.com/blog/detail/d8f2352578bead082719f1f77be51e18">
+                            SpringBoot2.X與Swagger2.X整合
+                        </a>
+                    </li>
+                                    <li class="list-group-item rand-border">
+                        <a href="https://hk.java366.com/blog/detail/9a7ee06c21c5bd926299aa70b0995558">
+                            SpringBoot2.x系列教程（十一）Jackson之ObjectMapper使用詳解
+                        </a>
+                    </li>
+                            </ul>
+        </div>
+        <div id="ads_sidebar_bottom"><script async="" src="./html歡迎界面_SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon - JAVA366_files/f(4).txt" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: inline-block; width: 300px; height: 0px;" data-ad-client="ca-pub-2567657924370618" data-ad-slot="5802832348" data-adsbygoogle-status="done" data-ad-status="unfilled"><div id="aswift_2_host" tabindex="0" title="Advertisement" aria-label="Advertisement" style="border: none; height: 0px; width: 300px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block; overflow: hidden; opacity: 0;"><iframe id="aswift_2" name="aswift_2" style="left: 0px; position: absolute; top: 0px; border: 0px; width: 300px; height: 0px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="300" height="0" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="./html歡迎界面_SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon - JAVA366_files/ads(2).html" data-google-container-id="a!3" data-google-query-id="CMrLj4LnrvoCFYbFTAIde5AEnw" data-load-complete="true"></iframe></div></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+    </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <footer class="py-3 my-4">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+
+
+            <li class="nav-item">
+                <a href="https://java366.com/blog/detail/66e20c73c2f8ca478c02f95064885fe1" class="nav-link px-2 text-muted">簡體</a>
+            </li>
+            <li class="nav-item">
+                <a href="https://hk.java366.com/blog/detail/66e20c73c2f8ca478c02f95064885fe1" class="nav-link px-2 text-muted">香港</a>
+            </li>
+            <li class="nav-item">
+                <a href="https://tw.java366.com/blog/detail/66e20c73c2f8ca478c02f95064885fe1" class="nav-link px-2 text-muted">台灣</a>
+            </li>
+
+            <li class="nav-item">
+                <a href="https://hk.java366.com/" class="nav-link px-2 text-muted">首頁</a>
+            </li>
+
+            <li class="nav-item"><a href="https://hk.java366.com/blogs" class="nav-link px-2 text-muted">JAVA技術博客</a></li>
+                        <li class="nav-item"><a href="mailto:contactus@java366.com" class="nav-link px-2 text-muted">聯繫我們</a></li>
+            <li class="nav-item"><a href="https://hk.java366.com/copyright" class="nav-link px-2 text-muted">版權申明</a></li>
+            <li class="nav-item"><a href="https://hk.java366.com/privacypolicy" class="nav-link px-2 text-muted">隱私條款</a></li>
+        </ul>
+        <p class="text-center text-muted">© 2022 All rights reserved by java366.com</p>
+    </footer>
+</div>
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;" data-ad-status="unfilled"><div id="aswift_0_host" tabindex="0" title="Advertisement" aria-label="Advertisement" style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="./html歡迎界面_SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon - JAVA366_files/ads(3).html" data-google-container-id="a!1" data-load-complete="true"></iframe></div></ins><script async="" src="./html歡迎界面_SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon - JAVA366_files/js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-E2B3NFZJV5');
+</script>
+<script src="./html歡迎界面_SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon - JAVA366_files/jquery-3.6.0.min.js.下載" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="./html歡迎界面_SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon - JAVA366_files/bootstrap.bundle.min.js.下載" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script>
+        var $website_category = "JAVA";
+    </script>
+    <script src="./html歡迎界面_SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon - JAVA366_files/codemirror.min.js.下載" type="text/javascript"></script>
+    <script src="./html歡迎界面_SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon - JAVA366_files/md.js.下載"></script>
+    
+    <script src="./html歡迎界面_SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon - JAVA366_files/detail.js.下載"></script>
+
+    <script src="./html歡迎界面_SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon - JAVA366_files/lazyload.min.js.下載"></script>
+
+    <script>
+        if ($('div.htmledit_views').hasClass('htmledit_views')) {
+            $('div.htmledit_views').removeClass('htmledit_views');
+        }
+
+        let images = document.querySelectorAll("div#content_views img");
+        $("div#content_views img").addClass("d-block")
+        lazyload(images);
+    </script>
+            <script src="./html歡迎界面_SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon - JAVA366_files/ads.js.下載"></script>
+    
+
+<iframe src="./html歡迎界面_SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon - JAVA366_files/aframe.html" width="0" height="0" style="display: none;"></iframe></body><iframe id="google_esf" name="google_esf" src="./html歡迎界面_SpringBoot2.x系列教程25--整合SpringMVC之歡迎頁面與自定義Favicon - JAVA366_files/zrt_lookup.html" style="display: none;"></iframe></html>

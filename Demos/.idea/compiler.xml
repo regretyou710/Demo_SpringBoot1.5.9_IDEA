@@ -6,31 +6,33 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="demo17-3" />
-        <module name="Demo27_切換日誌框架" />
-        <module name="demo16-1" />
         <module name="demo17-2" />
-        <module name="demo29-2" />
-        <module name="demo27-2" />
-        <module name="demo15" />
-        <module name="demo18" />
+        <module name="demo16-2" />
+        <module name="demo13" />
+        <module name="demo11" />
+        <module name="demo14-2" />
+        <module name="demo14-1" />
+        <module name="Demo27_切換日誌框架" />
+        <module name="demo31" />
+        <module name="demo30" />
         <module name="Demo25_SpringBoot默認配置" />
-        <module name="demo16-3" />
+        <module name="demo26-1" />
+        <module name="demo14-3" />
         <module name="Demo05_HelloWorld" />
         <module name="Demo29_webjars&amp;靜態資源映設規則1" />
-        <module name="demo11" />
+        <module name="demo15" />
         <module name="demo09" />
         <module name="demo08" />
         <module name="demo26-2" />
-        <module name="demo26-1" />
+        <module name="demo27-2" />
         <module name="demo27-1" />
-        <module name="demo14-3" />
-        <module name="demo14-2" />
-        <module name="demo14-1" />
-        <module name="demo16-2" />
-        <module name="Demo20_@Conditional&amp;自動配置報告" />
+        <module name="demo29-2" />
+        <module name="demo18" />
+        <module name="demo16-3" />
+        <module name="demo17-3" />
+        <module name="demo16-1" />
         <module name="demo17-1" />
-        <module name="demo13" />
+        <module name="Demo20_@Conditional&amp;自動配置報告" />
         <module name="demo12" />
       </profile>
     </annotationProcessing>
@@ -66,6 +68,8 @@
       <module name="Demo27_切換日誌框架" target="1.8" />
       <module name="demo29-2" target="1.8" />
       <module name="Demo29_webjars&amp;靜態資源映設規則1" target="1.8" />
+      <module name="demo30" target="1.8" />
+      <module name="demo31" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -100,6 +104,8 @@
       <module name="demo27-1" options="-parameters" />
       <module name="demo27-2" options="-parameters" />
       <module name="demo29-2" options="-parameters" />
+      <module name="demo30" options="-parameters" />
+      <module name="demo31" options="-parameters" />
     </option>
   </component>
 </project>

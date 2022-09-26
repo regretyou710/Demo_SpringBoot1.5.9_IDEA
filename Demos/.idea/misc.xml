@@ -34,6 +34,8 @@
         <option value="$PROJECT_DIR$/Demo29_webjars&amp;靜態資源映設規則2/pom.xml" />
         <option value="$PROJECT_DIR$/Demo30_引入Thymeleaf/pom.xml" />
         <option value="$PROJECT_DIR$/Demo31_Thymeleaf語法/pom.xml" />
+        <option value="$PROJECT_DIR$/Demo33_擴展與全面接管SpringMVC1/pom.xml" />
+        <option value="$PROJECT_DIR$/Demo33_擴展與全面接管SpringMVC2/pom.xml" />
       </list>
     </option>
   </component>

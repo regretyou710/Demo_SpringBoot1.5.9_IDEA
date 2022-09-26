@@ -29,6 +29,8 @@
       <module fileurl="file://$PROJECT_DIR$/Demo29_webjars&amp;靜態資源映設規則2/demo29-2.iml" filepath="$PROJECT_DIR$/Demo29_webjars&amp;靜態資源映設規則2/demo29-2.iml" />
       <module fileurl="file://$PROJECT_DIR$/Demo30_引入Thymeleaf/demo30.iml" filepath="$PROJECT_DIR$/Demo30_引入Thymeleaf/demo30.iml" />
       <module fileurl="file://$PROJECT_DIR$/Demo31_Thymeleaf語法/demo31.iml" filepath="$PROJECT_DIR$/Demo31_Thymeleaf語法/demo31.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Demo33_擴展與全面接管SpringMVC1/demo33-1.iml" filepath="$PROJECT_DIR$/Demo33_擴展與全面接管SpringMVC1/demo33-1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Demo33_擴展與全面接管SpringMVC2/demo33-2.iml" filepath="$PROJECT_DIR$/Demo33_擴展與全面接管SpringMVC2/demo33-2.iml" />
     </modules>
   </component>
 </project>

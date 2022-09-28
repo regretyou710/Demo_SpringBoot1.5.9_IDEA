@@ -45,7 +45,7 @@ public class DelegatingWebMvcConfiguration extends WebMvcConfigurationSupport {
 @ConditionalOnClass({ Servlet.class, DispatcherServlet.class,
 		WebMvcConfigurerAdapter.class })
 //容器中沒有這個組件的時候，這個自動配置類才生效
-//(生效後才再WebMvcAutoConfigurationAdapter類@Import(EnableWebMvcConfiguration.class)導入)
+//(生效後才在WebMvcAutoConfigurationAdapter類@Import(EnableWebMvcConfiguration.class)導入)
 //與配置類@EnableWebMvc註解後的底層先導入再進行@ConditionalOnMissingBean(WebMvcConfigurationSupport.class)不同
 @ConditionalOnMissingBean(WebMvcConfigurationSupport.class)
 @AutoConfigureOrder(Ordered.HIGHEST_PRECEDENCE + 10)

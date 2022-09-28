@@ -7,21 +7,22 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="demo14-2" />
-        <module name="demo14-1" />
-        <module name="demo27-1" />
+        <module name="Demo25_SpringBoot默認配置" />
+        <module name="demo13" />
         <module name="demo29-2" />
         <module name="demo30" />
         <module name="Demo20_@Conditional&amp;自動配置報告" />
         <module name="demo16-3" />
+        <module name="demo14-1" />
         <module name="demo18" />
         <module name="demo15" />
         <module name="demo27-2" />
-        <module name="demo13" />
+        <module name="demo27-1" />
         <module name="demo12" />
         <module name="demo11" />
         <module name="demo17-3" />
         <module name="demo17-2" />
-        <module name="Demo25_SpringBoot默認配置" />
+        <module name="demo17-1" />
         <module name="demo26-2" />
         <module name="demo26-1" />
         <module name="Demo27_切換日誌框架" />
@@ -32,7 +33,8 @@
         <module name="demo16-1" />
         <module name="demo09" />
         <module name="demo08" />
-        <module name="demo17-1" />
+        <module name="demo34-2" />
+        <module name="demo34-1" />
         <module name="demo33-2" />
         <module name="demo33-1" />
         <module name="demo14-3" />
@@ -74,6 +76,8 @@
       <module name="demo31" target="1.8" />
       <module name="demo33-1" target="1.8" />
       <module name="demo33-2" target="1.8" />
+      <module name="demo34-1" target="1.8" />
+      <module name="demo34-2" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -112,6 +116,8 @@
       <module name="demo31" options="-parameters" />
       <module name="demo33-1" options="-parameters" />
       <module name="demo33-2" options="-parameters" />
+      <module name="demo34-1" options="-parameters" />
+      <module name="demo34-2" options="-parameters" />
     </option>
   </component>
 </project>

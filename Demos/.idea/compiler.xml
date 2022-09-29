@@ -28,6 +28,7 @@
         <module name="Demo27_切換日誌框架" />
         <module name="Demo29_webjars&amp;靜態資源映設規則1" />
         <module name="Demo05_HelloWorld" />
+        <module name="demo35-1" />
         <module name="demo31" />
         <module name="demo16-2" />
         <module name="demo16-1" />
@@ -78,6 +79,7 @@
       <module name="demo33-2" target="1.8" />
       <module name="demo34-1" target="1.8" />
       <module name="demo34-2" target="1.8" />
+      <module name="demo35-1" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -118,6 +120,7 @@
       <module name="demo33-2" options="-parameters" />
       <module name="demo34-1" options="-parameters" />
       <module name="demo34-2" options="-parameters" />
+      <module name="demo35-1" options="-parameters" />
     </option>
   </component>
 </project>

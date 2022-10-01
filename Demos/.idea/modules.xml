@@ -38,6 +38,8 @@
       <module fileurl="file://$PROJECT_DIR$/Demo36_登入&amp;攔截器1/demo36-1.iml" filepath="$PROJECT_DIR$/Demo36_登入&amp;攔截器1/demo36-1.iml" />
       <module fileurl="file://$PROJECT_DIR$/Demo36_登入&amp;攔截器2/demo36-2.iml" filepath="$PROJECT_DIR$/Demo36_登入&amp;攔截器2/demo36-2.iml" />
       <module fileurl="file://$PROJECT_DIR$/Demo38_員工列表-公共頁抽取/demo38.iml" filepath="$PROJECT_DIR$/Demo38_員工列表-公共頁抽取/demo38.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Demo39_員工列表-連結高亮&amp;列表完成1/demo39-1.iml" filepath="$PROJECT_DIR$/Demo39_員工列表-連結高亮&amp;列表完成1/demo39-1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Demo39_員工列表-連結高亮&amp;列表完成2/demo39-2.iml" filepath="$PROJECT_DIR$/Demo39_員工列表-連結高亮&amp;列表完成2/demo39-2.iml" />
     </modules>
   </component>
 </project>

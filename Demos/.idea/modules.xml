@@ -44,6 +44,7 @@
       <module fileurl="file://$PROJECT_DIR$/Demo41_員工添加-添加完成/demo41.iml" filepath="$PROJECT_DIR$/Demo41_員工添加-添加完成/demo41.iml" />
       <module fileurl="file://$PROJECT_DIR$/Demo42_員工修改-重用頁面&amp;修改完成1/demo42-1.iml" filepath="$PROJECT_DIR$/Demo42_員工修改-重用頁面&amp;修改完成1/demo42-1.iml" />
       <module fileurl="file://$PROJECT_DIR$/Demo42_員工修改-重用頁面&amp;修改完成2/demo42-2.iml" filepath="$PROJECT_DIR$/Demo42_員工修改-重用頁面&amp;修改完成2/demo42-2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Demo43_員工刪除-刪除完成/demo43.iml" filepath="$PROJECT_DIR$/Demo43_員工刪除-刪除完成/demo43.iml" />
     </modules>
   </component>
 </project>

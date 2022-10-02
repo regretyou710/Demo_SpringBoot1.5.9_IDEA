@@ -8,6 +8,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="demo14-2" />
         <module name="Demo25_SpringBoot默認配置" />
+        <module name="demo42-2" />
+        <module name="demo42-1" />
         <module name="demo13" />
         <module name="demo29-2" />
         <module name="demo31" />
@@ -99,6 +101,8 @@
       <module name="demo39-2" target="1.8" />
       <module name="demo40" target="1.8" />
       <module name="demo41" target="1.8" />
+      <module name="demo42-1" target="1.8" />
+      <module name="demo42-2" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -151,6 +155,8 @@
       <module name="demo39-2" options="-parameters" />
       <module name="demo40" options="-parameters" />
       <module name="demo41" options="-parameters" />
+      <module name="demo42-1" options="-parameters" />
+      <module name="demo42-2" options="-parameters" />
     </option>
   </component>
 </project>

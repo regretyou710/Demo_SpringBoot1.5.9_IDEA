@@ -40,8 +40,10 @@
       <module fileurl="file://$PROJECT_DIR$/Demo38_員工列表-公共頁抽取/demo38.iml" filepath="$PROJECT_DIR$/Demo38_員工列表-公共頁抽取/demo38.iml" />
       <module fileurl="file://$PROJECT_DIR$/Demo39_員工列表-連結高亮&amp;列表完成1/demo39-1.iml" filepath="$PROJECT_DIR$/Demo39_員工列表-連結高亮&amp;列表完成1/demo39-1.iml" />
       <module fileurl="file://$PROJECT_DIR$/Demo39_員工列表-連結高亮&amp;列表完成2/demo39-2.iml" filepath="$PROJECT_DIR$/Demo39_員工列表-連結高亮&amp;列表完成2/demo39-2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Demo40_員工列表-來到添加頁面/demo40.iml" filepath="$PROJECT_DIR$/Demo40_員工列表-來到添加頁面/demo40.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Demo41_員工列表-添加完成/demo41.iml" filepath="$PROJECT_DIR$/Demo41_員工列表-添加完成/demo41.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Demo40_員工添加-來到添加頁面/demo40.iml" filepath="$PROJECT_DIR$/Demo40_員工添加-來到添加頁面/demo40.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Demo41_員工添加-添加完成/demo41.iml" filepath="$PROJECT_DIR$/Demo41_員工添加-添加完成/demo41.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Demo42_員工修改-重用頁面&amp;修改完成1/demo42-1.iml" filepath="$PROJECT_DIR$/Demo42_員工修改-重用頁面&amp;修改完成1/demo42-1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Demo42_員工修改-重用頁面&amp;修改完成2/demo42-2.iml" filepath="$PROJECT_DIR$/Demo42_員工修改-重用頁面&amp;修改完成2/demo42-2.iml" />
     </modules>
   </component>
 </project>

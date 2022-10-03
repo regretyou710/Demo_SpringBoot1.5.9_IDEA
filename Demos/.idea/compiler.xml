@@ -10,12 +10,10 @@
         <module name="Demo25_SpringBoot默認配置" />
         <module name="demo42-2" />
         <module name="demo42-1" />
-        <module name="demo13" />
         <module name="demo29-2" />
-        <module name="demo31" />
-        <module name="demo33-1" />
+        <module name="demo30" />
+        <module name="demo33-2" />
         <module name="demo43" />
-        <module name="demo16-2" />
         <module name="demo41" />
         <module name="demo40" />
         <module name="demo14-1" />
@@ -25,34 +23,38 @@
         <module name="demo27-1" />
         <module name="demo12" />
         <module name="demo11" />
+        <module name="demo45-2" />
         <module name="demo36-2" />
         <module name="demo36-1" />
         <module name="demo17-3" />
         <module name="demo17-2" />
         <module name="demo17-1" />
+        <module name="demo39-2" />
+        <module name="demo39-1" />
         <module name="demo38" />
         <module name="demo26-1" />
         <module name="Demo27_切換日誌框架" />
         <module name="Demo29_webjars&amp;靜態資源映設規則1" />
         <module name="demo35-2" />
         <module name="demo35-1" />
-        <module name="demo16-3" />
-        <module name="demo30" />
+        <module name="demo31" />
+        <module name="demo16-2" />
         <module name="demo16-1" />
-        <module name="demo14-3" />
-        <module name="demo44-1" />
         <module name="demo44-2" />
-        <module name="demo09" />
+        <module name="demo44-1" />
+        <module name="demo13" />
         <module name="demo08" />
-        <module name="demo26-2" />
+        <module name="demo09" />
         <module name="Demo44_錯誤處理原理&amp;訂製錯誤頁面" />
         <module name="demo18" />
         <module name="demo34-1" />
         <module name="Demo05_HelloWorld" />
+        <module name="demo45-1" />
         <module name="demo34-2" />
-        <module name="demo33-2" />
-        <module name="demo39-2" />
-        <module name="demo39-1" />
+        <module name="demo26-2" />
+        <module name="demo16-3" />
+        <module name="demo33-1" />
+        <module name="demo14-3" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -111,6 +113,8 @@
       <module name="demo44-1" target="1.8" />
       <module name="demo44-2" target="1.8" />
       <module name="Demo44_錯誤處理原理&amp;訂製錯誤頁面" target="1.8" />
+      <module name="demo45-1" target="1.8" />
+      <module name="demo45-2" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -169,6 +173,8 @@
       <module name="demo43" options="-parameters" />
       <module name="demo44-1" options="-parameters" />
       <module name="demo44-2" options="-parameters" />
+      <module name="demo45-1" options="-parameters" />
+      <module name="demo45-2" options="-parameters" />
     </option>
   </component>
 </project>

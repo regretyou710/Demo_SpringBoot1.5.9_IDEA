@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Created-By: IntelliJ IDEA
+Built-By: Workerman-NB
+Build-Jdk: 1.8.0_131
+Implementation-Title: demo51
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: tw.com
+Main-Class: ${start-class}
+

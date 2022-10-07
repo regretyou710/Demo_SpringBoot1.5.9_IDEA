@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Demo51_使用外部Servlet容器&amp;支持JSP:war">
+    <output-path>$PROJECT_DIR$/Demo51_使用外部Servlet容器&amp;支持JSP/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>Demo51_使用外部Servlet容器&amp;支持JSP</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="demo51-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="Demo51_使用外部Servlet容器&amp;支持JSP:war exploded" />
+    </root>
+  </artifact>
+</component>

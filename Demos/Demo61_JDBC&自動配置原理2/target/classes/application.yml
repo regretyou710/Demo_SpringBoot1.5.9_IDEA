@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    username: system
+    password: manager
+    url: jdbc:oracle:thin:@localhost:1521:orcl12c
+  sql:
+    init:
+      # 初始化模式（springboot2.0）
+      mode: always
+      # 指定位置(不使用資源類路徑中默認默認文件 schema-all.sql、scheam.sql)
+      schema-locations: classpath:emp.sql

@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    username: system
+    password: manager
+    url: jdbc:oracle:thin:@localhost:1521:orcl12c
+
+    # 透過單元測試，輸出是否為druid數據源
+    type: com.alibaba.druid.pool.DruidDataSource
+
+    # 以下配置druid數據源相關屬性
+    # 因為是來自druid數據源的屬性所以無法與原本的datasource屬性進行綁定，所以須寫一個配置類進行ioc容器注入
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+
+    #  配置監控統計攔截的filters，去掉後監控界面sql無法統計，'wall'用於防火墻
+    filters: stat,wall,log4j
+    maxPoolPreparedStatementPerConnectionSize: 20
+    useGlobalDataSourceStat: true
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500

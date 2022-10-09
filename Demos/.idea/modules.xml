@@ -54,6 +54,9 @@
       <module fileurl="file://$PROJECT_DIR$/Demo46_嵌入式servlet容器配置修改/demo46.iml" filepath="$PROJECT_DIR$/Demo46_嵌入式servlet容器配置修改/demo46.iml" />
       <module fileurl="file://$PROJECT_DIR$/Demo47_註冊servlet三大組件/demo47.iml" filepath="$PROJECT_DIR$/Demo47_註冊servlet三大組件/demo47.iml" />
       <module fileurl="file://$PROJECT_DIR$/Demo48_切換其他嵌入式servlet容器/demo48.iml" filepath="$PROJECT_DIR$/Demo48_切換其他嵌入式servlet容器/demo48.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Demo61_JDBC&amp;自動配置原理1/demo61-1.iml" filepath="$PROJECT_DIR$/Demo61_JDBC&amp;自動配置原理1/demo61-1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Demo61_JDBC&amp;自動配置原理2/demo61-2.iml" filepath="$PROJECT_DIR$/Demo61_JDBC&amp;自動配置原理2/demo61-2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Demo61_JDBC&amp;自動配置原理3/demo61-3.iml" filepath="$PROJECT_DIR$/Demo61_JDBC&amp;自動配置原理3/demo61-3.iml" />
     </modules>
   </component>
 </project>

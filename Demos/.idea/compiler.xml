@@ -32,6 +32,7 @@
         <module name="demo27-1" />
         <module name="demo12" />
         <module name="demo11" />
+        <module name="demo63" />
         <module name="demo36-2" />
         <module name="demo36-1" />
         <module name="demo17-3" />
@@ -136,6 +137,8 @@
       <module name="Demo61_JDBC&amp;自動配置原理1" target="1.8" />
       <module name="demo62-1" target="1.8" />
       <module name="demo62-2" target="1.8" />
+      <module name="demo63" target="1.8" />
+      <module name="Demo63_整合MyBatis-基礎環境搭建" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -148,6 +151,7 @@
       <module name="Demo44_錯誤處理原理&amp;訂製錯誤頁面" options="-parameters" />
       <module name="Demo51_使用外部Servlet容器&amp;支持JSP" options="-parameters" />
       <module name="Demo61_JDBC&amp;自動配置原理1" options="-parameters" />
+      <module name="Demo63_整合MyBatis-基礎環境搭建" options="-parameters" />
       <module name="demo08" options="-parameters" />
       <module name="demo09" options="-parameters" />
       <module name="demo11" options="-parameters" />
@@ -207,6 +211,7 @@
       <module name="demo61-3" options="-parameters" />
       <module name="demo62-1" options="-parameters" />
       <module name="demo62-2" options="-parameters" />
+      <module name="demo63" options="-parameters" />
     </option>
   </component>
 </project>

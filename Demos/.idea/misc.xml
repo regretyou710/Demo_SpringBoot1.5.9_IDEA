@@ -69,6 +69,7 @@
         <option value="$PROJECT_DIR$/Demo61_JDBC&amp;自動配置原理3/pom.xml" />
         <option value="$PROJECT_DIR$/Demo62_整合Druid&amp;配置數據源監控1/pom.xml" />
         <option value="$PROJECT_DIR$/Demo62_整合Druid&amp;配置數據源監控2/pom.xml" />
+        <option value="$PROJECT_DIR$/Demo63_整合MyBatis-基礎環境搭建/pom.xml" />
       </list>
     </option>
   </component>

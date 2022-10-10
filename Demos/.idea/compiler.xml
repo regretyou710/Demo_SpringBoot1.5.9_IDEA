@@ -14,6 +14,7 @@
         <module name="demo61-1" />
         <module name="demo29-2" />
         <module name="demo61-3" />
+        <module name="demo64" />
         <module name="demo26-2" />
         <module name="demo62-2" />
         <module name="demo48" />
@@ -139,6 +140,7 @@
       <module name="demo62-2" target="1.8" />
       <module name="demo63" target="1.8" />
       <module name="Demo63_整合MyBatis-基礎環境搭建" target="1.8" />
+      <module name="demo64" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -212,6 +214,7 @@
       <module name="demo62-1" options="-parameters" />
       <module name="demo62-2" options="-parameters" />
       <module name="demo63" options="-parameters" />
+      <module name="demo64" options="-parameters" />
     </option>
   </component>
 </project>

@@ -70,6 +70,7 @@
         <option value="$PROJECT_DIR$/Demo62_整合Druid&amp;配置數據源監控1/pom.xml" />
         <option value="$PROJECT_DIR$/Demo62_整合Druid&amp;配置數據源監控2/pom.xml" />
         <option value="$PROJECT_DIR$/Demo63_整合MyBatis-基礎環境搭建/pom.xml" />
+        <option value="$PROJECT_DIR$/Demo64_整合MyBatis-註解版Mybatis/pom.xml" />
       </list>
     </option>
   </component>

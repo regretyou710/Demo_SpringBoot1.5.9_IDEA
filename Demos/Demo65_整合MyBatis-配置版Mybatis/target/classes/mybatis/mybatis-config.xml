@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <!--啟用駝峰命名映射屬性欄位-->
+    <settings>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+
+    <!--透過springboot默認資源文件引入mybatis的配置文件，數據源使用springboot默認資源文件中配置的-->
+
+    <!--mappers標籤同樣透過springboot默認資源文件引入mybatis的配置文件時已經設置-->
+</configuration>

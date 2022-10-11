@@ -1,0 +1,2 @@
+CREATE SEQUENCE springboot_emp_seq;
+CREATE SEQUENCE springboot_dept_seq;

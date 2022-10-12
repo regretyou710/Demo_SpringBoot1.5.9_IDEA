@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    username: system
+    password: manager
+    url: jdbc:oracle:thin:@localhost:1521:orcl12c
+  jpa:
+    hibernate:
+      # 自訂生成ddl語句
+      # update:更新或創建數據表結構
+      ddl-auto: update
+
+    #控制台顯示SQL
+    show-sql: true

@@ -72,6 +72,7 @@
         <option value="$PROJECT_DIR$/Demo63_整合MyBatis-基礎環境搭建/pom.xml" />
         <option value="$PROJECT_DIR$/Demo64_整合MyBatis-註解版Mybatis/pom.xml" />
         <option value="$PROJECT_DIR$/Demo65_整合MyBatis-配置版Mybatis/pom.xml" />
+        <option value="$PROJECT_DIR$/Demo67_整合JPA/pom.xml" />
       </list>
     </option>
   </component>

@@ -6,25 +6,27 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="demo61-1" />
+        <module name="demo14-2" />
         <module name="demo14-1" />
         <module name="demo42-2" />
         <module name="demo42-1" />
-        <module name="demo39-2" />
+        <module name="demo39-1" />
         <module name="demo29-2" />
-        <module name="demo38" />
+        <module name="demo61-2" />
+        <module name="demo09" />
         <module name="demo64" />
-        <module name="Demo05_HelloWorld" />
+        <module name="Demo20_@Conditional&amp;自動配置報告" />
         <module name="demo48" />
         <module name="demo47" />
         <module name="demo46" />
         <module name="Demo51_使用外部Servlet容器&amp;支持JSP" />
-        <module name="demo33-2" />
+        <module name="demo35-2" />
         <module name="demo43" />
-        <module name="demo17-1" />
+        <module name="demo30" />
         <module name="demo41" />
         <module name="demo40" />
-        <module name="demo14-2" />
+        <module name="demo33-1" />
+        <module name="demo14-3" />
         <module name="demo61-3" />
         <module name="demo15" />
         <module name="demo27-2" />
@@ -36,38 +38,37 @@
         <module name="demo36-1" />
         <module name="demo17-3" />
         <module name="demo17-2" />
+        <module name="demo17-1" />
         <module name="demo45-3" />
-        <module name="demo45-2" />
         <module name="Demo25_SpringBoot默認配置" />
-        <module name="demo39-1" />
-        <module name="Demo20_@Conditional&amp;自動配置報告" />
+        <module name="demo38" />
         <module name="demo26-1" />
         <module name="Demo27_切換日誌框架" />
         <module name="Demo29_webjars&amp;靜態資源映設規則1" />
-        <module name="demo35-2" />
+        <module name="Demo05_HelloWorld" />
         <module name="demo35-1" />
         <module name="demo31" />
         <module name="demo16-2" />
         <module name="demo16-1" />
         <module name="demo44-2" />
+        <module name="demo61-1" />
         <module name="demo44-1" />
-        <module name="demo61-2" />
         <module name="demo13" />
         <module name="demo08" />
         <module name="demo26-2" />
         <module name="Demo44_錯誤處理原理&amp;訂製錯誤頁面" />
-        <module name="demo09" />
         <module name="demo18" />
         <module name="demo34-1" />
         <module name="demo62-2" />
         <module name="demo62-1" />
+        <module name="demo67" />
         <module name="demo16-3" />
         <module name="demo65" />
         <module name="demo34-2" />
         <module name="demo45-1" />
-        <module name="demo30" />
-        <module name="demo33-1" />
-        <module name="demo14-3" />
+        <module name="demo33-2" />
+        <module name="demo39-2" />
+        <module name="demo45-2" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -143,6 +144,7 @@
       <module name="Demo63_整合MyBatis-基礎環境搭建" target="1.8" />
       <module name="demo64" target="1.8" />
       <module name="demo65" target="1.8" />
+      <module name="demo67" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -218,6 +220,7 @@
       <module name="demo63" options="-parameters" />
       <module name="demo64" options="-parameters" />
       <module name="demo65" options="-parameters" />
+      <module name="demo67" options="-parameters" />
     </option>
   </component>
 </project>

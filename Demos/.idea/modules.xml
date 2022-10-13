@@ -63,6 +63,7 @@
       <module fileurl="file://$PROJECT_DIR$/Demo64_整合MyBatis-註解版Mybatis/demo64.iml" filepath="$PROJECT_DIR$/Demo64_整合MyBatis-註解版Mybatis/demo64.iml" />
       <module fileurl="file://$PROJECT_DIR$/Demo65_整合MyBatis-配置版Mybatis/demo65.iml" filepath="$PROJECT_DIR$/Demo65_整合MyBatis-配置版Mybatis/demo65.iml" />
       <module fileurl="file://$PROJECT_DIR$/Demo67_整合JPA/demo67.iml" filepath="$PROJECT_DIR$/Demo67_整合JPA/demo67.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Demo70_事件監聽機制相關測試/demo70.iml" filepath="$PROJECT_DIR$/Demo70_事件監聽機制相關測試/demo70.iml" />
     </modules>
   </component>
 </project>

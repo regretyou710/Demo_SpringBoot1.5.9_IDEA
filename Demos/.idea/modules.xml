@@ -7,6 +7,8 @@
       <module fileurl="file://$PROJECT_DIR$/Demo25_SpringBoot默認配置/Demo25_SpringBoot默認配置.iml" filepath="$PROJECT_DIR$/Demo25_SpringBoot默認配置/Demo25_SpringBoot默認配置.iml" />
       <module fileurl="file://$PROJECT_DIR$/Demo29_webjars&amp;靜態資源映設規則1/Demo29_webjars&amp;靜態資源映設規則1.iml" filepath="$PROJECT_DIR$/Demo29_webjars&amp;靜態資源映設規則1/Demo29_webjars&amp;靜態資源映設規則1.iml" />
       <module fileurl="file://$PROJECT_DIR$/Demo51_使用外部Servlet容器&amp;支持JSP/Demo51_使用外部Servlet容器&amp;支持JSP.iml" filepath="$PROJECT_DIR$/Demo51_使用外部Servlet容器&amp;支持JSP/Demo51_使用外部Servlet容器&amp;支持JSP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Demo71_自定義starter1/Demo71_自定義starter1.iml" filepath="$PROJECT_DIR$/Demo71_自定義starter1/Demo71_自定義starter1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Demo71_自定義starter2/Demo71_自定義starter2.iml" filepath="$PROJECT_DIR$/Demo71_自定義starter2/Demo71_自定義starter2.iml" />
       <module fileurl="file://$PROJECT_DIR$/Demo08_使用響導快速建立SpringBoot應用/demo08.iml" filepath="$PROJECT_DIR$/Demo08_使用響導快速建立SpringBoot應用/demo08.iml" />
       <module fileurl="file://$PROJECT_DIR$/Demo09_yaml簡介/demo09.iml" filepath="$PROJECT_DIR$/Demo09_yaml簡介/demo09.iml" />
       <module fileurl="file://$PROJECT_DIR$/Demo11_yaml配置文件值獲取/demo11.iml" filepath="$PROJECT_DIR$/Demo11_yaml配置文件值獲取/demo11.iml" />
@@ -64,6 +66,7 @@
       <module fileurl="file://$PROJECT_DIR$/Demo65_整合MyBatis-配置版Mybatis/demo65.iml" filepath="$PROJECT_DIR$/Demo65_整合MyBatis-配置版Mybatis/demo65.iml" />
       <module fileurl="file://$PROJECT_DIR$/Demo67_整合JPA/demo67.iml" filepath="$PROJECT_DIR$/Demo67_整合JPA/demo67.iml" />
       <module fileurl="file://$PROJECT_DIR$/Demo70_事件監聽機制相關測試/demo70.iml" filepath="$PROJECT_DIR$/Demo70_事件監聽機制相關測試/demo70.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Demo71_自定義starter3/demo71-3.iml" filepath="$PROJECT_DIR$/Demo71_自定義starter3/demo71-3.iml" />
     </modules>
   </component>
 </project>

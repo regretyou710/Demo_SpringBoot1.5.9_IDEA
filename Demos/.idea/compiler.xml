@@ -8,18 +8,24 @@
         <outputRelativeToContentRoot value="true" />
         <module name="demo14-1" />
         <module name="demo17-3" />
+        <module name="demo27-2" />
         <module name="Demo27_切換日誌框架" />
+        <module name="demo71-3" />
+        <module name="Demo71_自定義starter3" />
+        <module name="Demo71_自定義starter2" />
+        <module name="Demo71_自定義starter1" />
         <module name="demo70" />
         <module name="Demo29_webjars&amp;靜態資源映設規則1" />
         <module name="demo16-3" />
-        <module name="Demo05_HelloWorld" />
+        <module name="demo16-2" />
         <module name="demo16-1" />
         <module name="demo18" />
+        <module name="Demo71_自定義starter" />
         <module name="demo15" />
         <module name="demo13" />
         <module name="demo12" />
         <module name="demo11" />
-        <module name="demo27-2" />
+        <module name="demo67" />
         <module name="demo36-1" />
         <module name="demo36-2" />
         <module name="demo64" />
@@ -40,7 +46,7 @@
         <module name="demo35-2" />
         <module name="demo35-1" />
         <module name="demo65" />
-        <module name="demo67" />
+        <module name="Demo05_HelloWorld" />
         <module name="demo44-2" />
         <module name="demo48" />
         <module name="demo47" />
@@ -58,13 +64,12 @@
         <module name="demo45-1" />
         <module name="demo61-3" />
         <module name="demo61-2" />
-        <module name="demo38" />
+        <module name="demo61-1" />
         <module name="demo39-1" />
         <module name="demo31" />
         <module name="demo30" />
         <module name="Demo25_SpringBoot默認配置" />
-        <module name="demo61-1" />
-        <module name="demo16-2" />
+        <module name="demo38" />
         <module name="demo62-2" />
         <module name="demo62-1" />
         <module name="demo39-2" />
@@ -147,6 +152,12 @@
       <module name="demo65" target="1.8" />
       <module name="demo67" target="1.8" />
       <module name="demo70" target="1.8" />
+      <module name="demo71-3" target="1.8" />
+      <module name="demo71-spring-boot-starter" target="1.8" />
+      <module name="Demo71_自定義starter" target="1.8" />
+      <module name="Demo71_自定義starter1" target="1.8" />
+      <module name="Demo71_自定義starter2" target="1.8" />
+      <module name="Demo71_自定義starter3" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -160,6 +171,8 @@
       <module name="Demo51_使用外部Servlet容器&amp;支持JSP" options="-parameters" />
       <module name="Demo61_JDBC&amp;自動配置原理1" options="-parameters" />
       <module name="Demo63_整合MyBatis-基礎環境搭建" options="-parameters" />
+      <module name="Demo71_自定義starter2" options="-parameters" />
+      <module name="Demo71_自定義starter3" options="-parameters" />
       <module name="demo08" options="-parameters" />
       <module name="demo09" options="-parameters" />
       <module name="demo11" options="-parameters" />
@@ -224,6 +237,7 @@
       <module name="demo65" options="-parameters" />
       <module name="demo67" options="-parameters" />
       <module name="demo70" options="-parameters" />
+      <module name="demo71-3" options="-parameters" />
     </option>
   </component>
 </project>

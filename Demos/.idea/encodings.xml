@@ -63,6 +63,8 @@
     <file url="file://$PROJECT_DIR$/Demo65_整合MyBatis-配置版Mybatis/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Demo67_整合JPA/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Demo70_事件監聽機制相關測試/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Demo71_自定義starter2/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Demo71_自定義starter3/src/main/java" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>
